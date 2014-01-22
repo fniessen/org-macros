@@ -1,0 +1,313 @@
+#+TITLE:     Org Macros
+#+AUTHOR:    Fabrice Niessen
+#+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
+#+DESCRIPTION:
+#+KEYWORDS:  org mode, macros
+#+LANGUAGE:  en
+
+#+PROPERTY: comments no
+#+PROPERTY: eval     no
+#+PROPERTY: noweb    yes
+#+PROPERTY: tangle   org-macros.setup
+
+#+SETUPFILE: org-macros.setup
+#+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
+
+* Overview
+
+** Description
+
+Once you've cloned [[https://github.com/fniessen/org-macros][Org-macros]], many macros will be ready to use within your Org
+files.
+
+Below is a list of the macros currently available.
+
+*** Basic formatting
+
+- [[#bgcolor][bgcolor]] macro
+- [[#color][color]] macro
+- [[#highlight][highlight]] macro
+- [[#loremipsum][loremipsum]] macro
+
+*** Generic macros
+
+- =chart= macro
+- =recently-update= macro
+- =tasklist= macro
+
+*** Layout
+
+- =info= macro
+- =note= macro
+- =tip= macro
+- =warning= macro
+
+*** Navigation and lists
+
+- =children= macro (to display child pages)
+- =toc= macro
+
+* Macros
+
+#+begin_src org
+# -*- mode: org; -*-
+#+end_src
+
+** Bgcolor macro
+   :PROPERTIES:
+   :CUSTOM_ID: bgcolor
+   :END:
+
+The =bgcolor= macro allows you to change the background color of a block of text.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
+#+end_src
+
+*** Parameters
+
+1. Color name or hexadecimal code
+2. Text you want to color
+
+*** Examples
+
+{{{bgcolor(red, This information is important.)}}}
+{{{bgcolor(#E0E0E0, This other isn't.)}}}
+
+Common color names are supported by most Org exporters (HTML, LaTeX):
+
+{{{bgcolor(red, red)}}}
+{{{bgcolor(orange, orange)}}}
+{{{bgcolor(yellow, yellow)}}}
+{{{bgcolor(green, green)}}}
+{{{bgcolor(blue, blue)}}}
+{{{bgcolor(purple, purple)}}}
+{{{bgcolor(violet, violet)}}}
+
+You can also use hexadecimal color codes:
+
+{{{bgcolor(#FF0000, #FF0000)}}}
+{{{bgcolor(#00FF00, #00FF00)}}}
+{{{bgcolor(#0000FF, #0000FF)}}}
+
+*** See also
+
+[[#color][color]] macro \\
+[[#highlight][highlight]] macro
+
+** Color macro
+   :PROPERTIES:
+   :CUSTOM_ID: color
+   :END:
+
+The =color= macro allows you to change the foreground color of inline text.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+#+end_src
+
+*** Parameters
+
+1. Color name or hexadecimal code
+2. Text you want to color
+
+*** Examples
+
+{{{color(red, This information is important.)}}}
+{{{color(#E0E0E0, This other isn't.)}}}
+
+Common color names are supported by most Org exporters (HTML, LaTeX):
+
+{{{color(red, red)}}}
+{{{color(orange, orange)}}}
+{{{color(yellow, yellow)}}}
+{{{color(green, green)}}}
+{{{color(blue, blue)}}}
+{{{color(purple, purple)}}}
+{{{color(violet, violet)}}}
+
+You can also use hexadecimal color codes:
+
+{{{color(#FF0000, #FF0000)}}}
+{{{color(#00FF00, #00FF00)}}}
+{{{color(#0000FF, #0000FF)}}}
+
+*** See also
+
+[[#bgcolor][bgcolor]] macro \\
+[[#highlight][highlight]] macro
+
+** Error macro
+
+The =error= macro creates a red box around some text.
+
+*** Code
+
+*** Parameters
+
+*** Examples
+
+** Highlight macro
+   :PROPERTIES:
+   :CUSTOM_ID: highlight
+   :END:
+
+The =highlight= macro allows you to change the background color of inline text.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
+#+end_src
+
+*** Parameters
+
+1. Color name or hexadecimal code
+2. Text you want to color
+
+*** Examples
+
+{{{highlight(red, This information is important.)}}}
+{{{highlight(#E0E0E0, This other isn't.)}}}
+
+Common color names are supported by most Org exporters (HTML, LaTeX):
+
+{{{highlight(red, red)}}}
+{{{highlight(orange, orange)}}}
+{{{highlight(yellow, yellow)}}}
+{{{highlight(green, green)}}}
+{{{highlight(blue, blue)}}}
+{{{highlight(purple, purple)}}}
+{{{highlight(violet, violet)}}}
+
+You can also use hexadecimal color codes:
+
+{{{highlight(#FF0000, #FF0000)}}}
+{{{highlight(#00FF00, #00FF00)}}}
+{{{highlight(#0000FF, #0000FF)}}}
+
+*** See also
+
+[[#bgcolor][bgcolor]] macro \\
+[[#color][color]] macro
+
+** Info macro
+
+*** Code
+
+#+begin_src org
+,#+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
+,#+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+** Loremipsum macro
+   :PROPERTIES:
+   :CUSTOM_ID: loremipsum
+   :END:
+
+The =loremipsum= macro displays one paragraph of meaningless text that you can
+use for demonstration purposes of visual elements such as font, typography or
+layout.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+This is a basic example of the =Loremipsum= text:
+
+{{{loremipsum}}}
+
+** MiniPage macro
+
+*** Code
+
+#+begin_src org
+,#+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
+,#+MACRO: EndMiniPage @</div>
+#+end_src
+
+*** Parameters
+
+*** Examples
+
+** NoPrint macro
+
+The =noprint= macro prevents text from being printed.
+
+*** Code
+
+*** Parameters
+
+*** Examples
+
+** Warning macro
+
+*** Code
+
+#+begin_src org
+,#+MACRO: BeginWarningBox @@html:<div class="org-info-box"><img src="/worg/images/icons/warning.png" alt="NOTE" /><p>@@
+,#+MACRO: EndWarningBox @@html:</p><br style="clear:left;height:1px;" /></div><br />@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+{{{BeginWarningBox}}}
+Be cautious!
+{{{EndWarningBox}}}
+
+** Others XXX
+
+Keep a library of helpful CSS classes. Useful for debugging, but should be
+avoided in the release version (separate markup and presentation). Since you
+can use multiple class names (i.e. ~<p class="floatLeft alignLeft
+width75">...</p>~), make use of them debugging your markup.
+
+#+begin_src css :tangle no
+.width100 { width: 100%; }
+.width75 { width: 75%; }
+.width50 { width: 50%; }
+.floatLeft { float: left; }
+.floatRight { float: right; }
+.alignLeft { text-align: left; }
+.alignRight { text-align: right; }
+
+.clear         { clear: both; }
+.float-left    { float: left; }
+.float-right   { float: right; }
+
+.bold          { font-weight: bold; }
+.italic        { font-style: italic; }
+.underline     { border-bottom: 1px solid; }
+.highlight     { background: #FFFFCC; }
+
+.wrap          { width: 960px; margin: 0 auto; }
+
+.img-left      { float: left; margin: 4px 10px 4px 0; }
+.img-right     { float: right; margin: 4px 0 4px 10px; }
+
+.nopadding     { padding: 0; }
+.noindent      { margin-left: 0; padding-left: 0; }
+.nobullet      { list-style: none; list-style-image: none; }
+#+end_src
