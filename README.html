@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-22 Wed 21:18 -->
+  <title>Org Macros</title><!-- 2014-01-22 Wed 22:09 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -184,6 +184,8 @@
                   <li><a href="#sec-2-9-3">2.9.3. Examples</a></li>
                 </ul>
               </li>
+
+              <li><a href="#sec-2-10">2.10. Others XXX</a></li>
             </ul>
           </li>
         </ul>
@@ -274,7 +276,13 @@
     <div id="outline-container-sec-2" class="outline-2">
       <h2 id="sec-2"><span class="section-number-2">2</span> Macros</h2>
 
-      <div class="outline-text-2" id="text-2"></div>
+      <div class="outline-text-2" id="text-2">
+        <div class="org-src-container">
+          <pre class="src src-org">
+<span style="color: #8D8D84; font-style: italic;"># -*- mode: org; -*-</span>
+</pre>
+        </div>
+      </div>
 
       <div id="outline-container-bgcolor" class="outline-3">
         <h3 id="bgcolor"><a id="sec-2-1" name="sec-2-1"></a><span class=
@@ -743,6 +751,92 @@
 
               <p>Be cautious!</p><br style="clear:left;height:1px;" />
             </div><br />
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-2-10" class="outline-3">
+        <h3 id="sec-2-10"><span class="section-number-3">2.10</span> Others
+        XXX</h3>
+
+        <div class="outline-text-3" id="text-2-10">
+          <p>Keep a library of helpful CSS classes. Useful for debugging, but
+          should be avoided in the release version (separate markup and
+          presentation). Since you can use multiple class names (i.e.
+          <code>&lt;p class="floatLeft alignLeft
+          width75"&gt;...&lt;/p&gt;</code>), make use of them debugging your
+          markup.</p>
+
+          <div class="org-src-container">
+            <pre class="src src-css">
+<span style=
+"color: #0000ff; font-weight: bold;">.width100 </span>{ <span style="color: #00AA00;">width</span>: 100%; }
+<span style="color: #0000ff; font-weight: bold;">.width75 </span>{ <span style=
+"color: #00AA00;">width</span>: 75%; }
+<span style="color: #0000ff; font-weight: bold;">.width50 </span>{ <span style=
+"color: #00AA00;">width</span>: 50%; }
+<span style=
+"color: #0000ff; font-weight: bold;">.floatLeft </span>{ <span style=
+"color: #00AA00;">float</span>: left; }
+<span style=
+"color: #0000ff; font-weight: bold;">.floatRight </span>{ <span style=
+"color: #00AA00;">float</span>: right; }
+<span style=
+"color: #0000ff; font-weight: bold;">.alignLeft </span>{ <span style=
+"color: #00AA00;">text-align</span>: left; }
+<span style=
+"color: #0000ff; font-weight: bold;">.alignRight </span>{ <span style=
+"color: #00AA00;">text-align</span>: right; }
+
+<span style=
+"color: #0000ff; font-weight: bold;">.clear         </span>{ <span style=
+"color: #00AA00;">clear</span>: both; }
+<span style=
+"color: #0000ff; font-weight: bold;">.float-left    </span>{ <span style=
+"color: #00AA00;">float</span>: left; }
+<span style=
+"color: #0000ff; font-weight: bold;">.float-right   </span>{ <span style=
+"color: #00AA00;">float</span>: right; }
+
+<span style=
+"color: #0000ff; font-weight: bold;">.bold          </span>{ <span style=
+"color: #00AA00;">font-weight</span>: bold; }
+<span style=
+"color: #0000ff; font-weight: bold;">.italic        </span>{ <span style=
+"color: #00AA00;">font-style</span>: italic; }
+<span style=
+"color: #0000ff; font-weight: bold;">.underline     </span>{ <span style=
+"color: #00AA00;">border-bottom</span>: 1px solid; }
+<span style=
+"color: #0000ff; font-weight: bold;">.highlight     </span>{ <span style=
+"color: #00AA00;">background</span>: #FFFFCC; }
+
+<span style=
+"color: #0000ff; font-weight: bold;">.wrap          </span>{ <span style=
+"color: #00AA00;">width</span>: 960px; <span style=
+"color: #00AA00;">margin</span>: 0 auto; }
+
+<span style=
+"color: #0000ff; font-weight: bold;">.img-left      </span>{ <span style=
+"color: #00AA00;">float</span>: left; <span style=
+"color: #00AA00;">margin</span>: 4px 10px 4px 0; }
+<span style=
+"color: #0000ff; font-weight: bold;">.img-right     </span>{ <span style=
+"color: #00AA00;">float</span>: right; <span style=
+"color: #00AA00;">margin</span>: 4px 0 4px 10px; }
+
+<span style=
+"color: #0000ff; font-weight: bold;">.nopadding     </span>{ <span style=
+"color: #00AA00;">padding</span>: 0; }
+<span style=
+"color: #0000ff; font-weight: bold;">.noindent      </span>{ <span style=
+"color: #00AA00;">margin-left</span>: 0; <span style=
+"color: #00AA00;">padding-left</span>: 0; }
+<span style=
+"color: #0000ff; font-weight: bold;">.nobullet      </span>{ <span style=
+"color: #00AA00;">list-style</span>: none; <span style=
+"color: #00AA00;">list-style-image</span>: none; }
+</pre>
           </div>
         </div>
       </div>
