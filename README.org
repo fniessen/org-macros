@@ -1,4 +1,4 @@
-#+TITLE:     Org Macros
+# #+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
 #+DESCRIPTION:
@@ -55,7 +55,7 @@ Below is a list of the macros currently available.
 # -*- mode: org; -*-
 #+end_src
 
-** Bgcolor macro
+** BgColor macro
    :PROPERTIES:
    :CUSTOM_ID: bgcolor
    :END:
@@ -212,7 +212,7 @@ None.
 
 *** Examples
 
-** Loremipsum macro
+** LoremIpsum macro
    :PROPERTIES:
    :CUSTOM_ID: loremipsum
    :END:
