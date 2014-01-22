@@ -49,6 +49,8 @@ Below is a list of the macros currently available.
 
 * Macros
 
+** Cookie                                                            :noexport:
+
 #+begin_src org
 # -*- mode: org; -*-
 #+end_src
