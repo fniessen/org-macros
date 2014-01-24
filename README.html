@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-24 Fri 11:38 -->
+  <title>Org Macros</title><!-- 2014-01-24 Fri 15:47 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -68,7 +68,9 @@
                 </ul>
               </li>
 
-              <li><a href="#sec-1-2">1.2. Syntax</a></li>
+              <li><a href="#sec-1-2">1.2. Installation</a></li>
+
+              <li><a href="#sec-1-3">1.3. Usage</a></li>
             </ul>
           </li>
 
@@ -91,7 +93,7 @@
               </li>
 
               <li>
-                <a href="#date">2.2. Date macro (current time) XXX</a>
+                <a href="#date">2.2. Date macro</a>
 
                 <ul>
                   <li><a href="#sec-2-2-1">2.2.1. Code</a></li>
@@ -220,7 +222,25 @@
             </ul>
           </li>
 
-          <li><a href="#sec-4">4. Generic</a></li>
+          <li>
+            <a href="#sec-4">4. Generic</a>
+
+            <ul>
+              <li>
+                <a href="#currenttime">4.1. Current-time macro</a>
+
+                <ul>
+                  <li><a href="#sec-4-1-1">4.1.1. Code</a></li>
+
+                  <li><a href="#sec-4-1-2">4.1.2. XXX Parameters</a></li>
+
+                  <li><a href="#sec-4-1-3">4.1.3. Examples</a></li>
+
+                  <li><a href="#sec-4-1-4">4.1.4. See also</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 
           <li>
             <a href="#sec-5">5. Layout</a>
@@ -320,7 +340,7 @@
             <ul class="org-ul">
               <li><a href="#author">author</a> macro</li>
 
-              <li><a href="#date">date</a> macro (current time)</li>
+              <li><a href="#date">date</a> macro</li>
 
               <li><a href="#email">email</a> macro</li>
 
@@ -357,6 +377,8 @@
           <div class="outline-text-4" id="text-1-1-3">
             <ul class="org-ul">
               <li><code>chart</code> macro</li>
+
+              <li><a href="#currenttime">current-time</a> macro</li>
 
               <li><code>recently-updated</code> macro</li>
 
@@ -399,16 +421,34 @@
       </div>
 
       <div id="outline-container-sec-1-2" class="outline-3">
-        <h3 id="sec-1-2"><span class="section-number-3">1.2</span> Syntax</h3>
+        <h3 id="sec-1-2"><span class="section-number-3">1.2</span>
+        Installation</h3>
 
         <div class="outline-text-3" id="text-1-2">
+          <div class="org-src-container">
+            <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+INCLUDE: org-macros.setup</span>
+</pre>
+          </div>
+
+          <div class="inlinetask">
+            <b>&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+            "info">info</span></span></b><br />
+
+            <p>As there are Babel code blocks inside the
+            <code>org-macros.setup</code> file, it needs to be loaded via the
+            <code>#+INCLUDE:</code> directive, not via a
+            <code>#+SETUPFILE:</code>!</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-1-3" class="outline-3">
+        <h3 id="sec-1-3"><span class="section-number-3">1.3</span> Usage</h3>
+
+        <div class="outline-text-3" id="text-1-3">
           <p><code>{{{name-of-the-macro(arg1,arg2)}}}</code></p>
-
-          <p><b>Remark --</b> When macros are disguised calls to Babel code,
-          they must be on their own on a line: <i>nothing</i> before nor after
-          (<i>but spaces</i>).</p>
-
-          <p>The current date and time is: .</p>
         </div>
       </div>
     </div>
@@ -424,7 +464,7 @@
         "section-number-3">2.1</span> Author macro</h3>
 
         <div class="outline-text-3" id="text-author">
-          <p>The <code>author</code> macro display a list of users who have
+          <p>The <code>author</code> macro outputs a list of users who have
           created or edited the document.</p>
         </div>
 
@@ -468,11 +508,11 @@
 
       <div id="outline-container-date" class="outline-3">
         <h3 id="date"><a id="sec-2-2" name="sec-2-2"></a><span class=
-        "section-number-3">2.2</span> Date macro (current time) XXX</h3>
+        "section-number-3">2.2</span> Date macro</h3>
 
         <div class="outline-text-3" id="text-date">
-          <p>The <code>date</code> macro outputs the <b>current date and
-          time</b> <i>when</i> the document is being exported.</p>
+          <p>The <code>date</code> macro outputs the <b>date and time</b>
+          specified in the document.</p>
         </div>
 
         <div id="outline-container-sec-2-2-1" class="outline-4">
@@ -501,7 +541,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-2-3">
-            <p>This document was last exported on: 2014-01-01. XXX</p>
+            <p>The date of this document is: 2014-01-22 12:34.</p>
           </div>
         </div>
 
@@ -513,7 +553,10 @@
             <ul class="org-ul">
               <li>Option <code>#+DATE:</code>.</li>
 
-              <li><a href="#modification-time">modification-time</a> macro</li>
+              <li><i>current-time</i> macro.</li>
+
+              <li><a href="#modification-time">modification-time</a>
+              macro.</li>
             </ul>
           </div>
         </div>
@@ -524,7 +567,7 @@
         "section-number-3">2.3</span> Email macro</h3>
 
         <div class="outline-text-3" id="text-email">
-          <p>The <code>email</code> macro displays the email of the
+          <p>The <code>email</code> macro outputs the email of the
           author(s).</p>
         </div>
 
@@ -603,7 +646,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-4-3">
-            <p>This document was last modified on: 2014-01-24 Fri 11:38 .</p>
+            <p>This document was last modified on: 2014-01-24 Fri 15:47.</p>
           </div>
         </div>
 
@@ -612,7 +655,11 @@
           also</h4>
 
           <div class="outline-text-4" id="text-2-4-4">
-            <p><a href="#date">date</a> macro</p>
+            <ul class="org-ul">
+              <li><i>current-time</i> macro.</li>
+
+              <li><a href="#date">date</a> macro.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -622,7 +669,7 @@
         "section-number-3">2.5</span> Title macro</h3>
 
         <div class="outline-text-3" id="text-title">
-          <p>The <code>title</code> macro displays the document title.</p>
+          <p>The <code>title</code> macro outputs the document title.</p>
         </div>
 
         <div id="outline-container-sec-2-5-1" class="outline-4">
@@ -1005,6 +1052,83 @@
 
     <div id="outline-container-sec-4" class="outline-2">
       <h2 id="sec-4"><span class="section-number-2">4</span> Generic</h2>
+
+      <div class="outline-text-2" id="text-4"></div>
+
+      <div id="outline-container-currenttime" class="outline-3">
+        <h3 id="currenttime"><a id="sec-4-1" name="sec-4-1"></a><span class=
+        "section-number-3">4.1</span> Current-time macro</h3>
+
+        <div class="outline-text-3" id="text-currenttime">
+          <p>The <code>current-time</code> macro outputs the <b>current date
+          and time</b> <i>when</i> the document is being exported.</p>
+        </div>
+
+        <div id="outline-container-sec-4-1-1" class="outline-4">
+          <h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span>
+          Code</h4>
+
+          <div class="outline-text-4" id="text-4-1-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+name: current-time</span>
+<span style=
+"color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src emacs-lisp :eval yes :exports none :results silent</span>
+<span style=
+"background-color: #FFFFE0;">(format-time-string </span><span style="color: #036A07; background-color: #FFFFE0;">"%Y%m%d.%H%M"</span><span style="background-color: #FFFFE0;">)
+</span><span style=
+"color: #555555; background-color: #E2E1D5; text-decoration: overline;">#+end_src</span>
+
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: current-time call_current-time()[:eval yes :results raw]</span>
+</pre>
+            </div>
+
+            <div class="inlinetask">
+              <b>We chose an inline Babel call so that the macro can be used in
+              a paragraph.&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b><br />
+              nil
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-2" class="outline-4">
+          <h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> XXX
+          Parameters</h4>
+
+          <div class="outline-text-4" id="text-4-1-2">
+            <ol class="org-ol">
+              <li>Format string understood by
+              <code>format-time-string</code>.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-3" class="outline-4">
+          <h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span>
+          Examples</h4>
+
+          <div class="outline-text-4" id="text-4-1-3">
+            <p>This document was last exported on: 20140124.1547.</p>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-4" class="outline-4">
+          <h4 id="sec-4-1-4"><span class="section-number-4">4.1.4</span> See
+          also</h4>
+
+          <div class="outline-text-4" id="text-4-1-4">
+            <ul class="org-ul">
+              <li><a href="#date">date</a> macro.</li>
+
+              <li><a href="#modification-time">modification-time</a>
+              macro.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="outline-container-sec-5" class="outline-2">
@@ -1272,7 +1396,7 @@
 
   <div id="postamble" class="status">
     <div id="copyright">
-      © 2014-01-01 Fabrice Niessen
+      © 2014-01-22 12:34 Fabrice Niessen
     </div>
   </div>
 </body>

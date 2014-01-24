@@ -1,7 +1,7 @@
 #+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+DATE:      2014-01-01
+#+DATE:      2014-01-22 12:34
 #+DESCRIPTION:
 #+KEYWORDS:  org mode, macros
 #+LANGUAGE:  en
@@ -11,7 +11,7 @@
 #+PROPERTY: noweb    yes
 #+PROPERTY: tangle   org-macros.setup
 
-#+SETUPFILE: org-macros.setup
+#+INCLUDE: org-macros.setup
 #+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
 
 * Overview
@@ -26,7 +26,7 @@ Below is a list of the macros currently available.
 *** Org export-specific (Org built-ins)
 
 - [[#author][author]] macro
-- [[#date][date]] macro (current time)
+- [[#date][date]] macro
 - [[#email][email]] macro
 - [[#modification-time][modification-time]] macro
 - [[#title][title]] macro
@@ -42,6 +42,7 @@ Below is a list of the macros currently available.
 *** Generic macros
 
 - =chart= macro
+- [[#currenttime][current-time]] macro
 - =recently-updated= macro
 - =tasklist= macro
 
@@ -58,23 +59,20 @@ Below is a list of the macros currently available.
 - =children= macro (to display child pages)
 - =toc= macro
 
-** Syntax
+** Installation
 
-={{{name-of-the-macro(arg1,arg2)}}}=
-
-*Remark --* When macros are disguised calls to Babel code, they must be on their
-own on a line: /nothing/ before nor after (/but spaces/).
-
-#+name: current-time
-#+begin_src emacs-lisp :exports results :tangle no
-(format-time-string "%Y%m%d.%H%M")
+#+begin_src org :tangle no
+,#+INCLUDE: org-macros.setup
 #+end_src
 
-#+MACRO: ct #+CALL: current-time()
+***************                                                          :info:
+As there are Babel code blocks inside the ~org-macros.setup~ file, it needs to be
+loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
+*************** END
 
-The current date and time is:
-{{{ct}}}
-.
+** Usage
+
+={{{name-of-the-macro(arg1,arg2)}}}=
 
 ** Cookie                                                            :noexport:
 
@@ -89,7 +87,7 @@ The current date and time is:
    :CUSTOM_ID: author
    :END:
 
-The =author= macro display a list of users who have created or edited the
+The =author= macro outputs a list of users who have created or edited the
 document.
 
 *** Code
@@ -108,13 +106,12 @@ People who have created and edited this document: {{{author}}}.
 
 Option =#+AUTHOR:=.
 
-** Date macro (current time) XXX
+** Date macro
    :PROPERTIES:
    :CUSTOM_ID: date
    :END:
 
-The =date= macro outputs the *current date and time* /when/ the document is being
-exported.
+The =date= macro outputs the *date and time* specified in the document.
 
 *** Code
 
@@ -126,19 +123,20 @@ Org built-in.
 
 *** Examples
 
-This document was last exported on: {{{date(%Y-%m-%d %a %H:%M)}}}. XXX
+The date of this document is: {{{date(%Y-%m-%d %a %H:%M)}}}.
 
 *** See also
 
 - Option =#+DATE:=.
-- [[#modification-time][modification-time]] macro
+- [[#current-time][current-time]] macro.
+- [[#modification-time][modification-time]] macro.
 
 ** Email macro
    :PROPERTIES:
    :CUSTOM_ID: email
    :END:
 
-The =email= macro displays the email of the author(s).
+The =email= macro outputs the email of the author(s).
 
 *** Code
 
@@ -174,18 +172,19 @@ Org built-in.
 
 *** Examples
 
-This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}} .
+This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 
 *** See also
 
-[[#date][date]] macro
+- [[#current-time][current-time]] macro.
+- [[#date][date]] macro.
 
 ** Title macro
    :PROPERTIES:
    :CUSTOM_ID: title
    :END:
 
-The =title= macro displays the document title.
+The =title= macro outputs the document title.
 
 *** Code
 
@@ -378,6 +377,40 @@ XXX Diff with an Org comment?
 *** Examples
 
 * Generic
+
+** Current-time macro
+   :PROPERTIES:
+   :CUSTOM_ID: currenttime
+   :END:
+
+The =current-time= macro outputs the *current date and time* /when/ the document is being
+exported.
+
+*** Code
+
+#+begin_src org
+,#+name: current-time
+,#+begin_src emacs-lisp :eval yes :exports none :results silent
+(format-time-string "%Y%m%d.%H%M")
+,#+end_src
+
+,#+MACRO: current-time call_current-time()[:eval yes :results raw]
+#+end_src
+
+*************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
+
+*** XXX Parameters
+
+1. Format string understood by =format-time-string=.
+
+*** Examples
+
+This document was last exported on: {{{current-time}}}.
+
+*** See also
+
+- [[#date][date]] macro.
+- [[#modification-time][modification-time]] macro.
 
 * Layout
 
