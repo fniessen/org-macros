@@ -1,6 +1,7 @@
-# #+TITLE:     Org Macros
+#+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
+#+DATE:      2014-01-01
 #+DESCRIPTION:
 #+KEYWORDS:  org mode, macros
 #+LANGUAGE:  en
@@ -45,10 +46,10 @@ Below is a list of the macros currently available.
 
 *** Layout
 
-- =info= macro
-- =note= macro
-- =tip= macro
-- =warning= macro
+- [[#info][info]] macro
+- [[#note][note]] macro
+- [[#tip][tip]] macro
+- [[#warning][warning]] macro
 
 *** Navigation and lists
 
@@ -57,7 +58,21 @@ Below is a list of the macros currently available.
 
 ** Syntax
 
-={{{name(arg1,arg2)}}}=
+={{{name-of-the-macro(arg1,arg2)}}}=
+
+*Remark --* When macros are disguised calls to Babel code, they must be on their
+own on a line: /nothing/ before nor after (/but spaces/).
+
+#+name: current-time
+#+begin_src emacs-lisp :exports results
+(format-time-string "%Y%m%d.%H%M")
+#+end_src
+
+#+MACRO: ct #+CALL: current-time()
+
+The current date and time is:
+{{{ct}}}
+.
 
 * Macros
 
@@ -179,7 +194,7 @@ You can also use hexadecimal color codes:
 [[#bgcolor][bgcolor]] macro \\
 [[#highlight][highlight]] macro
 
-** Date macro (current time)
+** Date macro (current time) XXX
    :PROPERTIES:
    :CUSTOM_ID: date
    :END:
@@ -227,16 +242,6 @@ The email of this document is: {{{email}}}.
 
 Option =#+EMAIL:=.
 
-** Error macro
-
-The =error= macro creates a red box around some text.
-
-*** Code
-
-*** Parameters
-
-*** Examples
-
 ** Highlight macro
    :PROPERTIES:
    :CUSTOM_ID: highlight
@@ -282,6 +287,9 @@ You can also use hexadecimal color codes:
 [[#color][color]] macro
 
 ** Info macro
+   :PROPERTIES:
+   :CUSTOM_ID: info
+   :END:
 
 *** Code
 
@@ -368,6 +376,32 @@ The =noprint= macro prevents text from being printed.
 
 *** Examples
 
+** Note macro
+   :PROPERTIES:
+   :CUSTOM_ID: note
+   :END:
+
+*** Code
+
+*** Parameters
+
+None.
+
+*** Examples
+
+** Tip macro
+   :PROPERTIES:
+   :CUSTOM_ID: tip
+   :END:
+
+*** Code
+
+*** Parameters
+
+None.
+
+*** Examples
+
 ** Title macro
    :PROPERTIES:
    :CUSTOM_ID: title
@@ -392,6 +426,9 @@ The title of this document is: {{{title}}}.
 Option =#+TITLE:=.
 
 ** Warning macro
+   :PROPERTIES:
+   :CUSTOM_ID: warning
+   :END:
 
 *** Code
 
