@@ -390,11 +390,11 @@ exported.
 
 #+begin_src org
 ,#+name: current-time
-,#+begin_src emacs-lisp :eval yes :exports none :results silent
+,#+begin_src emacs-lisp :exports none :results silent
 (format-time-string "%Y%m%d.%H%M")
 ,#+end_src
 
-,#+MACRO: current-time call_current-time()[:eval yes :results raw]
+,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
 #+end_src
 
 *************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
