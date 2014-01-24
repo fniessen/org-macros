@@ -37,6 +37,7 @@ Below is a list of the macros currently available.
 - [[#color][color]] macro
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
+- [[#noprint][noprint]] macro
 
 *** Generic macros
 
@@ -47,6 +48,7 @@ Below is a list of the macros currently available.
 *** Layout
 
 - [[#info][info]] macro
+- [[#minipage][minipage]] macro
 - [[#note][note]] macro
 - [[#tip][tip]] macro
 - [[#warning][warning]] macro
@@ -64,7 +66,7 @@ Below is a list of the macros currently available.
 own on a line: /nothing/ before nor after (/but spaces/).
 
 #+name: current-time
-#+begin_src emacs-lisp :exports results
+#+begin_src emacs-lisp :exports results :tangle no
 (format-time-string "%Y%m%d.%H%M")
 #+end_src
 
@@ -74,13 +76,13 @@ The current date and time is:
 {{{ct}}}
 .
 
-* Macros
-
 ** Cookie                                                            :noexport:
 
 #+begin_src org
 # -*- mode: org; -*-
 #+end_src
+
+* Org export-specific
 
 ** Author macro
    :PROPERTIES:
@@ -105,6 +107,103 @@ People who have created and edited this document: {{{author}}}.
 *** See also
 
 Option =#+AUTHOR:=.
+
+** Date macro (current time) XXX
+   :PROPERTIES:
+   :CUSTOM_ID: date
+   :END:
+
+The =date= macro outputs the *current date and time* /when/ the document is being
+exported.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+1. Format string understood by =format-time-string=.
+
+*** Examples
+
+This document was last exported on: {{{date(%Y-%m-%d %a %H:%M)}}}. XXX
+
+*** See also
+
+- Option =#+DATE:=.
+- [[#modification-time][modification-time]] macro
+
+** Email macro
+   :PROPERTIES:
+   :CUSTOM_ID: email
+   :END:
+
+The =email= macro displays the email of the author(s).
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+The email of this document is: {{{email}}}.
+
+*** See also
+
+Option =#+EMAIL:=.
+
+** Modification-time macro
+   :PROPERTIES:
+   :CUSTOM_ID: modification-time
+   :END:
+
+The =modification-time= macro outputs the *modification date and time* /of/ the file
+being exported.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+1. Format string understood by =format-time-string=.
+
+*** Examples
+
+This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}} .
+
+*** See also
+
+[[#date][date]] macro
+
+** Title macro
+   :PROPERTIES:
+   :CUSTOM_ID: title
+   :END:
+
+The =title= macro displays the document title.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+The title of this document is: {{{title}}}.
+
+*** See also
+
+Option =#+TITLE:=.
+
+* Basic formatting
 
 ** BgColor macro
    :PROPERTIES:
@@ -194,54 +293,6 @@ You can also use hexadecimal color codes:
 [[#bgcolor][bgcolor]] macro \\
 [[#highlight][highlight]] macro
 
-** Date macro (current time) XXX
-   :PROPERTIES:
-   :CUSTOM_ID: date
-   :END:
-
-The =date= macro outputs the *current date and time* /when/ the document is being
-exported.
-
-*** Code
-
-Org built-in.
-
-*** Parameters
-
-1. Format string understood by =format-time-string=.
-
-*** Examples
-
-This document was last exported on: {{{date(%Y-%m-%d %a %H:%M)}}}. XXX
-
-*** See also
-
-- Option =#+DATE:=.
-- [[#modification-time][modification-time]] macro
-
-** Email macro
-   :PROPERTIES:
-   :CUSTOM_ID: email
-   :END:
-
-The =email= macro displays the email of the author(s).
-
-*** Code
-
-Org built-in.
-
-*** Parameters
-
-None.
-
-*** Examples
-
-The email of this document is: {{{email}}}.
-
-*** See also
-
-Option =#+EMAIL:=.
-
 ** Highlight macro
    :PROPERTIES:
    :CUSTOM_ID: highlight
@@ -286,24 +337,6 @@ You can also use hexadecimal color codes:
 [[#bgcolor][bgcolor]] macro \\
 [[#color][color]] macro
 
-** Info macro
-   :PROPERTIES:
-   :CUSTOM_ID: info
-   :END:
-
-*** Code
-
-#+begin_src org
-,#+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
-,#+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
-#+end_src
-
-*** Parameters
-
-None.
-
-*** Examples
-
 ** LoremIpsum macro
    :PROPERTIES:
    :CUSTOM_ID: loremipsum
@@ -329,7 +362,47 @@ This is a basic example of the =Loremipsum= text:
 
 {{{loremipsum}}}
 
+** NoPrint macro
+   :PROPERTIES:
+   :CUSTOM_ID: noprint
+   :END:
+
+The =noprint= macro prevents text from being printed.
+
+XXX Diff with an Org comment?
+
+*** Code
+
+*** Parameters
+
+*** Examples
+
+* Generic
+
+* Layout
+
+** Info macro
+   :PROPERTIES:
+   :CUSTOM_ID: info
+   :END:
+
+*** Code
+
+#+begin_src org
+,#+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
+,#+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
 ** MiniPage macro
+   :PROPERTIES:
+   :CUSTOM_ID: minipage
+   :END:
 
 *** Code
 
@@ -337,40 +410,6 @@ This is a basic example of the =Loremipsum= text:
 ,#+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
 ,#+MACRO: EndMiniPage @</div>
 #+end_src
-
-*** Parameters
-
-*** Examples
-
-** Modification-time macro
-   :PROPERTIES:
-   :CUSTOM_ID: modification-time
-   :END:
-
-The =modification-time= macro outputs the *modification date and time* /of/ the file
-being exported.
-
-*** Code
-
-Org built-in.
-
-*** Parameters
-
-1. Format string understood by =format-time-string=.
-
-*** Examples
-
-This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}} .
-
-*** See also
-
-[[#date][date]] macro
-
-** NoPrint macro
-
-The =noprint= macro prevents text from being printed.
-
-*** Code
 
 *** Parameters
 
@@ -402,29 +441,6 @@ None.
 
 *** Examples
 
-** Title macro
-   :PROPERTIES:
-   :CUSTOM_ID: title
-   :END:
-
-The =title= macro displays the document title.
-
-*** Code
-
-Org built-in.
-
-*** Parameters
-
-None.
-
-*** Examples
-
-The title of this document is: {{{title}}}.
-
-*** See also
-
-Option =#+TITLE:=.
-
 ** Warning macro
    :PROPERTIES:
    :CUSTOM_ID: warning
@@ -447,7 +463,9 @@ None.
 Be cautious!
 {{{EndWarningBox}}}
 
-** Others XXX
+* Navigation and lists
+
+* Others XXX
 
 Keep a library of helpful CSS classes. Useful for debugging, but should be
 avoided in the release version (separate markup and presentation). Since you
