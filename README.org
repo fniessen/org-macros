@@ -22,6 +22,14 @@ files.
 
 Below is a list of the macros currently available.
 
+*** Org export-specific (Org built-ins)
+
+- [[#author][author]] macro
+- [[#date][date]] macro (= =current-time=)
+- [[#email][email]] macro
+- [[#modification-time][modification-time]] macro
+- [[#title][title]] macro
+
 *** Basic formatting
 
 - [[#bgcolor][bgcolor]] macro
@@ -32,7 +40,7 @@ Below is a list of the macros currently available.
 *** Generic macros
 
 - =chart= macro
-- =recently-update= macro
+- =recently-updated= macro
 - =tasklist= macro
 
 *** Layout
@@ -47,6 +55,10 @@ Below is a list of the macros currently available.
 - =children= macro (to display child pages)
 - =toc= macro
 
+** Syntax
+
+={{{name(arg1,arg2)}}}=
+
 * Macros
 
 ** Cookie                                                            :noexport:
@@ -54,6 +66,30 @@ Below is a list of the macros currently available.
 #+begin_src org
 # -*- mode: org; -*-
 #+end_src
+
+** Author macro
+   :PROPERTIES:
+   :CUSTOM_ID: author
+   :END:
+
+The =author= macro display a list of users who have created or edited the
+document.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+People who have created and edited this document: {{{author}}}.
+
+*** See also
+
+Option =#+AUTHOR:=.
 
 ** BgColor macro
    :PROPERTIES:
@@ -70,8 +106,8 @@ The =bgcolor= macro allows you to change the background color of a block of text
 
 *** Parameters
 
-1. Color name or hexadecimal code
-2. Text you want to color
+1. Color name or hexadecimal code.
+2. Text you want to color.
 
 *** Examples
 
@@ -114,8 +150,8 @@ The =color= macro allows you to change the foreground color of inline text.
 
 *** Parameters
 
-1. Color name or hexadecimal code
-2. Text you want to color
+1. Color name or hexadecimal code.
+2. Text you want to color.
 
 *** Examples
 
@@ -143,6 +179,54 @@ You can also use hexadecimal color codes:
 [[#bgcolor][bgcolor]] macro \\
 [[#highlight][highlight]] macro
 
+** Date macro
+   :PROPERTIES:
+   :CUSTOM_ID: date
+   :END:
+
+The =date= macro outputs the *current date and time* /when/ the document is being
+exported.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+1. Format string understood by =format-time-string=.
+
+*** Examples
+
+This document was last exported on: {{{date(%Y-%m-%d %a %H:%M)}}}. XXX
+
+*** See also
+
+- Option =#+DATE:=.
+- [[#modification-time][modification-time]] macro
+
+** Email macro
+   :PROPERTIES:
+   :CUSTOM_ID: email
+   :END:
+
+The =email= macro displays the email of the author(s).
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+The email of this document is: {{{email}}}.
+
+*** See also
+
+Option =#+EMAIL:=.
+
 ** Error macro
 
 The =error= macro creates a red box around some text.
@@ -168,8 +252,8 @@ The =highlight= macro allows you to change the background color of inline text.
 
 *** Parameters
 
-1. Color name or hexadecimal code
-2. Text you want to color
+1. Color name or hexadecimal code.
+2. Text you want to color.
 
 *** Examples
 
@@ -250,6 +334,30 @@ This is a basic example of the =Loremipsum= text:
 
 *** Examples
 
+** Modification-time macro
+   :PROPERTIES:
+   :CUSTOM_ID: modification-time
+   :END:
+
+The =modification-time= macro outputs the *modification date and time* /of/ the file
+being exported.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+1. Format string understood by =format-time-string=.
+
+*** Examples
+
+This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}} .
+
+*** See also
+
+[[#date][date]] macro
+
 ** NoPrint macro
 
 The =noprint= macro prevents text from being printed.
@@ -259,6 +367,29 @@ The =noprint= macro prevents text from being printed.
 *** Parameters
 
 *** Examples
+
+** Title macro
+   :PROPERTIES:
+   :CUSTOM_ID: title
+   :END:
+
+The =title= macro displays the document title.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+The title of this document is: {{{title}}}.
+
+*** See also
+
+Option =#+TITLE:=.
 
 ** Warning macro
 
