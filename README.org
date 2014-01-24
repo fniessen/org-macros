@@ -25,7 +25,7 @@ Below is a list of the macros currently available.
 *** Org export-specific (Org built-ins)
 
 - [[#author][author]] macro
-- [[#date][date]] macro (= =current-time=)
+- [[#date][date]] macro (current time)
 - [[#email][email]] macro
 - [[#modification-time][modification-time]] macro
 - [[#title][title]] macro
@@ -179,7 +179,7 @@ You can also use hexadecimal color codes:
 [[#bgcolor][bgcolor]] macro \\
 [[#highlight][highlight]] macro
 
-** Date macro
+** Date macro (current time)
    :PROPERTIES:
    :CUSTOM_ID: date
    :END:
