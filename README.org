@@ -468,11 +468,37 @@ None.
 
 *** Code
 
+#+begin_src org
+,#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
+#+end_src
+
+#+begin_src org
+,#+MACRO: tipBegin @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
+,#+MACRO: tipEnd @@html:</div>@@
+#+end_src
+
 *** Parameters
 
 None.
 
 *** Examples
+
+{{{tip(Tip example, Try doing it this way...)}}}
+
+{{{tipBegin(Tip example)}}}
+Try doing it this way...
+{{{tipEnd}}}
+
+{{{tip(, Try doing it this way...)}}}
+
+{{{tipBegin()}}}
+Try doing it this way...
+{{{tipEnd}}}
+
+{{{tip(Tip example, )}}}
+
+{{{tipBegin(Tip example)}}}
+{{{tipEnd}}}
 
 ** Warning macro
    :PROPERTIES:
@@ -513,7 +539,7 @@ Insert a table of contents.
 
 *** Parameters
 
-- Number of headline levels.
+1. Number of headline levels.
 
 *** Remarks
 

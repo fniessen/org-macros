@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-28 Tue 20:08 -->
+  <title>Org Macros</title><!-- 2014-01-28 Tue 20:37 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -664,7 +664,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-4-3">
-            <p>This document was last modified on: 2014-01-28 Tue 15:45.</p>
+            <p>This document was last modified on: 2014-01-28 Tue 20:37.</p>
           </div>
         </div>
 
@@ -1128,7 +1128,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-4-1-3">
-            <p>This document was last exported on: 20140128.2008.</p>
+            <p>This document was last exported on: 20140128.2037.</p>
           </div>
         </div>
 
@@ -1258,6 +1258,24 @@
         <div id="outline-container-sec-5-4-1" class="outline-4">
           <h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span>
           Code</h4>
+
+          <div class="outline-text-4" id="text-5-4-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: tip @@html:&lt;div class="inlinetask"&gt;&lt;b&gt;$1&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="tag"&gt;&lt;span class= "tip"&gt;tip&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;$2&lt;/div&gt;@@</span>
+</pre>
+            </div>
+
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: tipBegin @@html:&lt;div class="inlinetask"&gt;&lt;b&gt;$1&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;span class="tag"&gt;&lt;span class= "tip"&gt;tip&lt;/span&gt;&lt;/span&gt;&lt;/b&gt;@@</span>
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: tipEnd @@html:&lt;/div&gt;@@</span>
+</pre>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-sec-5-4-2" class="outline-4">
@@ -1272,6 +1290,38 @@
         <div id="outline-container-sec-5-4-3" class="outline-4">
           <h4 id="sec-5-4-3"><span class="section-number-4">5.4.3</span>
           Examples</h4>
+
+          <div class="outline-text-4" id="text-5-4-3">
+            <div class="inlinetask">
+              <b>Tip example&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b> Try doing it this way...
+            </div>
+
+            <div class="inlinetask">
+              <b>Tip example&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b> Try doing it this way…
+            </div>
+
+            <div class="inlinetask">
+              <b>&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b> Try doing it this way...
+            </div>
+
+            <div class="inlinetask">
+              <b>&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b> Try doing it this way…
+            </div>
+
+            <div class="inlinetask">
+              <b>Tip example&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b>
+            </div>
+
+            <div class="inlinetask">
+              <b>Tip example&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1354,9 +1404,9 @@
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-1-2">
-            <ul class="org-ul">
+            <ol class="org-ol">
               <li>Number of headline levels.</li>
-            </ul>
+            </ol>
           </div>
         </div>
 
