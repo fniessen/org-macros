@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-24 Fri 15:53 -->
+  <title>Org Macros</title><!-- 2014-01-28 Tue 20:08 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -308,7 +308,25 @@
             </ul>
           </li>
 
-          <li><a href="#sec-6">6. Navigation and lists</a></li>
+          <li>
+            <a href="#sec-6">6. Navigation and lists</a>
+
+            <ul>
+              <li>
+                <a href="#toc">6.1. Toc macro</a>
+
+                <ul>
+                  <li><a href="#sec-6-1-1">6.1.1. Code</a></li>
+
+                  <li><a href="#sec-6-1-2">6.1.2. Parameters</a></li>
+
+                  <li><a href="#sec-6-1-3">6.1.3. Remarks</a></li>
+
+                  <li><a href="#sec-6-1-4">6.1.4. Examples</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 
           <li><a href="#sec-7">7. Others XXX</a></li>
         </ul>
@@ -414,7 +432,7 @@
             <ul class="org-ul">
               <li><code>children</code> macro (to display child pages)</li>
 
-              <li><code>toc</code> macro</li>
+              <li><a href="#toc">toc</a> macro</li>
             </ul>
           </div>
         </div>
@@ -434,7 +452,7 @@
 
           <div class="inlinetask">
             <b>&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
-            "info">info</span></span></b><br />
+            "info">info</span></span></b>
 
             <p>As there are Babel code blocks inside the
             <code>org-macros.setup</code> file, it needs to be loaded via the
@@ -646,7 +664,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-4-3">
-            <p>This document was last modified on: 2014-01-24 Fri 15:52.</p>
+            <p>This document was last modified on: 2014-01-28 Tue 15:45.</p>
           </div>
         </div>
 
@@ -1088,8 +1106,7 @@
             <div class="inlinetask">
               <b>We chose an inline Babel call so that the macro can be used in
               a paragraph.&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
-              "tip">tip</span></span></b><br />
-              nil
+              "tip">tip</span></span></b>
             </div>
           </div>
         </div>
@@ -1111,7 +1128,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-4-1-3">
-            <p>This document was last exported on: 20140124.1553.</p>
+            <p>This document was last exported on: 20140128.2008.</p>
           </div>
         </div>
 
@@ -1307,6 +1324,82 @@
     <div id="outline-container-sec-6" class="outline-2">
       <h2 id="sec-6"><span class="section-number-2">6</span> Navigation and
       lists</h2>
+
+      <div class="outline-text-2" id="text-6"></div>
+
+      <div id="outline-container-toc" class="outline-3">
+        <h3 id="toc"><a id="sec-6-1" name="sec-6-1"></a><span class=
+        "section-number-3">6.1</span> Toc macro</h3>
+
+        <div class="outline-text-3" id="text-toc">
+          <p>Insert a table of contents.</p>
+        </div>
+
+        <div id="outline-container-sec-6-1-1" class="outline-4">
+          <h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span>
+          Code</h4>
+
+          <div class="outline-text-4" id="text-6-1-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: toc #+toc: headlines $1</span>
+</pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-6-1-2" class="outline-4">
+          <h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span>
+          Parameters</h4>
+
+          <div class="outline-text-4" id="text-6-1-2">
+            <ul class="org-ul">
+              <li>Number of headline levels.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-6-1-3" class="outline-4">
+          <h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span>
+          Remarks</h4>
+
+          <div class="outline-text-4" id="text-6-1-3">
+            <p>The <code>toc</code> macro <b>can’t be inlined</b> in text.</p>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-6-1-4" class="outline-4">
+          <h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span>
+          Examples</h4>
+
+          <div class="outline-text-4" id="text-6-1-4">
+            <p>Insert the TOC here, with one headline level:</p>
+
+            <div id="table-of-contents">
+              <h2>Table of Contents</h2>
+
+              <div id="text-table-of-contents">
+                <ul>
+                  <li><a href="#sec-1">1. Overview</a></li>
+
+                  <li><a href="#sec-2">2. Org export-specific</a></li>
+
+                  <li><a href="#sec-3">3. Basic formatting</a></li>
+
+                  <li><a href="#sec-4">4. Generic</a></li>
+
+                  <li><a href="#sec-5">5. Layout</a></li>
+
+                  <li><a href="#sec-6">6. Navigation and lists</a></li>
+
+                  <li><a href="#sec-7">7. Others XXX</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="outline-container-sec-7" class="outline-2">
@@ -1350,15 +1443,6 @@
 "color: #0000ff; font-weight: bold;">.float-right   </span>{ <span style=
 "color: #00AA00;">float</span>: right; }
 
-<span style=
-"color: #0000ff; font-weight: bold;">.bold          </span>{ <span style=
-"color: #00AA00;">font-weight</span>: bold; }
-<span style=
-"color: #0000ff; font-weight: bold;">.italic        </span>{ <span style=
-"color: #00AA00;">font-style</span>: italic; }
-<span style=
-"color: #0000ff; font-weight: bold;">.underline     </span>{ <span style=
-"color: #00AA00;">border-bottom</span>: 1px solid; }
 <span style=
 "color: #0000ff; font-weight: bold;">.highlight     </span>{ <span style=
 "color: #00AA00;">background</span>: #FFFFCC; }

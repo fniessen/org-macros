@@ -23,3 +23,5 @@
 
 #+MACRO: BeginWarningBox @@html:<div class="org-info-box"><img src="/worg/images/icons/warning.png" alt="NOTE" /><p>@@
 #+MACRO: EndWarningBox @@html:</p><br style="clear:left;height:1px;" /></div><br />@@
+
+#+MACRO: toc #+toc: headlines $1

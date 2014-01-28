@@ -57,7 +57,7 @@ Below is a list of the macros currently available.
 *** Navigation and lists
 
 - =children= macro (to display child pages)
-- =toc= macro
+- [[#toc][toc]] macro
 
 ** Installation
 
@@ -498,6 +498,33 @@ Be cautious!
 
 * Navigation and lists
 
+** Toc macro
+   :PROPERTIES:
+   :CUSTOM_ID: toc
+   :END:
+
+Insert a table of contents.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: toc #+toc: headlines $1
+#+end_src
+
+*** Parameters
+
+- Number of headline levels.
+
+*** Remarks
+
+The =toc= macro *can't be inlined* in text.
+
+*** Examples
+
+Insert the TOC here, with one headline level:
+
+{{{toc(1)}}}
+
 * Others XXX
 
 Keep a library of helpful CSS classes. Useful for debugging, but should be
@@ -518,9 +545,6 @@ width75">...</p>~), make use of them debugging your markup.
 .float-left    { float: left; }
 .float-right   { float: right; }
 
-.bold          { font-weight: bold; }
-.italic        { font-style: italic; }
-.underline     { border-bottom: 1px solid; }
 .highlight     { background: #FFFFCC; }
 
 .wrap          { width: 960px; margin: 0 auto; }
