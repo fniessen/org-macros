@@ -35,6 +35,7 @@ Below is a list of the macros currently available.
 
 - [[#bgcolor][bgcolor]] macro
 - [[#color][color]] macro
+- [[#fixme][fixme]] macro
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
 
@@ -290,6 +291,27 @@ You can also use hexadecimal color codes:
 
 [[#bgcolor][bgcolor]] macro \\
 [[#highlight][highlight]] macro
+
+** Fixme macro
+   :PROPERTIES:
+   :CUSTOM_ID: fixme
+   :END:
+
+The =fixme= macro inserts a "FIXME" image.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: fixme @@html:<img class="icon" alt="FIXME" src="images/fixme.png" style="display: inline;"/>@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+{{{fixme}}} Delete this...
 
 ** Highlight macro
    :PROPERTIES:

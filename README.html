@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-29 Wed 14:42 -->
+  <title>Org Macros</title><!-- 2014-01-29 Wed 15:37 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -183,7 +183,7 @@
               </li>
 
               <li>
-                <a href="#highlight">3.3. Highlight macro</a>
+                <a href="#fixme">3.3. Fixme macro</a>
 
                 <ul>
                   <li><a href="#sec-3-3-1">3.3.1. Code</a></li>
@@ -191,13 +191,11 @@
                   <li><a href="#sec-3-3-2">3.3.2. Parameters</a></li>
 
                   <li><a href="#sec-3-3-3">3.3.3. Examples</a></li>
-
-                  <li><a href="#sec-3-3-4">3.3.4. See also</a></li>
                 </ul>
               </li>
 
               <li>
-                <a href="#loremipsum">3.4. LoremIpsum macro</a>
+                <a href="#highlight">3.4. Highlight macro</a>
 
                 <ul>
                   <li><a href="#sec-3-4-1">3.4.1. Code</a></li>
@@ -205,6 +203,20 @@
                   <li><a href="#sec-3-4-2">3.4.2. Parameters</a></li>
 
                   <li><a href="#sec-3-4-3">3.4.3. Examples</a></li>
+
+                  <li><a href="#sec-3-4-4">3.4.4. See also</a></li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#loremipsum">3.5. LoremIpsum macro</a>
+
+                <ul>
+                  <li><a href="#sec-3-5-1">3.5.1. Code</a></li>
+
+                  <li><a href="#sec-3-5-2">3.5.2. Parameters</a></li>
+
+                  <li><a href="#sec-3-5-3">3.5.3. Examples</a></li>
                 </ul>
               </li>
             </ul>
@@ -366,6 +378,8 @@
               <li><a href="#bgcolor">bgcolor</a> macro</li>
 
               <li><a href="#color">color</a> macro</li>
+
+              <li><a href="#fixme">fixme</a> macro</li>
 
               <li><a href="#highlight">highlight</a> macro</li>
 
@@ -650,7 +664,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-4-3">
-            <p>This document was last modified on: 2014-01-29 Wed 14:42.</p>
+            <p>This document was last modified on: 2014-01-29 Wed 15:37.</p>
           </div>
         </div>
 
@@ -900,13 +914,12 @@
         </div>
       </div>
 
-      <div id="outline-container-highlight" class="outline-3">
-        <h3 id="highlight"><a id="sec-3-3" name="sec-3-3"></a><span class=
-        "section-number-3">3.3</span> Highlight macro</h3>
+      <div id="outline-container-fixme" class="outline-3">
+        <h3 id="fixme"><a id="sec-3-3" name="sec-3-3"></a><span class=
+        "section-number-3">3.3</span> Fixme macro</h3>
 
-        <div class="outline-text-3" id="text-highlight">
-          <p>The <code>highlight</code> macro allows you to change the
-          background color of inline text.</p>
+        <div class="outline-text-3" id="text-fixme">
+          <p>The <code>fixme</code> macro inserts a “FIXME” image.</p>
         </div>
 
         <div id="outline-container-sec-3-3-1" class="outline-4">
@@ -917,7 +930,7 @@
             <div class="org-src-container">
               <pre class="src src-org">
 <span style=
-"color: #008ED1; background-color: #EAEAFF;">#+MACRO: highlight @@html:&lt;span style="background-color: $1;"&gt;$2&lt;/span&gt;@@</span>
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: fixme @@html:&lt;img class="icon" alt="</span><span style="color: #CC0000; background-color: #FFFF88;">FIXME</span><span style="color: #008ED1; background-color: #EAEAFF;">" src="images/fixme.png" style="display: inline;"/&gt;@@</span>
 </pre>
             </div>
           </div>
@@ -928,11 +941,7 @@
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-3-2">
-            <ol class="org-ol">
-              <li>Color name or hexadecimal code.</li>
-
-              <li>Text you want to color.</li>
-            </ol>
+            <p>None.</p>
           </div>
         </div>
 
@@ -941,6 +950,53 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-3-3">
+            <p><img class="icon" alt="FIXME" src="images/fixme.png" style=
+            "display: inline;" /> Delete this…</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="outline-container-highlight" class="outline-3">
+        <h3 id="highlight"><a id="sec-3-4" name="sec-3-4"></a><span class=
+        "section-number-3">3.4</span> Highlight macro</h3>
+
+        <div class="outline-text-3" id="text-highlight">
+          <p>The <code>highlight</code> macro allows you to change the
+          background color of inline text.</p>
+        </div>
+
+        <div id="outline-container-sec-3-4-1" class="outline-4">
+          <h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span>
+          Code</h4>
+
+          <div class="outline-text-4" id="text-3-4-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: highlight @@html:&lt;span style="background-color: $1;"&gt;$2&lt;/span&gt;@@</span>
+</pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-3-4-2" class="outline-4">
+          <h4 id="sec-3-4-2"><span class="section-number-4">3.4.2</span>
+          Parameters</h4>
+
+          <div class="outline-text-4" id="text-3-4-2">
+            <ol class="org-ol">
+              <li>Color name or hexadecimal code.</li>
+
+              <li>Text you want to color.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-3-4-3" class="outline-4">
+          <h4 id="sec-3-4-3"><span class="section-number-4">3.4.3</span>
+          Examples</h4>
+
+          <div class="outline-text-4" id="text-3-4-3">
             <p><span style="background-color: red;">This information is
             important.</span> <span style="background-color: #E0E0E0;">This
             other isn't.</span></p>
@@ -964,11 +1020,11 @@
           </div>
         </div>
 
-        <div id="outline-container-sec-3-3-4" class="outline-4">
-          <h4 id="sec-3-3-4"><span class="section-number-4">3.3.4</span> See
+        <div id="outline-container-sec-3-4-4" class="outline-4">
+          <h4 id="sec-3-4-4"><span class="section-number-4">3.4.4</span> See
           also</h4>
 
-          <div class="outline-text-4" id="text-3-3-4">
+          <div class="outline-text-4" id="text-3-4-4">
             <p><a href="#bgcolor">bgcolor</a> macro<br />
             <a href="#color">color</a> macro</p>
           </div>
@@ -976,8 +1032,8 @@
       </div>
 
       <div id="outline-container-loremipsum" class="outline-3">
-        <h3 id="loremipsum"><a id="sec-3-4" name="sec-3-4"></a><span class=
-        "section-number-3">3.4</span> LoremIpsum macro</h3>
+        <h3 id="loremipsum"><a id="sec-3-5" name="sec-3-5"></a><span class=
+        "section-number-3">3.5</span> LoremIpsum macro</h3>
 
         <div class="outline-text-3" id="text-loremipsum">
           <p>The <code>loremipsum</code> macro displays one paragraph of
@@ -985,11 +1041,11 @@
           visual elements such as font, typography or layout.</p>
         </div>
 
-        <div id="outline-container-sec-3-4-1" class="outline-4">
-          <h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span>
+        <div id="outline-container-sec-3-5-1" class="outline-4">
+          <h4 id="sec-3-5-1"><span class="section-number-4">3.5.1</span>
           Code</h4>
 
-          <div class="outline-text-4" id="text-3-4-1">
+          <div class="outline-text-4" id="text-3-5-1">
             <div class="org-src-container">
               <pre class="src src-org">
 <span style=
@@ -999,20 +1055,20 @@
           </div>
         </div>
 
-        <div id="outline-container-sec-3-4-2" class="outline-4">
-          <h4 id="sec-3-4-2"><span class="section-number-4">3.4.2</span>
+        <div id="outline-container-sec-3-5-2" class="outline-4">
+          <h4 id="sec-3-5-2"><span class="section-number-4">3.5.2</span>
           Parameters</h4>
 
-          <div class="outline-text-4" id="text-3-4-2">
+          <div class="outline-text-4" id="text-3-5-2">
             <p>None.</p>
           </div>
         </div>
 
-        <div id="outline-container-sec-3-4-3" class="outline-4">
-          <h4 id="sec-3-4-3"><span class="section-number-4">3.4.3</span>
+        <div id="outline-container-sec-3-5-3" class="outline-4">
+          <h4 id="sec-3-5-3"><span class="section-number-4">3.5.3</span>
           Examples</h4>
 
-          <div class="outline-text-4" id="text-3-4-3">
+          <div class="outline-text-4" id="text-3-5-3">
             <p>This is a basic example of the <code>Loremipsum</code> text:</p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -1087,7 +1143,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-4-1-3">
-            <p>This document was last exported on: 20140129.1442.</p>
+            <p>This document was last exported on: 20140129.1537.</p>
           </div>
         </div>
 
