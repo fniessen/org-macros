@@ -37,7 +37,6 @@ Below is a list of the macros currently available.
 - [[#color][color]] macro
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
-- [[#noprint][noprint]] macro
 
 *** Generic macros
 
@@ -360,21 +359,6 @@ None.
 This is a basic example of the =Loremipsum= text:
 
 {{{loremipsum}}}
-
-** NoPrint macro
-   :PROPERTIES:
-   :CUSTOM_ID: noprint
-   :END:
-
-The =noprint= macro prevents text from being printed.
-
-XXX Diff with an Org comment?
-
-*** Code
-
-*** Parameters
-
-*** Examples
 
 * Generic
 
