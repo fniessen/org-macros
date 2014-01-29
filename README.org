@@ -127,7 +127,7 @@ The date of this document is: {{{date(%Y-%m-%d %a %H:%M)}}}.
 *** See also
 
 - Option =#+DATE:=.
-- [[#current-time][current-time]] macro.
+- [[#currenttime][current-time]] macro.
 - [[#modification-time][modification-time]] macro.
 
 ** Email macro
@@ -175,7 +175,7 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 
 *** See also
 
-- [[#current-time][current-time]] macro.
+- [[#currenttime][current-time]] macro.
 - [[#date][date]] macro.
 
 ** Title macro
