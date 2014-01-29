@@ -62,7 +62,7 @@ Below is a list of the macros currently available.
 ** Installation
 
 #+begin_src org :tangle no
-,#+INCLUDE: org-macros.setup
+,#+INCLUDE: /path/to/org-macros.setup
 #+end_src
 
 ***************                                                          :info:
