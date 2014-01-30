@@ -121,13 +121,11 @@ Org built-in.
 
 *** Parameters
 
-1. *Format string* understood by =format-time-string=.
+None.
 
 *** Examples
 
-XXX The unformatted date of this document is: {{{date}}}.
-
-The formatted date of this document is: {{{date(%Y%m%d.%H%M)}}}.
+The date of this document is: {{{date}}}.
 
 *** See also
 
