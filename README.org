@@ -18,12 +18,39 @@
 
 ** Description
 
+The *macros* in Org allow you to add text or code to an Org document that will be
+*expanded during export*: the text between the accolades is expanded so that
+readers can see it in the exported versions of the document.
+
+Some people (such as me) use it to construct complex HTML or LaTeX code.
+
+These [[https://github.com/fniessen/org-macros][Org-macros]] have been tested for PDF and HTML exports.
+
+** Installation
+
+#+begin_src org :tangle no
+,#+INCLUDE: /path/to/org-macros.setup
+#+end_src
+
+***************                                                          :info:
+As there are Babel code blocks inside the ~org-macros.setup~ file, it needs to be
+loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
+*************** END
+
+** Usage
+
 Once you've cloned [[https://github.com/fniessen/org-macros][Org-macros]], many macros will be ready to use within your Org
 files.
 
+Macros can be referenced anywhere in the document (even in code examples).
+
+#+begin_src org
+{{{name-of-the-macro(arg1,arg2)}}}
+#+end_src
+
 Below is a list of the macros currently available.
 
-*** Org export-specific (Org built-ins)
+*** Org built-ins
 
 - [[#author][author]] macro
 - [[#date][date]] macro
@@ -62,28 +89,13 @@ Below is a list of the macros currently available.
 - =children= macro (to display child pages)
 - [[#toc][toc]] macro
 
-** Installation
-
-#+begin_src org :tangle no
-,#+INCLUDE: /path/to/org-macros.setup
-#+end_src
-
-***************                                                          :info:
-As there are Babel code blocks inside the ~org-macros.setup~ file, it needs to be
-loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
-*************** END
-
-** Usage
-
-={{{name-of-the-macro(arg1,arg2)}}}=
-
 ** Cookie                                                            :noexport:
 
 #+begin_src org
 # -*- mode: org; -*-
 #+end_src
 
-* Org export-specific
+* Org built-ins
 
 ** Author macro
    :PROPERTIES:
@@ -351,7 +363,7 @@ The =fixme= macro inserts a "FIXME" image.
 *** Code
 
 #+begin_src org
-,#+MACRO: fixme @@html:<img class="icon" alt="FIXME" src="images/fixme.png" style="display: inline;"/>@@
+,#+MACRO: fixme @@html:<span class="FIXME">FIXME</span>@@
 #+end_src
 
 *** Parameters

@@ -1,10 +1,12 @@
+{{{name-of-the-macro(arg1,arg2)}}}
+
 # -*- mode: org; -*-
 
 #+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@
 
-#+MACRO: fixme @@html:<img class="icon" alt="FIXME" src="images/fixme.png" style="display: inline;"/>@@
+#+MACRO: fixme @@html:<span class="FIXME">FIXME</span>@@
 
 #+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
 
