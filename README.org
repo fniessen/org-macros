@@ -427,7 +427,7 @@ The =hl= macro allows you to change the background color of inline text.
 *** Code
 
 #+begin_src org
-,#+MACRO: hl {{{highlight(#FFFF00,$1}}}
+,#+MACRO: hl {{{highlight(#FFFF00,$1)}}}
 #+end_src
 
 *** Parameters
@@ -437,7 +437,7 @@ The =hl= macro allows you to change the background color of inline text.
 
 *** Examples
 
-XXX {{{hl(This information is important.)}}}
+{{{hl(This information is important.)}}}
 
 *** See also
 
