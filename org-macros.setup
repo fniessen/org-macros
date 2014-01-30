@@ -12,6 +12,13 @@
 
 #+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+#+name: version-history
+#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)
+git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
+#+end_src
+
+#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
+
 #+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
 #+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
 

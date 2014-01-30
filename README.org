@@ -47,6 +47,7 @@ Below is a list of the macros currently available.
 - =chart= macro
 - =recently-updated= macro
 - =tasklist= macro
+- [[#version-history][version-history]] macro
 
 *** Layout
 
@@ -211,17 +212,6 @@ exported.
 *** Code
 
 Org built-in.
-
-# #+begin_src org
-# ,#+name: current-time
-# ,#+begin_src emacs-lisp :exports none :results silent
-# (format-time-string "%Y%m%d.%H%M")
-# ,#+end_src
-#
-# ,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
-# #+end_src
-#
-# *************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
 
 *** Parameters
 
@@ -471,6 +461,41 @@ This is a basic example of the =Loremipsum= text:
 {{{loremipsum}}}
 
 * Generic
+
+** Version-history macro
+   :PROPERTIES:
+   :CUSTOM_ID: version-history
+   :END:
+
+The =version-history= macro inserts the history of (the last 5) updates made to
+a document: version number, date, author and comment.
+
+XXX + link to View Changes?
+
+*** Code
+
+#+begin_src org
+,#+name: version-history
+,#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)
+git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
+,#+end_src
+
+,#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
+#+end_src
+
+*************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
+
+*** Parameters
+
+None.
+
+*** Remarks
+
+This only will work with *Git repositories*.
+
+*** Examples
+
+{{{version-history}}}
 
 * Layout
 

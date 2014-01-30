@@ -6,7 +6,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-30 Thu 13:14 -->
+  <title>Org Macros</title><!-- 2014-01-30 Thu 14:17 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -261,7 +261,25 @@
             </ul>
           </li>
 
-          <li><a href="#sec-4">4. Generic</a></li>
+          <li>
+            <a href="#sec-4">4. Generic</a>
+
+            <ul>
+              <li>
+                <a href="#version-history">4.1. Version-history macro</a>
+
+                <ul>
+                  <li><a href="#sec-4-1-1">4.1.1. Code</a></li>
+
+                  <li><a href="#sec-4-1-2">4.1.2. Parameters</a></li>
+
+                  <li><a href="#sec-4-1-3">4.1.3. Remarks</a></li>
+
+                  <li><a href="#sec-4-1-4">4.1.4. Examples</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 
           <li>
             <a href="#sec-5">5. Layout</a>
@@ -426,6 +444,8 @@
               <li><code>recently-updated</code> macro</li>
 
               <li><code>tasklist</code> macro</li>
+
+              <li><a href="#version-history">version-history</a> macro</li>
             </ul>
           </div>
         </div>
@@ -723,7 +743,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-5-3">
-            <p>This document was last modified on: 2014-01-30 Thu 13:14.</p>
+            <p>This document was last modified on: 2014-01-30 Thu 14:17.</p>
           </div>
         </div>
 
@@ -776,7 +796,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-6-3">
-            <p>This document was last exported on: 2014-01-30 Thu 13:14.</p>
+            <p>This document was last exported on: 2014-01-30 Thu 14:17.</p>
           </div>
         </div>
 
@@ -1275,6 +1295,152 @@
 
     <div id="outline-container-sec-4" class="outline-2">
       <h2 id="sec-4"><span class="section-number-2">4</span> Generic</h2>
+
+      <div class="outline-text-2" id="text-4"></div>
+
+      <div id="outline-container-version-history" class="outline-3">
+        <h3 id="version-history"><a id="sec-4-1" name=
+        "sec-4-1"></a><span class="section-number-3">4.1</span> Version-history
+        macro</h3>
+
+        <div class="outline-text-3" id="text-version-history">
+          <p>The <code>version-history</code> macro inserts the history of (the
+          last 5) updates made to a document: version number, date, author and
+          comment.</p>
+
+          <p>XXX + link to View Changes?</p>
+        </div>
+
+        <div id="outline-container-sec-4-1-1" class="outline-4">
+          <h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span>
+          Code</h4>
+
+          <div class="outline-text-4" id="text-4-1-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+name: version-history</span>
+<span style=
+"color: #555555; background-color: #E2E1D5; text-decoration: underline;">#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)</span>
+<span style=
+"background-color: #FFFFE0;">git log --pretty=format:</span><span style=
+"color: #036A07; background-color: #FFFFE0;">"%h%x09%ad%x09%an%x09%s"</span><span style="background-color: #FFFFE0;"> --date=short | head -n 5
+</span><span style=
+"color: #555555; background-color: #E2E1D5; text-decoration: overline;">#+end_src</span>
+
+<span style=
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]</span>
+</pre>
+            </div>
+
+            <div class="inlinetask">
+              <b>We chose an inline Babel call so that the macro can be used in
+              a paragraph.&nbsp;&nbsp;&nbsp;<span class="tag"><span class=
+              "tip">tip</span></span></b>
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-2" class="outline-4">
+          <h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span>
+          Parameters</h4>
+
+          <div class="outline-text-4" id="text-4-1-2">
+            <p>None.</p>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-3" class="outline-4">
+          <h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span>
+          Remarks</h4>
+
+          <div class="outline-text-4" id="text-4-1-3">
+            <p>This only will work with <b>Git repositories</b>.</p>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-4-1-4" class="outline-4">
+          <h4 id="sec-4-1-4"><span class="section-number-4">4.1.4</span>
+          Examples</h4>
+
+          <div class="outline-text-4" id="text-4-1-4">
+            <table border="2" cellspacing="0" cellpadding="6" rules="groups"
+            frame="hsides">
+              <colgroup>
+                <col class="left" />
+                <col class="right" />
+                <col class="left" />
+                <col class="left" />
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th scope="col" class="left">Version</th>
+
+                  <th scope="col" class="right">Date</th>
+
+                  <th scope="col" class="left">Author</th>
+
+                  <th scope="col" class="left">Comment</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="left">6da494e</td>
+
+                  <td class="right">2014-01-30</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Fix bug in `hl’ macro</td>
+                </tr>
+
+                <tr>
+                  <td class="left">e98a0af</td>
+
+                  <td class="right">2014-01-30</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Add `input-file’ macro</td>
+                </tr>
+
+                <tr>
+                  <td class="left">239c24a</td>
+
+                  <td class="right">2014-01-30</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Fix usage of `date’ macro</td>
+                </tr>
+
+                <tr>
+                  <td class="left">8d38f0c</td>
+
+                  <td class="right">2014-01-30</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Remove `current-time’ macro (exists in Org
+                  as `time’)</td>
+                </tr>
+
+                <tr>
+                  <td class="left">651bfde</td>
+
+                  <td class="right">2014-01-29</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Add `fixme’ image</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="outline-container-sec-5" class="outline-2">
