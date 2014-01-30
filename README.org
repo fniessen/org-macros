@@ -424,7 +424,7 @@ You can also use hexadecimal color codes:
    :CUSTOM_ID: hl
    :END:
 
-The =hl= macro allows you to change the background color of inline text.
+The =hl= macro allows you to highlight text with a "neon marker" effect.
 
 *** Code
 
