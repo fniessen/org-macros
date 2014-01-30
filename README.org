@@ -28,7 +28,7 @@ Below is a list of the macros currently available.
 - [[#author][author]] macro
 - [[#date][date]] macro
 - [[#email][email]] macro
-- =input-file=
+- [[#input-file][input-file]] macro
 - [[#modification-time][modification-time]] macro
 - =property(node-property)=
 - [[#time][time]] macro
@@ -155,6 +155,25 @@ The email of this document is: {{{email}}}.
 *** See also
 
 Option =#+EMAIL:=.
+
+** Input-file macro
+   :PROPERTIES:
+   :CUSTOM_ID: input-file
+   :END:
+
+The =input-file= macro displays the name of the input Org file.
+
+*** Code
+
+Org built-in.
+
+*** Parameters
+
+None.
+
+*** Examples
+
+The input file name for this document is: {{{input-file}}}.
 
 ** Modification-time macro
    :PROPERTIES:
@@ -283,8 +302,9 @@ You can also use hexadecimal color codes:
 
 *** See also
 
-[[#color][color]] macro \\
-[[#highlight][highlight]] macro
+- [[#color][color]] macro
+- [[#highlight][highlight]] macro
+- [[#hl][hl]] macro
 
 ** Color macro
    :PROPERTIES:
@@ -327,8 +347,9 @@ You can also use hexadecimal color codes:
 
 *** See also
 
-[[#bgcolor][bgcolor]] macro \\
-[[#highlight][highlight]] macro
+- [[#bgcolor][bgcolor]] macro
+- [[#highlight][highlight]] macro
+- [[#hl][hl]] macro
 
 ** Fixme macro
    :PROPERTIES:
@@ -392,8 +413,37 @@ You can also use hexadecimal color codes:
 
 *** See also
 
-[[#bgcolor][bgcolor]] macro \\
-[[#color][color]] macro
+- [[#bgcolor][bgcolor]] macro
+- [[#color][color]] macro
+- [[#hl][hl]] macro
+
+** Hl macro
+   :PROPERTIES:
+   :CUSTOM_ID: hl
+   :END:
+
+The =hl= macro allows you to change the background color of inline text.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: hl {{{highlight(#FFFF00,$1}}}
+#+end_src
+
+*** Parameters
+
+1. Color name or hexadecimal code.
+2. Text you want to color.
+
+*** Examples
+
+XXX {{{hl(This information is important.)}}}
+
+*** See also
+
+- [[#bgcolor][bgcolor]] macro
+- [[#color][color]] macro
+- [[#highlight][highlight]] macro
 
 ** LoremIpsum macro
    :PROPERTIES:
