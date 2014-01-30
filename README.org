@@ -28,7 +28,10 @@ Below is a list of the macros currently available.
 - [[#author][author]] macro
 - [[#date][date]] macro
 - [[#email][email]] macro
+- =input-file=
 - [[#modification-time][modification-time]] macro
+- =property(node-property)=
+- [[#time][time]] macro
 - [[#title][title]] macro
 
 *** Basic formatting
@@ -42,7 +45,6 @@ Below is a list of the macros currently available.
 *** Generic macros
 
 - =chart= macro
-- [[#currenttime][current-time]] macro
 - =recently-updated= macro
 - =tasklist= macro
 
@@ -119,17 +121,19 @@ Org built-in.
 
 *** Parameters
 
-1. Format string understood by =format-time-string=.
+1. *Format string* understood by =format-time-string=.
 
 *** Examples
 
-The date of this document is: {{{date(%Y-%m-%d %a %H:%M)}}}.
+XXX The unformatted date of this document is: {{{date}}}.
+
+The formatted date of this document is: {{{date(%Y%m%d.%H%M)}}}.
 
 *** See also
 
 - Option =#+DATE:=.
-- [[#currenttime][current-time]] macro.
 - [[#modification-time][modification-time]] macro.
+- [[#time][time]] macro.
 
 ** Email macro
    :PROPERTIES:
@@ -168,7 +172,7 @@ Org built-in.
 
 *** Parameters
 
-1. Format string understood by =format-time-string=.
+1. *Format string* understood by =format-time-string=.
 
 *** Examples
 
@@ -176,8 +180,44 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 
 *** See also
 
-- [[#currenttime][current-time]] macro.
 - [[#date][date]] macro.
+- [[#time][time]] macro.
+
+** Time macro
+   :PROPERTIES:
+   :CUSTOM_ID: time
+   :END:
+
+The =time= macro outputs the *current date and time* /when/ the document is being
+exported.
+
+*** Code
+
+Org built-in.
+
+# #+begin_src org
+# ,#+name: current-time
+# ,#+begin_src emacs-lisp :exports none :results silent
+# (format-time-string "%Y%m%d.%H%M")
+# ,#+end_src
+#
+# ,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
+# #+end_src
+#
+# *************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
+
+*** Parameters
+
+1. *Format string* understood by =format-time-string=.
+
+*** Examples
+
+This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
+
+*** See also
+
+- [[#date][date]] macro.
+- [[#modification-time][modification-time]] macro.
 
 ** Title macro
    :PROPERTIES:
@@ -383,40 +423,6 @@ This is a basic example of the =Loremipsum= text:
 {{{loremipsum}}}
 
 * Generic
-
-** Current-time macro
-   :PROPERTIES:
-   :CUSTOM_ID: currenttime
-   :END:
-
-The =current-time= macro outputs the *current date and time* /when/ the document is being
-exported.
-
-*** Code
-
-#+begin_src org
-,#+name: current-time
-,#+begin_src emacs-lisp :exports none :results silent
-(format-time-string "%Y%m%d.%H%M")
-,#+end_src
-
-,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
-#+end_src
-
-*************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
-
-*** XXX Parameters
-
-1. Format string understood by =format-time-string=.
-
-*** Examples
-
-This document was last exported on: {{{current-time}}}.
-
-*** See also
-
-- [[#date][date]] macro.
-- [[#modification-time][modification-time]] macro.
 
 * Layout
 
