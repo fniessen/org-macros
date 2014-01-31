@@ -6,7 +6,7 @@
 
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@
 
-#+MACRO: fixme @@html:<span class="FIXME">FIXME</span>@@
+#+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
 
 #+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
 

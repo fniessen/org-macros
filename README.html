@@ -7,7 +7,7 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-01-31 Fri 10:29 -->
+  <title>Org Macros</title><!-- 2014-01-31 Fri 13:27 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
@@ -762,7 +762,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-5-3">
-            <p>This document was last modified on: 2014-01-31 Fri 10:29.</p>
+            <p>This document was last modified on: 2014-01-31 Fri 13:27.</p>
           </div>
         </div>
 
@@ -815,7 +815,7 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-2-6-3">
-            <p>This document was last exported on: 2014-01-31 Fri 10:29.</p>
+            <p>This document was last exported on: 2014-01-31 Fri 13:27.</p>
           </div>
         </div>
 
@@ -1081,7 +1081,8 @@
         "section-number-3">3.3</span> Fixme macro</h3>
 
         <div class="outline-text-3" id="text-fixme">
-          <p>The <code>fixme</code> macro inserts a “FIXME” image.</p>
+          <p>The <code>fixme</code> macro inserts a “Fix Me!” image (with
+          adequate CSS).</p>
         </div>
 
         <div id="outline-container-sec-3-3-1" class="outline-4">
@@ -1092,7 +1093,26 @@
             <div class="org-src-container">
               <pre class="src src-org">
 <span style=
-"color: #008ED1; background-color: #EAEAFF;">#+MACRO: fixme @@html:&lt;span class="</span><span style="color: #CC0000; background-color: #FFFF88;">FIXME</span><span style="color: #008ED1; background-color: #EAEAFF;">"&gt;</span><span style="color: #CC0000; background-color: #FFFF88;">FIXME</span><span style="color: #008ED1; background-color: #EAEAFF;">&lt;/span&gt;@@</span>
+"color: #008ED1; background-color: #EAEAFF;">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span style="color: #CC0000; background-color: #FFFF88;">FIXME</span><span style="color: #008ED1; background-color: #EAEAFF;">&lt;/span&gt;@@</span>
+</pre>
+            </div>
+
+            <p>CSS example:</p>
+
+            <div class="org-src-container">
+              <pre class="src src-css">
+<span style="color: #0000ff; font-weight: bold;">.</span><span style=
+"color: #CC0000; background-color: #FFFF88; font-weight: bold;">fixme</span><span style="color: #0000ff; font-weight: bold;"> </span>{
+    <span style="color: #00AA00;">background</span>: #FFFF88 url(<span style=
+"color: #036A07;">'../images/</span><span style=
+"color: #CC0000; background-color: #FFFF88;">fixme</span><span style=
+"color: #036A07;">.png'</span>) no-repeat top left;
+    <span style="color: #00AA00;">color</span>: #CC0000;
+    <span style="color: #00AA00;">display</span>: inline-block;
+    <span style="color: #00AA00;">height</span>: 16px;
+    <span style="color: #00AA00;">text-indent</span>: -9999px;
+    <span style="color: #00AA00;">width</span>: 82px;
+}
 </pre>
             </div>
           </div>
@@ -1112,12 +1132,12 @@
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-3-3">
-            <p><span class="FIXME">FIXME</span> Delete this…</p>
+            <p><span class="fixme">FIXME</span> Delete this…</p>
 
             <p>Testing testing testing testing testing testing testing testing
             testing testing testing testing testing testing testing testing
             testing testing testing testing testing testing testing testing
-            testing <span class="FIXME">FIXME</span> testing testing testing
+            testing <span class="fixme">FIXME</span> testing testing testing
             testing testing testing testing testing testing testing testing
             testing testing testing testing testing testing testing testing
             testing testing testing testing testing testing</p>
@@ -1413,6 +1433,16 @@
 
               <tbody>
                 <tr>
+                  <td class="left">af47e9c</td>
+
+                  <td class="right">2014-01-31</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Add testing code</td>
+                </tr>
+
+                <tr>
                   <td class="left">22e323c</td>
 
                   <td class="right">2014-01-30</td>
@@ -1450,16 +1480,6 @@
                   <td class="left">Fabrice Niessen</td>
 
                   <td class="left">Add `version-history’ macro</td>
-                </tr>
-
-                <tr>
-                  <td class="left">6da494e</td>
-
-                  <td class="right">2014-01-30</td>
-
-                  <td class="left">Fabrice Niessen</td>
-
-                  <td class="left">Fix bug in `hl’ macro</td>
                 </tr>
               </tbody>
             </table>
@@ -1695,7 +1715,9 @@
       <h2 id="sec-6"><span class="section-number-2">6</span> Navigation and
       lists</h2>
 
-      <div class="outline-text-2" id="text-6"></div>
+      <div class="outline-text-2" id="text-6">
+        <p>FIXME Problem with the tab title.</p>
+      </div>
 
       <div id="outline-container-toc" class="outline-3">
         <h3 id="toc"><a id="sec-6-1" name="sec-6-1"></a><span class=

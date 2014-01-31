@@ -358,12 +358,25 @@ You can also use hexadecimal color codes:
    :CUSTOM_ID: fixme
    :END:
 
-The =fixme= macro inserts a "FIXME" image.
+The =fixme= macro inserts a "Fix Me!" image (with adequate CSS).
 
 *** Code
 
 #+begin_src org
-,#+MACRO: fixme @@html:<span class="FIXME">FIXME</span>@@
+,#+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
+#+end_src
+
+CSS example:
+
+#+begin_src css :tangle no
+.fixme {
+    background: #FFFF88 url('../images/fixme.png') no-repeat top left;
+    color: #CC0000;
+    display: inline-block;
+    height: 16px;
+    text-indent: -9999px;
+    width: 82px;
+}
 #+end_src
 
 *** Parameters
@@ -376,9 +389,10 @@ None.
 
 Testing testing testing testing testing testing testing testing testing testing
 testing testing testing testing testing testing testing testing testing testing
-testing testing testing testing testing {{{FIXME}}} testing testing testing testing testing
+testing testing testing testing testing {{{FIXME}}} testing testing testing
 testing testing testing testing testing testing testing testing testing testing
 testing testing testing testing testing testing testing testing testing testing
+testing testing
 
 ** Highlight macro
    :PROPERTIES:
@@ -626,6 +640,8 @@ Be cautious!
 {{{EndWarningBox}}}
 
 * Navigation and lists
+
+FIXME Problem with the tab title.
 
 ** Toc macro
    :PROPERTIES:
