@@ -11,24 +11,30 @@
 #+PROPERTY: noweb    yes
 #+PROPERTY: tangle   org-macros.setup
 
+#+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+
 #+INCLUDE: org-macros.setup
-#+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
 
 * Overview
 
 ** Description
 
 The *macros* in Org allow you to add text or code to an Org document that will be
-*expanded during export*: the text between the accolades is expanded so that
-readers can see it in the exported versions of the document.
+*expanded during export*: the text between the 3 pairs of accolades is expanded
+so that readers can see it in the exported versions of the document.
 
 Some people (such as me) use it to construct complex HTML or LaTeX code.
 
 ** Objectives
 
+Using macros allows you to *insert dynamic content* or *add extra functionality* in
+exports of an Org document.
+
 ** Features
 
-These [[https://github.com/fniessen/org-macros][Org-macros]] have been tested for PDF and HTML exports.
+These [[https://github.com/fniessen/org-macros][Org-macros]] have been tested for HTML exports.
+
+FIXME They will be soon made available for PDF exports.
 
 * Code
 
@@ -55,13 +61,21 @@ loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
 Once you've cloned [[https://github.com/fniessen/org-macros][Org-macros]], many macros will be ready to use within your Org
 files.
 
-Macros can be referenced anywhere in the document (even in code examples).
+You can invoke macros anywhere in the document (even in code examples).
 
-#+begin_src org
-{{{name-of-the-macro(arg1,arg2)}}}
-#+end_src
+Examples:
 
-Below is a list of the macros currently available.
+- With no arguments:
+
+: {{{name-of-the-macro}}}
+
+- With arguments:
+
+: {{{name-of-the-macro(arg1,arg2)}}}
+
+** Macros
+
+Below is a list of the few macros currently available.
 
 *** Org built-ins
 
@@ -655,7 +669,7 @@ Insert the TOC here, with one headline level:
 
 {{{toc(1)}}}
 
-* Others XXX
+* Others                                                             :noexport:
 
 Keep a library of helpful CSS classes. Useful for debugging, but should be
 avoided in the release version (separate markup and presentation). Since you

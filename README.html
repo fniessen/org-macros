@@ -7,34 +7,34 @@
   <meta name="generator" content=
   "HTML Tidy for Cygwin (vers 1st September 2004), see www.w3.org" />
 
-  <title>Org Macros</title><!-- 2014-02-05 Wed 14:11 -->
+  <title>Org Macros</title><!-- 2014-02-05 Wed 20:50 -->
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
   <meta name="keywords" content="org mode, macros" />
   <link rel="stylesheet" type="text/css" href=
-  "file:///D:/Users/fni/src/org-style/styles/bigblow/css/htmlize.css" />
+  "http://www.pirilampo.org/styles/bigblow/css/htmlize.css" />
   <link rel="stylesheet" type="text/css" href=
-  "file:///D:/Users/fni/src/org-style/styles/bigblow/css/bigblow.css" />
+  "http://www.pirilampo.org/styles/bigblow/css/bigblow.css" />
   <link rel="stylesheet" type="text/css" href=
-  "file:///D:/Users/fni/src/org-style/styles/bigblow/css/hideshow.css" />
+  "http://www.pirilampo.org/styles/bigblow/css/hideshow.css" />
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/jquery-1.9.1.min.js">
+"http://www.pirilampo.org/styles/bigblow/js/jquery-1.9.1.min.js">
 </script>
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/jquery-ui-1.10.2.min.js">
+"http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js">
 </script>
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/jquery.localscroll-min.js">
+"http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js">
 </script>
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js">
+"http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js">
 </script>
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/bigblow.js">
+"http://www.pirilampo.org/styles/bigblow/js/bigblow.js">
 </script>
 <script type="text/javascript" src=
-"file:///D:/Users/fni/src/org-style/styles/bigblow/js/hideshow.js">
+"http://www.pirilampo.org/styles/bigblow/js/hideshow.js">
 </script>
 </head>
 
@@ -67,19 +67,21 @@
 
               <li><a href="#sec-2-2">2.2. Installation</a></li>
 
+              <li><a href="#sec-2-3">2.3. Usage</a></li>
+
               <li>
-                <a href="#sec-2-3">2.3. Usage</a>
+                <a href="#sec-2-4">2.4. Macros</a>
 
                 <ul>
-                  <li><a href="#sec-2-3-1">2.3.1. Org built-ins</a></li>
+                  <li><a href="#sec-2-4-1">2.4.1. Org built-ins</a></li>
 
-                  <li><a href="#sec-2-3-2">2.3.2. Basic formatting</a></li>
+                  <li><a href="#sec-2-4-2">2.4.2. Basic formatting</a></li>
 
-                  <li><a href="#sec-2-3-3">2.3.3. Generic macros</a></li>
+                  <li><a href="#sec-2-4-3">2.4.3. Generic macros</a></li>
 
-                  <li><a href="#sec-2-3-4">2.3.4. Layout</a></li>
+                  <li><a href="#sec-2-4-4">2.4.4. Layout</a></li>
 
-                  <li><a href="#sec-2-3-5">2.3.5. Navigation and lists</a></li>
+                  <li><a href="#sec-2-4-5">2.4.5. Navigation and lists</a></li>
                 </ul>
               </li>
             </ul>
@@ -364,8 +366,6 @@
               </li>
             </ul>
           </li>
-
-          <li><a href="#sec-8">8. Others XXX</a></li>
         </ul>
       </div>
     </div>
@@ -382,8 +382,8 @@
         <div class="outline-text-3" id="text-1-1">
           <p>The <b>macros</b> in Org allow you to add text or code to an Org
           document that will be <b>expanded during export</b>: the text between
-          the accolades is expanded so that readers can see it in the exported
-          versions of the document.</p>
+          the 3 pairs of accolades is expanded so that readers can see it in
+          the exported versions of the document.</p>
 
           <p>Some people (such as me) use it to construct complex HTML or LaTeX
           code.</p>
@@ -393,6 +393,11 @@
       <div id="outline-container-sec-1-2" class="outline-3">
         <h3 id="sec-1-2"><span class="section-number-3">1.2</span>
         Objectives</h3>
+
+        <div class="outline-text-3" id="text-1-2">
+          <p>Using macros allows you to <b>insert dynamic content</b> or <b>add
+          extra functionality</b> in exports of an Org document.</p>
+        </div>
       </div>
 
       <div id="outline-container-sec-1-3" class="outline-3">
@@ -402,7 +407,9 @@
         <div class="outline-text-3" id="text-1-3">
           <p>These <a href=
           "https://github.com/fniessen/org-macros">Org-macros</a> have been
-          tested for PDF and HTML exports.</p>
+          tested for HTML exports.</p>
+
+          <p>FIXME They will be soon made available for PDF exports.</p>
         </div>
       </div>
     </div>
@@ -457,24 +464,39 @@ git clone git@github.com:fniessen/org-macros.git
           "https://github.com/fniessen/org-macros">Org-macros</a>, many macros
           will be ready to use within your Org files.</p>
 
-          <p>Macros can be referenced anywhere in the document (even in code
+          <p>You can invoke macros anywhere in the document (even in code
           examples).</p>
 
-          <div class="org-src-container">
-            <pre class="src src-org">
-<span style=
-"color: #ffffff; background-color: #EDB802;">name-of-the-macro(arg1,arg2)</span>
-</pre>
-          </div>
+          <p>Examples:</p>
 
-          <p>Below is a list of the macros currently available.</p>
+          <ul class="org-ul">
+            <li>With no arguments:</li>
+          </ul>
+          <pre class="example">
+{{{name-of-the-macro}}}
+</pre>
+
+          <ul class="org-ul">
+            <li>With arguments:</li>
+          </ul>
+          <pre class="example">
+{{{name-of-the-macro(arg1,arg2)}}}
+</pre>
+        </div>
+      </div>
+
+      <div id="outline-container-sec-2-4" class="outline-3">
+        <h3 id="sec-2-4"><span class="section-number-3">2.4</span> Macros</h3>
+
+        <div class="outline-text-3" id="text-2-4">
+          <p>Below is a list of the few macros currently available.</p>
         </div>
 
-        <div id="outline-container-sec-2-3-1" class="outline-4">
-          <h4 id="sec-2-3-1"><span class="section-number-4">2.3.1</span> Org
+        <div id="outline-container-sec-2-4-1" class="outline-4">
+          <h4 id="sec-2-4-1"><span class="section-number-4">2.4.1</span> Org
           built-ins</h4>
 
-          <div class="outline-text-4" id="text-2-3-1">
+          <div class="outline-text-4" id="text-2-4-1">
             <ul class="org-ul">
               <li><a href="#author">author</a> macro</li>
 
@@ -495,11 +517,11 @@ git clone git@github.com:fniessen/org-macros.git
           </div>
         </div>
 
-        <div id="outline-container-sec-2-3-2" class="outline-4">
-          <h4 id="sec-2-3-2"><span class="section-number-4">2.3.2</span> Basic
+        <div id="outline-container-sec-2-4-2" class="outline-4">
+          <h4 id="sec-2-4-2"><span class="section-number-4">2.4.2</span> Basic
           formatting</h4>
 
-          <div class="outline-text-4" id="text-2-3-2">
+          <div class="outline-text-4" id="text-2-4-2">
             <ul class="org-ul">
               <li><a href="#bgcolor">bgcolor</a> macro</li>
 
@@ -514,11 +536,11 @@ git clone git@github.com:fniessen/org-macros.git
           </div>
         </div>
 
-        <div id="outline-container-sec-2-3-3" class="outline-4">
-          <h4 id="sec-2-3-3"><span class="section-number-4">2.3.3</span>
+        <div id="outline-container-sec-2-4-3" class="outline-4">
+          <h4 id="sec-2-4-3"><span class="section-number-4">2.4.3</span>
           Generic macros</h4>
 
-          <div class="outline-text-4" id="text-2-3-3">
+          <div class="outline-text-4" id="text-2-4-3">
             <ul class="org-ul">
               <li><code>chart</code> macro</li>
 
@@ -531,11 +553,11 @@ git clone git@github.com:fniessen/org-macros.git
           </div>
         </div>
 
-        <div id="outline-container-sec-2-3-4" class="outline-4">
-          <h4 id="sec-2-3-4"><span class="section-number-4">2.3.4</span>
+        <div id="outline-container-sec-2-4-4" class="outline-4">
+          <h4 id="sec-2-4-4"><span class="section-number-4">2.4.4</span>
           Layout</h4>
 
-          <div class="outline-text-4" id="text-2-3-4">
+          <div class="outline-text-4" id="text-2-4-4">
             <ul class="org-ul">
               <li><a href="#info">info</a> macro</li>
 
@@ -550,11 +572,11 @@ git clone git@github.com:fniessen/org-macros.git
           </div>
         </div>
 
-        <div id="outline-container-sec-2-3-5" class="outline-4">
-          <h4 id="sec-2-3-5"><span class="section-number-4">2.3.5</span>
+        <div id="outline-container-sec-2-4-5" class="outline-4">
+          <h4 id="sec-2-4-5"><span class="section-number-4">2.4.5</span>
           Navigation and lists</h4>
 
-          <div class="outline-text-4" id="text-2-3-5">
+          <div class="outline-text-4" id="text-2-4-5">
             <ul class="org-ul">
               <li><code>children</code> macro (to display child pages)</li>
 
@@ -746,7 +768,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-5-2">
-            <p>This document was last modified on: 2014-02-05 Wed 14:10.</p>
+            <p>This document was last modified on: 2014-02-05 Wed 20:50.</p>
           </div>
         </div>
 
@@ -790,7 +812,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-6-2">
-            <p>This document was last exported on: 2014-02-05 Wed 14:11.</p>
+            <p>This document was last exported on: 2014-02-05 Wed 20:50.</p>
           </div>
         </div>
 
@@ -1399,6 +1421,17 @@ git clone git@github.com:fniessen/org-macros.git
 
               <tbody>
                 <tr>
+                  <td class="left">9f17499</td>
+
+                  <td class="right">2014-02-05</td>
+
+                  <td class="left">Fabrice Niessen</td>
+
+                  <td class="left">Remove useless comments about Org
+                  built-ins</td>
+                </tr>
+
+                <tr>
                   <td class="left">b6fbcea</td>
 
                   <td class="right">2014-01-31</td>
@@ -1436,16 +1469,6 @@ git clone git@github.com:fniessen/org-macros.git
                   <td class="left">Fabrice Niessen</td>
 
                   <td class="left">Update `fixme’ macro</td>
-                </tr>
-
-                <tr>
-                  <td class="left">5fa31b0</td>
-
-                  <td class="right">2014-01-30</td>
-
-                  <td class="left">Fabrice Niessen</td>
-
-                  <td class="left">Export latest version</td>
                 </tr>
               </tbody>
             </table>
@@ -1752,87 +1775,10 @@ git clone git@github.com:fniessen/org-macros.git
                   <li><a href="#sec-6">6. Layout</a></li>
 
                   <li><a href="#sec-7">7. Navigation and lists</a></li>
-
-                  <li><a href="#sec-8">8. Others XXX</a></li>
                 </ul>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="outline-container-sec-8" class="outline-2">
-      <h2 id="sec-8"><span class="section-number-2">8</span> Others XXX</h2>
-
-      <div class="outline-text-2" id="text-8">
-        <p>Keep a library of helpful CSS classes. Useful for debugging, but
-        should be avoided in the release version (separate markup and
-        presentation). Since you can use multiple class names (i.e. <code>&lt;p
-        class="floatLeft alignLeft width75"&gt;...&lt;/p&gt;</code>), make use
-        of them debugging your markup.</p>
-
-        <div class="org-src-container">
-          <pre class="src src-css">
-<span style=
-"color: #0000ff; font-weight: bold;">.width100 </span>{ <span style="color: #00AA00;">width</span>: 100%; }
-<span style="color: #0000ff; font-weight: bold;">.width75 </span>{ <span style=
-"color: #00AA00;">width</span>: 75%; }
-<span style="color: #0000ff; font-weight: bold;">.width50 </span>{ <span style=
-"color: #00AA00;">width</span>: 50%; }
-<span style=
-"color: #0000ff; font-weight: bold;">.floatLeft </span>{ <span style=
-"color: #00AA00;">float</span>: left; }
-<span style=
-"color: #0000ff; font-weight: bold;">.floatRight </span>{ <span style=
-"color: #00AA00;">float</span>: right; }
-<span style=
-"color: #0000ff; font-weight: bold;">.alignLeft </span>{ <span style=
-"color: #00AA00;">text-align</span>: left; }
-<span style=
-"color: #0000ff; font-weight: bold;">.alignRight </span>{ <span style=
-"color: #00AA00;">text-align</span>: right; }
-
-<span style=
-"color: #0000ff; font-weight: bold;">.clear         </span>{ <span style=
-"color: #00AA00;">clear</span>: both; }
-<span style=
-"color: #0000ff; font-weight: bold;">.float-left    </span>{ <span style=
-"color: #00AA00;">float</span>: left; }
-<span style=
-"color: #0000ff; font-weight: bold;">.float-right   </span>{ <span style=
-"color: #00AA00;">float</span>: right; }
-
-<span style=
-"color: #0000ff; font-weight: bold;">.highlight     </span>{ <span style=
-"color: #00AA00;">background</span>: #FFFFCC; }
-
-<span style=
-"color: #0000ff; font-weight: bold;">.wrap          </span>{ <span style=
-"color: #00AA00;">width</span>: 960px; <span style=
-"color: #00AA00;">margin</span>: 0 auto; }
-
-<span style=
-"color: #0000ff; font-weight: bold;">.img-left      </span>{ <span style=
-"color: #00AA00;">float</span>: left; <span style=
-"color: #00AA00;">margin</span>: 4px 10px 4px 0; }
-<span style=
-"color: #0000ff; font-weight: bold;">.img-right     </span>{ <span style=
-"color: #00AA00;">float</span>: right; <span style=
-"color: #00AA00;">margin</span>: 4px 0 4px 10px; }
-
-<span style=
-"color: #0000ff; font-weight: bold;">.nopadding     </span>{ <span style=
-"color: #00AA00;">padding</span>: 0; }
-<span style=
-"color: #0000ff; font-weight: bold;">.noindent      </span>{ <span style=
-"color: #00AA00;">margin-left</span>: 0; <span style=
-"color: #00AA00;">padding-left</span>: 0; }
-<span style=
-"color: #0000ff; font-weight: bold;">.nobullet      </span>{ <span style=
-"color: #00AA00;">list-style</span>: none; <span style=
-"color: #00AA00;">list-style-image</span>: none; }
-</pre>
         </div>
       </div>
     </div>
