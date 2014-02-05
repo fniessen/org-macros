@@ -24,7 +24,20 @@ readers can see it in the exported versions of the document.
 
 Some people (such as me) use it to construct complex HTML or LaTeX code.
 
+** Objectives
+
+** Features
+
 These [[https://github.com/fniessen/org-macros][Org-macros]] have been tested for PDF and HTML exports.
+
+* Code
+
+** Checkout
+
+Use this command to check out the latest source code of the project from the
+Git repository hosted at GitHub:
+
+: git clone git@github.com:fniessen/org-macros.git
 
 ** Installation
 
@@ -105,10 +118,6 @@ Below is a list of the macros currently available.
 The =author= macro outputs a list of users who have created or edited the
 document.
 
-*** Code
-
-Org built-in.
-
 *** Parameters
 
 None.
@@ -127,10 +136,6 @@ Option =#+AUTHOR:=.
    :END:
 
 The =date= macro outputs the *date and time* specified in the document.
-
-*** Code
-
-Org built-in.
 
 *** Parameters
 
@@ -153,10 +158,6 @@ The date of this document is: {{{date}}}.
 
 The =email= macro outputs the email of the author(s).
 
-*** Code
-
-Org built-in.
-
 *** Parameters
 
 None.
@@ -176,10 +177,6 @@ Option =#+EMAIL:=.
 
 The =input-file= macro displays the name of the input Org file.
 
-*** Code
-
-Org built-in.
-
 *** Parameters
 
 None.
@@ -195,10 +192,6 @@ The input file name for this document is: {{{input-file}}}.
 
 The =modification-time= macro outputs the *modification date and time* /of/ the file
 being exported.
-
-*** Code
-
-Org built-in.
 
 *** Parameters
 
@@ -221,10 +214,6 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 The =time= macro outputs the *current date and time* /when/ the document is being
 exported.
 
-*** Code
-
-Org built-in.
-
 *** Parameters
 
 1. *Format string* understood by =format-time-string=.
@@ -244,10 +233,6 @@ This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
    :END:
 
 The =title= macro outputs the document title.
-
-*** Code
-
-Org built-in.
 
 *** Parameters
 
