@@ -105,6 +105,7 @@ Below is a list of the few macros currently available.
 
 *** Layout
 
+- [[#collapse][collapse]] macro
 - [[#info][info]] macro
 - [[#minipage][minipage]] macro
 - [[#note][note]] macro
@@ -529,6 +530,26 @@ This only will work with *Git repositories*.
 {{{version-history}}}
 
 * Layout
+
+** Collapse macro
+   :PROPERTIES:
+   :CUSTOM_ID: collapse
+   :END:
+
+The =collapse= macro inserts of collapsed block of text.
+
+*** Code
+
+*** Parameters
+
+None.
+
+*** Examples
+
+{{{collapse(View details...)
+This is a block of text that is collapsed by default.
+It can be expanded by clicking a link.
+}}}
 
 ** Info macro
    :PROPERTIES:
