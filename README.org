@@ -67,11 +67,15 @@ Examples:
 
 - With no arguments:
 
-: {{{name-of-the-macro}}}
+  #+begin_example
+  {{{name-of-the-macro}}}
+  #+end_example
 
 - With arguments:
 
-: {{{name-of-the-macro(arg1,arg2)}}}
+  #+begin_example
+  {{{name-of-the-macro(arg1,arg2)}}}
+  #+end_example
 
 ** Macros
 
@@ -606,12 +610,12 @@ None.
 *** Code
 
 #+begin_src org
-,#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
+,#+MACRO: begin_tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
+,#+MACRO: end_tip @@html:</div>@@
 #+end_src
 
 #+begin_src org
-,#+MACRO: tipBegin @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
-,#+MACRO: tipEnd @@html:</div>@@
+,#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
 #+end_src
 
 *** Parameters
@@ -620,22 +624,22 @@ None.
 
 *** Examples
 
+{{{begin_tip(Tip example)}}}
+Try doing it this way...
+{{{end_tip}}}
+
 {{{tip(Tip example, Try doing it this way...)}}}
 
-{{{tipBegin(Tip example)}}}
+{{{begin_tip()}}}
 Try doing it this way...
-{{{tipEnd}}}
+{{{end_tip}}}
 
 {{{tip(, Try doing it this way...)}}}
 
-{{{tipBegin()}}}
-Try doing it this way...
-{{{tipEnd}}}
+{{{begin_tip(Tip example)}}}
+{{{end_tip}}}
 
 {{{tip(Tip example, )}}}
-
-{{{tipBegin(Tip example)}}}
-{{{tipEnd}}}
 
 ** Warning macro
    :PROPERTIES:

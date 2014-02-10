@@ -25,10 +25,10 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
 #+MACRO: EndMiniPage @</div>
 
-#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
+#+MACRO: begin_tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
+#+MACRO: end_tip @@html:</div>@@
 
-#+MACRO: tipBegin @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
-#+MACRO: tipEnd @@html:</div>@@
+#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
 
 #+MACRO: BeginWarningBox @@html:<div class="org-info-box"><img src="/worg/images/icons/warning.png" alt="NOTE" /><p>@@
 #+MACRO: EndWarningBox @@html:</p><br style="clear:left;height:1px;" /></div><br />@@
