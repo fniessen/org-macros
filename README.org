@@ -562,6 +562,8 @@ It can be expanded by clicking a link.
    :CUSTOM_ID: info
    :END:
 
+The =info= macro is useful for including helpful information.
+
 *** Code
 
 #+begin_src org
