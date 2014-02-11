@@ -53,10 +53,10 @@ Git repository hosted at GitHub:
 ,#+INCLUDE: /path/to/org-macros.setup
 #+end_src
 
-***************                                                          :info:
+#+begin_info
 As there are Babel code blocks inside the ~org-macros.setup~ file, it needs to be
 loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
-*************** END
+#+end_info
 
 ** Usage
 
@@ -521,7 +521,9 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 ,#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
 #+end_src
 
-*************** We chose an inline Babel call so that the macro can be used in a paragraph. :tip:
+#+begin_tip
+We chose an inline Babel call so that the macro can be used in a paragraph.
+#+end_tip
 
 *** Parameters
 
