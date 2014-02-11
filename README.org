@@ -8,10 +8,12 @@
 
 #+PROPERTY: comments no
 #+PROPERTY: eval     no
+#+PROPERTY: exports  code
 #+PROPERTY: noweb    yes
 #+PROPERTY: tangle   org-macros.setup
 
-#+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+# #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+#+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
 
 #+INCLUDE: org-macros.setup
 
@@ -563,8 +565,8 @@ It can be expanded by clicking a link.
 *** Code
 
 #+begin_src org
-,#+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
-,#+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
+,#+MACRO: begin_info @@html:<div class="info"><p>@@
+,#+MACRO: end_info @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -572,6 +574,22 @@ It can be expanded by clicking a link.
 None.
 
 *** Examples
+
+{{{begin_info}}}
+*Info example* \\
+Did you know...
+{{{end_info}}}
+
+*** Remarks
+
+You'd better use a "special block", such as:
+
+#+begin_example
+,#+begin_info
+,*Info example* \\
+Did you know...
+,#+end_info
+#+end_example
 
 ** MiniPage macro
    :PROPERTIES:
@@ -596,11 +614,32 @@ None.
 
 *** Code
 
+#+begin_src org
+,#+MACRO: begin_note @@html:<div class="note"><p>@@
+,#+MACRO: end_note @@html:</p></div>@@
+#+end_src
+
 *** Parameters
 
 None.
 
 *** Examples
+
+{{{begin_note}}}
+*Note example* \\
+This is a useful note...
+{{{end_note}}}
+
+*** Remarks
+
+You'd better use a "special block", such as:
+
+#+begin_example
+,#+begin_note
+,*Note example* \\
+This is a useful note...
+,#+end_note
+#+end_example
 
 ** Tip macro
    :PROPERTIES:
@@ -610,12 +649,8 @@ None.
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
-,#+MACRO: end_tip @@html:</div>@@
-#+end_src
-
-#+begin_src org
-,#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
+,#+MACRO: begin_tip @@html:<div class="tip"><p>@@
+,#+MACRO: end_tip @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -624,22 +659,21 @@ None.
 
 *** Examples
 
-{{{begin_tip(Tip example)}}}
+{{{begin_tip}}}
+*Tip example* \\
 Try doing it this way...
 {{{end_tip}}}
 
-{{{tip(Tip example, Try doing it this way...)}}}
+*** Remarks
 
-{{{begin_tip()}}}
+You'd better use a "special block", such as:
+
+#+begin_example
+,#+begin_tip
+,*Tip example* \\
 Try doing it this way...
-{{{end_tip}}}
-
-{{{tip(, Try doing it this way...)}}}
-
-{{{begin_tip(Tip example)}}}
-{{{end_tip}}}
-
-{{{tip(Tip example, )}}}
+,#+end_tip
+#+end_example
 
 ** Warning macro
    :PROPERTIES:
@@ -649,8 +683,8 @@ Try doing it this way...
 *** Code
 
 #+begin_src org
-,#+MACRO: BeginWarningBox @@html:<div class="org-info-box"><img src="/worg/images/icons/warning.png" alt="NOTE" /><p>@@
-,#+MACRO: EndWarningBox @@html:</p><br style="clear:left;height:1px;" /></div><br />@@
+,#+MACRO: begin_warning @@html:<div class="warning"><p>@@
+,#+MACRO: end_warning @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -659,9 +693,21 @@ None.
 
 *** Examples
 
-{{{BeginWarningBox}}}
-Be cautious!
-{{{EndWarningBox}}}
+{{{begin_warning}}}
+*Warning example* \\
+Be careful! Check that you have...
+{{{end_warning}}}
+
+*** Remarks
+
+You'd better use a "special block", such as:
+
+#+begin_example
+,#+begin_warning
+,*Warning example* \\
+Be careful! Check that you have...
+,#+end_warning
+#+end_example
 
 * Navigation and lists
 

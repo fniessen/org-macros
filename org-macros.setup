@@ -19,18 +19,19 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
 
-#+MACRO: BeginInfoBox @<div class="org-info-box">@<img src="/worg/images/icons/info.png" alt="NOTE" />@<p>
-#+MACRO: EndInfoBox @</p>@<br style="clear:left;height:1px;" />@</div>@<br />
+#+MACRO: begin_info @@html:<div class="info"><p>@@
+#+MACRO: end_info @@html:</p></div>@@
 
 #+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
 #+MACRO: EndMiniPage @</div>
 
-#+MACRO: begin_tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>@@
-#+MACRO: end_tip @@html:</div>@@
+#+MACRO: begin_note @@html:<div class="note"><p>@@
+#+MACRO: end_note @@html:</p></div>@@
 
-#+MACRO: tip @@html:<div class="inlinetask"><b>$1&nbsp;&nbsp;&nbsp;<span class="tag"><span class= "tip">tip</span></span></b>$2</div>@@
+#+MACRO: begin_tip @@html:<div class="tip"><p>@@
+#+MACRO: end_tip @@html:</p></div>@@
 
-#+MACRO: BeginWarningBox @@html:<div class="org-info-box"><img src="/worg/images/icons/warning.png" alt="NOTE" /><p>@@
-#+MACRO: EndWarningBox @@html:</p><br style="clear:left;height:1px;" /></div><br />@@
+#+MACRO: begin_warning @@html:<div class="warning"><p>@@
+#+MACRO: end_warning @@html:</p></div>@@
 
 #+MACRO: toc #+toc: headlines $1
