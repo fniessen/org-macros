@@ -12,8 +12,8 @@
 #+PROPERTY: noweb    yes
 #+PROPERTY: tangle   org-macros.setup
 
-# #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
-#+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
+#+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+# #+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
 
 #+INCLUDE: org-macros.setup
 
@@ -102,9 +102,12 @@ Below is a list of the few macros currently available.
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
 
+- LaTeX keys macro (see menukeys)
+
 *** Generic macros
 
-- =chart= macro
+- [[#bar-chart][bar-chart]] macro
+- [[#image][image]] macro
 - =recently-updated= macro
 - =tasklist= macro
 - [[#version-history][version-history]] macro
@@ -115,6 +118,7 @@ Below is a list of the few macros currently available.
 - [[#info][info]] macro
 - [[#minipage][minipage]] macro
 - [[#note][note]] macro
+- [[#panel][panel]] macro
 - [[#tip][tip]] macro
 - [[#warning][warning]] macro
 
@@ -500,6 +504,74 @@ This is a basic example of the =Loremipsum= text:
 
 * Generic
 
+** Bar chart macro
+   :PROPERTIES:
+   :CUSTOM_ID: bar-chart
+   :END:
+
+The =bar-chart= macro displays a chart.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: bar-chart ...
+#+end_src
+
+*** Parameters
+
+1. Path to chart file.
+
+*** Examples
+
+Data to be charted:
+
+#+name: income-expenses
+|      | Income | Expenses |
+|------+--------+----------|
+| 2012 |     31 |       12 |
+| 2013 |     42 |       32 |
+| 2014 |     43 |       41 |
+
+Code:
+
+#+name: bar-chart
+#+begin_src R :var data=income-expenses :results graphics :file bar-chart.png :exports both :eval yes
+plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
+grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
+legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
+#+end_src
+
+The resulting bar chart:
+
+#+results: bar-chart
+[[file:bar-chart.png]]
+
+{{{bar-chart}}}
+
+** Image macro
+   :PROPERTIES:
+   :CUSTOM_ID: image
+   :END:
+
+The =image= macro displays an image.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: image \includegraphics{$1}
+#+end_src
+
+*** Parameters
+
+1. Path to image file.
+
+*** Examples
+
+{{{image}}}
+
+| {{{image(a.png)}}} | {{{image(b.png)}}} |
+| {{{image(c.png)}}} | {{{image(d.png)}}} |
+
 ** Version-history macro
    :PROPERTIES:
    :CUSTOM_ID: version-history
@@ -643,6 +715,40 @@ You'd better use a "special block", such as:
 ,*Note example* \\
 This is a useful note...
 ,#+end_note
+#+end_example
+
+** Panel macro
+   :PROPERTIES:
+   :CUSTOM_ID: panel
+   :END:
+
+*** Code
+
+#+begin_src org
+,#+MACRO: begin_panel @@html:<div class="panel"><p>@@
+,#+MACRO: end_panel @@html:</p></div>@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+{{{begin_panel}}}
+*Panel example* \\
+This is a formatted block of text...
+{{{end_panel}}}
+
+*** Remarks
+
+You'd better use a "special block", such as:
+
+#+begin_example
+,#+begin_panel
+,*Panel example* \\
+This is a formatted block of text...
+,#+end_panel
 #+end_example
 
 ** Tip macro
