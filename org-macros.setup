@@ -12,6 +12,8 @@
 
 #+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+#+MACRO: image \includegraphics{$1}
+
 #+name: version-history
 #+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)
 git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
@@ -28,6 +30,9 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+MACRO: begin_note @@html:<div class="note"><p>@@
 #+MACRO: end_note @@html:</p></div>@@
 
+#+MACRO: begin_panel @@html:<div class="panel"><p>@@
+#+MACRO: end_panel @@html:</p></div>@@
+
 #+MACRO: begin_tip @@html:<div class="tip"><p>@@
 #+MACRO: end_tip @@html:</p></div>@@
 
@@ -35,3 +40,5 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+MACRO: end_warning @@html:</p></div>@@
 
 #+MACRO: toc #+toc: headlines $1
+
+#+MACRO: twitter-share-link-button @@html:<script src="http://platform.twitter.com/widgets.js"></script><a href="https://twitter.com/share" class="twitter-share-button" data-via="$1">Tweet</a>@@

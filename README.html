@@ -19,7 +19,7 @@
   <link rel="stylesheet" type="text/css" href=
   "http://www.pirilampo.org/styles/bigblow/css/hideshow.css" />
 <script type="text/javascript" src=
-"http://www.pirilampo.org/styles/bigblow/js/jquery-1.9.1.min.js">
+"http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js">
 </script>
 <script type="text/javascript" src=
 "http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js">
@@ -29,6 +29,9 @@
 </script>
 <script type="text/javascript" src=
 "http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js">
+</script>
+<script type="text/javascript" src=
+"http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js">
 </script>
 <script type="text/javascript" src=
 "http://www.pirilampo.org/styles/bigblow/js/bigblow.js">
@@ -125,6 +128,8 @@
                   <li><a href="#sec-2-4-4">2.4.4. Layout</a></li>
 
                   <li><a href="#sec-2-4-5">2.4.5. Navigation and lists</a></li>
+
+                  <li><a href="#sec-2-4-6">2.4.6. Dev tools</a></li>
                 </ul>
               </li>
             </ul>
@@ -309,7 +314,7 @@
 
             <ul>
               <li>
-                <a href="#bar-chart">5.1. Bar chart macro</a>
+                <a href="#image">5.1. Image macro</a>
 
                 <ul>
                   <li><a href="#sec-5-1-1">5.1.1. Code</a></li>
@@ -321,28 +326,16 @@
               </li>
 
               <li>
-                <a href="#image">5.2. Image macro</a>
+                <a href="#version-history">5.2. Version-history macro</a>
 
                 <ul>
                   <li><a href="#sec-5-2-1">5.2.1. Code</a></li>
 
                   <li><a href="#sec-5-2-2">5.2.2. Parameters</a></li>
 
-                  <li><a href="#sec-5-2-3">5.2.3. Examples</a></li>
-                </ul>
-              </li>
+                  <li><a href="#sec-5-2-3">5.2.3. Remarks</a></li>
 
-              <li>
-                <a href="#version-history">5.3. Version-history macro</a>
-
-                <ul>
-                  <li><a href="#sec-5-3-1">5.3.1. Code</a></li>
-
-                  <li><a href="#sec-5-3-2">5.3.2. Parameters</a></li>
-
-                  <li><a href="#sec-5-3-3">5.3.3. Remarks</a></li>
-
-                  <li><a href="#sec-5-3-4">5.3.4. Examples</a></li>
+                  <li><a href="#sec-5-2-4">5.2.4. Examples</a></li>
                 </ul>
               </li>
             </ul>
@@ -467,16 +460,32 @@
               </li>
             </ul>
           </li>
+
+          <li>
+            <a href="#sec-8">8. Dev tools</a>
+
+            <ul>
+              <li>
+                <a href="#twitter-share-link-button">8.1. Twitter “Share a
+                link”</a>
+
+                <ul>
+                  <li><a href="#sec-8-1-1">8.1.1. Code</a></li>
+
+                  <li><a href="#sec-8-1-2">8.1.2. Parameters</a></li>
+
+                  <li><a href="#sec-8-1-3">8.1.3. Examples</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="#sec-9">9. Contributing</a></li>
+
+          <li><a href="#sec-10">10. Standard disclaimer</a></li>
         </ul>
       </div>
     </div>
-
-    <p>data &lt;- local({ con &lt;- textConnection( “\"\” \"Income\”
-    \"Expenses\” 2012 31 12 2013 42 32 2014 43 41” ) res &lt;- read.table( con,
-    header = TRUE, row.names = NULL, sep = “\t”, as.is = TRUE ) close(con) res
-    }) plot(data, type="b”, bty="l”, col=c(“#ABD249”), las=1, lwd=4)
-    grid(nx=NULL, ny=NULL, col=c(“#E8E8E8”), lwd=1) legend(“bottom”,
-    legend=c(“Degrees”), col=c(“#ABD249”), pch=c(19))</p>
 
     <div id="outline-container-sec-1" class="outline-2">
       <h2 id="sec-1"><span class="section-number-2">1</span> Overview</h2>
@@ -503,8 +512,8 @@
         Objectives</h3>
 
         <div class="outline-text-3" id="text-1-2">
-          <p>Using macros allows you to <b>insert dynamic content</b> or <b>add
-          extra functionality</b> in exports of an Org document.</p>
+          Using macros allows you to <b>insert dynamic content</b> or <b>add
+          extra functionality</b> in exports of an Org document.
         </div>
       </div>
 
@@ -552,10 +561,10 @@ git clone git@github.com:fniessen/org-macros.git
           </div>
 
           <div class="info">
-            <p>As there are Babel code blocks inside the
+            As there are Babel code blocks inside the
             <code>org-macros.setup</code> file, it needs to be loaded via the
             <code>#+INCLUDE:</code> directive, not via a
-            <code>#+SETUPFILE:</code>!</p>
+            <code>#+SETUPFILE:</code>!
           </div>
         </div>
       </div>
@@ -595,7 +604,7 @@ git clone git@github.com:fniessen/org-macros.git
         <h3 id="sec-2-4"><span class="section-number-3">2.4</span> Macros</h3>
 
         <div class="outline-text-3" id="text-2-4">
-          <p>Below is a list of the few macros currently available.</p>
+          Below is a list of the few macros currently available.
         </div>
 
         <div id="outline-container-sec-2-4-1" class="outline-4">
@@ -650,7 +659,9 @@ git clone git@github.com:fniessen/org-macros.git
 
           <div class="outline-text-4" id="text-2-4-3">
             <ul class="org-ul">
-              <li><a href="#bar-chart">bar-chart</a> macro</li>
+              <li><i>area-chart</i> macro</li>
+
+              <li><i>bar-chart</i> macro</li>
 
               <li><a href="#image">image</a> macro</li>
 
@@ -698,6 +709,19 @@ git clone git@github.com:fniessen/org-macros.git
             </ul>
           </div>
         </div>
+
+        <div id="outline-container-sec-2-4-6" class="outline-4">
+          <h4 id="sec-2-4-6"><span class="section-number-4">2.4.6</span> Dev
+          tools</h4>
+
+          <div class="outline-text-4" id="text-2-4-6">
+            <ul class="org-ul">
+              <li><a href=
+              "#twitter-share-link-button">twitter-share-link-button</a>
+              macro</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -711,8 +735,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.1</span> Author macro</h3>
 
         <div class="outline-text-3" id="text-author">
-          <p>The <code>author</code> macro outputs a list of users who have
-          created or edited the document.</p>
+          The <code>author</code> macro outputs a list of users who have
+          created or edited the document.
         </div>
 
         <div id="outline-container-sec-3-1-1" class="outline-4">
@@ -720,7 +744,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-1-1">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -729,8 +753,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-1-2">
-            <p>People who have created and edited this document: Fabrice
-            Niessen.</p>
+            People who have created and edited this document: Fabrice Niessen.
           </div>
         </div>
 
@@ -739,7 +762,7 @@ git clone git@github.com:fniessen/org-macros.git
           also</h4>
 
           <div class="outline-text-4" id="text-3-1-3">
-            <p>Option <code>#+AUTHOR:</code>.</p>
+            Option <code>#+AUTHOR:</code>.
           </div>
         </div>
       </div>
@@ -749,8 +772,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.2</span> Date macro</h3>
 
         <div class="outline-text-3" id="text-date">
-          <p>The <code>date</code> macro outputs the <b>date and time</b>
-          specified in the document.</p>
+          The <code>date</code> macro outputs the <b>date and time</b>
+          specified in the document.
         </div>
 
         <div id="outline-container-sec-3-2-1" class="outline-4">
@@ -758,7 +781,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-2-1">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -767,7 +790,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-2-2">
-            <p>The date of this document is: 2014-01-22 12:34.</p>
+            The date of this document is: 2014-01-22 12:34.
           </div>
         </div>
 
@@ -793,8 +816,7 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.3</span> Email macro</h3>
 
         <div class="outline-text-3" id="text-email">
-          <p>The <code>email</code> macro outputs the email of the
-          author(s).</p>
+          The <code>email</code> macro outputs the email of the author(s).
         </div>
 
         <div id="outline-container-sec-3-3-1" class="outline-4">
@@ -802,7 +824,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-3-1">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -811,8 +833,8 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-3-2">
-            <p>The email of this document is: (concat “fniessen” at-sign
-            “pirilampo.org”).</p>
+            The email of this document is: (concat “fniessen” at-sign
+            “pirilampo.org”).
           </div>
         </div>
 
@@ -821,7 +843,7 @@ git clone git@github.com:fniessen/org-macros.git
           also</h4>
 
           <div class="outline-text-4" id="text-3-3-3">
-            <p>Option <code>#+EMAIL:</code>.</p>
+            Option <code>#+EMAIL:</code>.
           </div>
         </div>
       </div>
@@ -831,8 +853,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.4</span> Input-file macro</h3>
 
         <div class="outline-text-3" id="text-input-file">
-          <p>The <code>input-file</code> macro displays the name of the input
-          Org file.</p>
+          The <code>input-file</code> macro displays the name of the input Org
+          file.
         </div>
 
         <div id="outline-container-sec-3-4-1" class="outline-4">
@@ -840,7 +862,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-4-1">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -849,7 +871,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-4-2">
-            <p>The input file name for this document is: README.org.</p>
+            The input file name for this document is: README.org.
           </div>
         </div>
       </div>
@@ -860,9 +882,8 @@ git clone git@github.com:fniessen/org-macros.git
         Modification-time macro</h3>
 
         <div class="outline-text-3" id="text-modification-time">
-          <p>The <code>modification-time</code> macro outputs the
-          <b>modification date and time</b> <i>of</i> the file being
-          exported.</p>
+          The <code>modification-time</code> macro outputs the <b>modification
+          date and time</b> <i>of</i> the file being exported.
         </div>
 
         <div id="outline-container-sec-3-5-1" class="outline-4">
@@ -882,7 +903,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-5-2">
-            <p>This document was last modified on: 2014-07-29 Tue 16:33.</p>
+            This document was last modified on: 2014-09-10 Wed 14:02.
           </div>
         </div>
 
@@ -905,8 +926,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.6</span> Time macro</h3>
 
         <div class="outline-text-3" id="text-time">
-          <p>The <code>time</code> macro outputs the <b>current date and
-          time</b> <i>when</i> the document is being exported.</p>
+          The <code>time</code> macro outputs the <b>current date and time</b>
+          <i>when</i> the document is being exported.
         </div>
 
         <div id="outline-container-sec-3-6-1" class="outline-4">
@@ -926,7 +947,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-6-2">
-            <p>This document was last exported on: 2014-07-29 Tue 16:33.</p>
+            This document was last exported on: 2014-09-10 Wed 14:02.
           </div>
         </div>
 
@@ -950,7 +971,7 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">3.7</span> Title macro</h3>
 
         <div class="outline-text-3" id="text-title">
-          <p>The <code>title</code> macro outputs the document title.</p>
+          The <code>title</code> macro outputs the document title.
         </div>
 
         <div id="outline-container-sec-3-7-1" class="outline-4">
@@ -958,7 +979,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-3-7-1">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -967,7 +988,7 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-3-7-2">
-            <p>The title of this document is: Org Macros.</p>
+            The title of this document is: Org Macros.
           </div>
         </div>
 
@@ -976,7 +997,7 @@ git clone git@github.com:fniessen/org-macros.git
           also</h4>
 
           <div class="outline-text-4" id="text-3-7-3">
-            <p>Option <code>#+TITLE:</code>.</p>
+            Option <code>#+TITLE:</code>.
           </div>
         </div>
       </div>
@@ -993,8 +1014,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.1</span> BgColor macro</h3>
 
         <div class="outline-text-3" id="text-bgcolor">
-          <p>The <code>bgcolor</code> macro allows you to change the background
-          color of a block of text.</p>
+          The <code>bgcolor</code> macro allows you to change the background
+          color of a block of text.
         </div>
 
         <div id="outline-container-sec-4-1-1" class="outline-4">
@@ -1105,8 +1126,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.2</span> Color macro</h3>
 
         <div class="outline-text-3" id="text-color">
-          <p>The <code>color</code> macro allows you to change the foreground
-          color of inline text.</p>
+          The <code>color</code> macro allows you to change the foreground
+          color of inline text.
         </div>
 
         <div id="outline-container-sec-4-2-1" class="outline-4">
@@ -1183,8 +1204,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.3</span> Fixme macro</h3>
 
         <div class="outline-text-3" id="text-fixme">
-          <p>The <code>fixme</code> macro inserts a “Fix Me!” image (with
-          adequate CSS).</p>
+          The <code>fixme</code> macro inserts a “Fix Me!” image (with adequate
+          CSS).
         </div>
 
         <div id="outline-container-sec-4-3-1" class="outline-4">
@@ -1195,7 +1216,7 @@ git clone git@github.com:fniessen/org-macros.git
             <div class="org-src-container">
               <pre class="src src-org">
 <span class=
-"org-org-meta-line">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span class="org-org-meta-line"><span class="org-leuven-highlight">FIXME</span></span><span class="org-org-meta-line">&lt;/span&gt;@@</span>
+"org-org-meta-line">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span class="org-leuven-highlight"><span class="org-org-meta-line">FIXME</span></span><span class="org-org-meta-line">&lt;/span&gt;@@</span>
 </pre>
             </div>
 
@@ -1204,12 +1225,11 @@ git clone git@github.com:fniessen/org-macros.git
             <div class="org-src-container">
               <pre class="src src-css">
 <span class="org-css-selector">.</span><span class=
-"org-css-selector"><span class=
-"org-leuven-highlight">fixme</span></span><span class=
-"org-css-selector"> </span>{
+"org-leuven-highlight"><span class=
+"org-css-selector">fixme</span></span><span class="org-css-selector"> </span>{
     <span class="org-css-property">background</span>: #FFFF88 url(<span class=
-"org-string">'../images/</span><span class="org-string"><span class=
-"org-leuven-highlight">fixme</span></span><span class=
+"org-string">'../images/</span><span class="org-leuven-highlight"><span class=
+"org-string">fixme</span></span><span class=
 "org-string">.png'</span>) no-repeat top left;
     <span class="org-css-property">color</span>: #CC0000;
     <span class="org-css-property">display</span>: inline-block;
@@ -1227,7 +1247,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-4-3-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1254,8 +1274,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.4</span> Highlight macro</h3>
 
         <div class="outline-text-3" id="text-highlight">
-          <p>The <code>highlight</code> macro allows you to change the
-          background color of inline text.</p>
+          The <code>highlight</code> macro allows you to change the background
+          color of inline text.
         </div>
 
         <div id="outline-container-sec-4-4-1" class="outline-4">
@@ -1334,8 +1354,8 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.5</span> Hl macro</h3>
 
         <div class="outline-text-3" id="text-hl">
-          <p>The <code>hl</code> macro allows you to highlight text with a
-          “neon marker” effect.</p>
+          The <code>hl</code> macro allows you to highlight text with a “neon
+          marker” effect.
         </div>
 
         <div id="outline-container-sec-4-5-1" class="outline-4">
@@ -1369,8 +1389,8 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-4-5-3">
-            <p><span style="background-color: #FFFF00;">This information is
-            important.</span></p>
+            <span style="background-color: #FFFF00;">This information is
+            important.</span>
           </div>
         </div>
 
@@ -1395,9 +1415,9 @@ git clone git@github.com:fniessen/org-macros.git
         "section-number-3">4.6</span> LoremIpsum macro</h3>
 
         <div class="outline-text-3" id="text-loremipsum">
-          <p>The <code>loremipsum</code> macro displays one paragraph of
+          The <code>loremipsum</code> macro displays one paragraph of
           meaningless text that you can use for demonstration purposes of
-          visual elements such as font, typography or layout.</p>
+          visual elements such as font, typography or layout.
         </div>
 
         <div id="outline-container-sec-4-6-1" class="outline-4">
@@ -1419,7 +1439,7 @@ git clone git@github.com:fniessen/org-macros.git
           Parameters</h4>
 
           <div class="outline-text-4" id="text-4-6-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1447,12 +1467,12 @@ git clone git@github.com:fniessen/org-macros.git
 
       <div class="outline-text-2" id="text-5"></div>
 
-      <div id="outline-container-bar-chart" class="outline-3">
-        <h3 id="bar-chart"><a id="sec-5-1" name="sec-5-1"></a><span class=
-        "section-number-3">5.1</span> Bar chart macro</h3>
+      <div id="outline-container-image" class="outline-3">
+        <h3 id="image"><a id="sec-5-1" name="sec-5-1"></a><span class=
+        "section-number-3">5.1</span> Image macro</h3>
 
-        <div class="outline-text-3" id="text-bar-chart">
-          <p>The <code>bar-chart</code> macro displays a chart.</p>
+        <div class="outline-text-3" id="text-image">
+          The <code>image</code> macro displays an image.
         </div>
 
         <div id="outline-container-sec-5-1-1" class="outline-4">
@@ -1462,7 +1482,7 @@ git clone git@github.com:fniessen/org-macros.git
           <div class="outline-text-4" id="text-5-1-1">
             <div class="org-src-container">
               <pre class="src src-org">
-<span class="org-org-meta-line">#+MACRO: bar-chart ...</span>
+<span class="org-org-meta-line">#+MACRO: image \includegraphics{$1}</span>
 </pre>
             </div>
           </div>
@@ -1474,7 +1494,7 @@ git clone git@github.com:fniessen/org-macros.git
 
           <div class="outline-text-4" id="text-5-1-2">
             <ol class="org-ol">
-              <li>Path to chart file.</li>
+              <li>Path to image file.</li>
             </ol>
           </div>
         </div>
@@ -1484,117 +1504,6 @@ git clone git@github.com:fniessen/org-macros.git
           Examples</h4>
 
           <div class="outline-text-4" id="text-5-1-3">
-            <p>Data to be charted:</p>
-
-            <table id="income-expenses" border="2" cellspacing="0" cellpadding=
-            "6" rules="groups" frame="hsides">
-              <colgroup>
-                <col class="right" />
-                <col class="right" />
-                <col class="right" />
-              </colgroup>
-
-              <thead>
-                <tr>
-                  <th scope="col" class="right">&nbsp;</th>
-
-                  <th scope="col" class="right">Income</th>
-
-                  <th scope="col" class="right">Expenses</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td class="right">2012</td>
-
-                  <td class="right">31</td>
-
-                  <td class="right">12</td>
-                </tr>
-
-                <tr>
-                  <td class="right">2013</td>
-
-                  <td class="right">42</td>
-
-                  <td class="right">32</td>
-                </tr>
-
-                <tr>
-                  <td class="right">2014</td>
-
-                  <td class="right">43</td>
-
-                  <td class="right">41</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <p>Code:</p>
-
-            <div class="org-src-container">
-              <pre class="src src-R" id="bar-chart">
-plot(data, type=<span class="org-string">"b"</span>, bty=<span class=
-"org-string">"l"</span>, col=c(<span class=
-"org-string">"#ABD249"</span>), las=1, lwd=4)
-grid(nx=<span class="org-type">NULL</span>, ny=<span class=
-"org-type">NULL</span>, col=c(<span class=
-"org-string">"#E8E8E8"</span>), lwd=1)
-legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
-"org-string">"Degrees"</span>), col=c(<span class=
-"org-string">"#ABD249"</span>), pch=c(19))
-</pre>
-            </div>
-
-            <p>The resulting bar chart:</p>
-
-            <div class="figure">
-              <p><img src="bar-chart.png" alt="bar-chart.png" /></p>
-            </div>
-
-            <p>…</p>
-          </div>
-        </div>
-      </div>
-
-      <div id="outline-container-image" class="outline-3">
-        <h3 id="image"><a id="sec-5-2" name="sec-5-2"></a><span class=
-        "section-number-3">5.2</span> Image macro</h3>
-
-        <div class="outline-text-3" id="text-image">
-          <p>The <code>image</code> macro displays an image.</p>
-        </div>
-
-        <div id="outline-container-sec-5-2-1" class="outline-4">
-          <h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span>
-          Code</h4>
-
-          <div class="outline-text-4" id="text-5-2-1">
-            <div class="org-src-container">
-              <pre class="src src-org">
-<span class="org-org-meta-line">#+MACRO: image \includegraphics{$1}</span>
-</pre>
-            </div>
-          </div>
-        </div>
-
-        <div id="outline-container-sec-5-2-2" class="outline-4">
-          <h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span>
-          Parameters</h4>
-
-          <div class="outline-text-4" id="text-5-2-2">
-            <ol class="org-ol">
-              <li>Path to image file.</li>
-            </ol>
-          </div>
-        </div>
-
-        <div id="outline-container-sec-5-2-3" class="outline-4">
-          <h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span>
-          Examples</h4>
-
-          <div class="outline-text-4" id="text-5-2-3">
             <p>\includegraphics{}</p>
 
             <table border="2" cellspacing="0" cellpadding="6" rules="groups"
@@ -1623,8 +1532,8 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
       </div>
 
       <div id="outline-container-version-history" class="outline-3">
-        <h3 id="version-history"><a id="sec-5-3" name=
-        "sec-5-3"></a><span class="section-number-3">5.3</span> Version-history
+        <h3 id="version-history"><a id="sec-5-2" name=
+        "sec-5-2"></a><span class="section-number-3">5.2</span> Version-history
         macro</h3>
 
         <div class="outline-text-3" id="text-version-history">
@@ -1635,22 +1544,19 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
           <p>XXX + link to View Changes?</p>
         </div>
 
-        <div id="outline-container-sec-5-3-1" class="outline-4">
-          <h4 id="sec-5-3-1"><span class="section-number-4">5.3.1</span>
+        <div id="outline-container-sec-5-2-1" class="outline-4">
+          <h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span>
           Code</h4>
 
-          <div class="outline-text-4" id="text-5-3-1">
+          <div class="outline-text-4" id="text-5-2-1">
             <div class="org-src-container">
               <pre class="src src-org">
 <span class="org-org-meta-line">#+name: version-history</span>
 <span class=
 "org-org-block-begin-line">#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)</span>
-<span class=
-"org-org-block-background">git log --pretty=format:</span><span class=
-"org-string"><span class=
-"org-org-block-background">"%h%x09%ad%x09%an%x09%s"</span></span><span class=
-"org-org-block-background"> --date=short | head -n 5
-</span><span class="org-org-block-end-line">#+end_src</span>
+git log --pretty=format:<span class=
+"org-string">"%h%x09%ad%x09%an%x09%s"</span> --date=short | head -n 5
+<span class="org-org-block-end-line">#+end_src</span>
 
 <span class=
 "org-org-meta-line">#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]</span>
@@ -1658,32 +1564,32 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
             </div>
 
             <div class="tip">
-              <p>We chose an inline Babel call so that the macro can be used in
-              a paragraph.</p>
+              We chose an inline Babel call so that the macro can be used in a
+              paragraph.
             </div>
           </div>
         </div>
 
-        <div id="outline-container-sec-5-3-2" class="outline-4">
-          <h4 id="sec-5-3-2"><span class="section-number-4">5.3.2</span>
+        <div id="outline-container-sec-5-2-2" class="outline-4">
+          <h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span>
           Parameters</h4>
 
-          <div class="outline-text-4" id="text-5-3-2">
-            <p>None.</p>
+          <div class="outline-text-4" id="text-5-2-2">
+            None.
           </div>
         </div>
 
-        <div id="outline-container-sec-5-3-3" class="outline-4">
-          <h4 id="sec-5-3-3"><span class="section-number-4">5.3.3</span>
+        <div id="outline-container-sec-5-2-3" class="outline-4">
+          <h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span>
           Remarks</h4>
 
-          <div class="outline-text-4" id="text-5-3-3">
-            <p>This only will work with <b>Git repositories</b>.</p>
+          <div class="outline-text-4" id="text-5-2-3">
+            This only will work with <b>Git repositories</b>.
           </div>
         </div>
 
-        <div id="outline-container-sec-5-3-4" class="outline-4">
-          <h4 id="sec-5-3-4"><span class="section-number-4">5.3.4</span>
+        <div id="outline-container-sec-5-2-4" class="outline-4">
+          <h4 id="sec-5-2-4"><span class="section-number-4">5.2.4</span>
           Examples</h4>
         </div>
       </div>
@@ -1699,8 +1605,7 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
         "section-number-3">6.1</span> Collapse macro</h3>
 
         <div class="outline-text-3" id="text-collapse">
-          <p>The <code>collapse</code> macro inserts of collapsed block of
-          text.</p>
+          The <code>collapse</code> macro inserts of collapsed block of text.
         </div>
 
         <div id="outline-container-sec-6-1-1" class="outline-4">
@@ -1713,7 +1618,7 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-1-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1722,9 +1627,8 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
           Examples</h4>
 
           <div class="outline-text-4" id="text-6-1-3">
-            <p>{{{collapse(View details…) This is a block of text that is
-            collapsed by default. It can be expanded by clicking a link.
-            }}}</p>
+            {{{collapse(View details…) This is a block of text that is
+            collapsed by default. It can be expanded by clicking a link. }}}
           </div>
         </div>
       </div>
@@ -1734,8 +1638,8 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
         "section-number-3">6.2</span> Info macro</h3>
 
         <div class="outline-text-3" id="text-info">
-          <p>The <code>info</code> macro is useful for including helpful
-          information.</p>
+          The <code>info</code> macro is useful for including helpful
+          information.
         </div>
 
         <div id="outline-container-sec-6-2-1" class="outline-4">
@@ -1759,7 +1663,7 @@ legend(<span class="org-string">"bottom"</span>, legend=c(<span class=
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-2-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1850,7 +1754,7 @@ Did you know...
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-4-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1901,6 +1805,8 @@ This is a useful note...
 "org-org-meta-line">#+MACRO: end_panel @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
             </div>
+
+            <p>XXX PanelHeader + PanelContent</p>
           </div>
         </div>
 
@@ -1909,7 +1815,7 @@ This is a useful note...
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-5-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -1968,7 +1874,7 @@ This is a formatted block of text...
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-6-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -2027,7 +1933,7 @@ Try doing it this way...
           Parameters</h4>
 
           <div class="outline-text-4" id="text-6-7-2">
-            <p>None.</p>
+            None.
           </div>
         </div>
 
@@ -2065,7 +1971,7 @@ Be careful! Check that you have...
       lists</h2>
 
       <div class="outline-text-2" id="text-7">
-        <p>FIXME Problem with the tab title.</p>
+        FIXME Problem with the tab title.
       </div>
 
       <div id="outline-container-toc" class="outline-3">
@@ -2073,7 +1979,7 @@ Be careful! Check that you have...
         "section-number-3">7.1</span> Toc macro</h3>
 
         <div class="outline-text-3" id="text-toc">
-          <p>Insert a table of contents.</p>
+          Insert a table of contents.
         </div>
 
         <div id="outline-container-sec-7-1-1" class="outline-4">
@@ -2105,7 +2011,7 @@ Be careful! Check that you have...
           Remarks</h4>
 
           <div class="outline-text-4" id="text-7-1-3">
-            <p>The <code>toc</code> macro <b>can’t be inlined</b> in text.</p>
+            The <code>toc</code> macro <b>can’t be inlined</b> in text.
           </div>
         </div>
 
@@ -2134,11 +2040,103 @@ Be careful! Check that you have...
                   <li><a href="#sec-6">6. Layout</a></li>
 
                   <li><a href="#sec-7">7. Navigation and lists</a></li>
+
+                  <li><a href="#sec-8">8. Dev tools</a></li>
+
+                  <li><a href="#sec-9">9. Contributing</a></li>
+
+                  <li><a href="#sec-10">10. Standard disclaimer</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div id="outline-container-sec-8" class="outline-2">
+      <h2 id="sec-8"><span class="section-number-2">8</span> Dev tools</h2>
+
+      <div class="outline-text-2" id="text-8"></div>
+
+      <div id="outline-container-twitter-share-link-button" class="outline-3">
+        <h3 id="twitter-share-link-button"><a id="sec-8-1" name=
+        "sec-8-1"></a><span class="section-number-3">8.1</span> Twitter “Share
+        a link”</h3>
+
+        <div class="outline-text-3" id="text-twitter-share-link-button">
+          Add a “Share a link” button to your website.
+        </div>
+
+        <div id="outline-container-sec-8-1-1" class="outline-4">
+          <h4 id="sec-8-1-1"><span class="section-number-4">8.1.1</span>
+          Code</h4>
+
+          <div class="outline-text-4" id="text-8-1-1">
+            <div class="org-src-container">
+              <pre class="src src-org">
+<span class=
+"org-org-meta-line">#+MACRO: twitter-share-link-button @@html:&lt;script src="<a href="http://platform.twitter.com/widgets.js">http://platform.twitter.com/widgets.js</a>"&gt;&lt;/script&gt;&lt;a href="<a href="https://twitter.com/share">https://twitter.com/share</a>" class="twitter-share-button" data-via="$1"&gt;Tweet&lt;/a&gt;@@</span>
+</pre>
+            </div>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-8-1-2" class="outline-4">
+          <h4 id="sec-8-1-2"><span class="section-number-4">8.1.2</span>
+          Parameters</h4>
+
+          <div class="outline-text-4" id="text-8-1-2">
+            <ol class="org-ol">
+              <li>Username.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="outline-container-sec-8-1-3" class="outline-4">
+          <h4 id="sec-8-1-3"><span class="section-number-4">8.1.3</span>
+          Examples</h4>
+
+          <div class="outline-text-4" id="text-8-1-3">
+            <p>Insert the Twitter “Share a link” button here:</p>
+
+            <p><script src="http://platform.twitter.com/widgets.js" type=
+            "text/javascript">
+</script><a href="https://twitter.com/share" class="twitter-share-button"
+            data-via="fniessen">Tweet</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="outline-container-sec-9" class="outline-2">
+      <h2 id="sec-9"><span class="section-number-2">9</span> Contributing</h2>
+
+      <div class="outline-text-2" id="text-9">
+        I love contributions! If you’d like to contribute, please send a patch
+        file or submit a pull request via GitHub.
+      </div>
+    </div>
+
+    <div id="outline-container-sec-10" class="outline-2">
+      <h2 id="sec-10"><span class="section-number-2">10</span> Standard
+      disclaimer</h2>
+
+      <div class="outline-text-2" id="text-10">
+        <p>I am furnishing this item “as is”. I do <b>NOT</b> provide <b>ANY
+        WARRANTY</b> of the item whatsoever, whether express, implied, or
+        statutory, including, but not limited to, any warranty of
+        <b>MERCHANTABILITY</b> or <b>FITNESS FOR A PARTICULAR PURPOSE</b> or
+        any warranty that the contents of the item will be error-free.</p>
+
+        <p>In no respect shall I incur any liability for any damages,
+        including, but limited to, direct, indirect, special, or consequential
+        damages arising out of, resulting from, or any way connected to the use
+        of the item, whether or not based upon warranty, contract, tort, or
+        otherwise; whether or not injury was sustained by persons or property
+        or otherwise; and whether or not loss was sustained from, or arose out
+        of, the results of, the item, or any services that may be provided by
+        me.</p>
       </div>
     </div>
   </div>

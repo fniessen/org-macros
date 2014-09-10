@@ -106,6 +106,7 @@ Below is a list of the few macros currently available.
 
 *** Generic macros
 
+- [[#area-chart][area-chart]] macro
 - [[#bar-chart][bar-chart]] macro
 - [[#image][image]] macro
 - =recently-updated= macro
@@ -127,7 +128,11 @@ Below is a list of the few macros currently available.
 - =children= macro (to display child pages)
 - [[#toc][toc]] macro
 
-** Cookie                                                            :noexport:
+*** Dev tools
+
+- [[#twitter-share-link-button][twitter-share-link-button]] macro
+
+** Cookie                                                             :noexport:
 
 #+begin_src org
 # -*- mode: org; -*-
@@ -504,7 +509,54 @@ This is a basic example of the =Loremipsum= text:
 
 * Generic
 
-** Bar chart macro
+** COMMENT Area chart macro
+   :PROPERTIES:
+   :CUSTOM_ID: area-chart
+   :END:
+
+The =area-chart= macro displays a chart.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: area-chart ...
+#+end_src
+
+*** Parameters
+
+1. Path to chart file.
+
+*** Examples
+
+Data to be charted:
+
+#+name: satisfaction
+|                   | 2009 | 2010 | 2011 |
+|-------------------+------+------+------|
+| Very satisfied    |   20 |   23 |   34 |
+| Satisfied         |   40 |   34 |   23 |
+| Dissatisfied      |   25 |   26 |   25 |
+| Very dissatisfied |   15 |   17 |   18 |
+
+Code:
+
+#+name: area-chart
+#+begin_src R :var data=satisfaction :results graphics :file images/area-chart.png :exports both :eval yes
+plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
+grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
+legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
+#+end_src
+
+XXX See https://confluence.atlassian.com/display/DOC/Chart+Macro;jsessionid=E1FA8760BC67BA4A130C1DF8DD4477CE.node2#ChartMacro-AreaCharts
+
+The resulting area chart:
+
+#+results: area-chart
+[[file:bar-chart.png]]
+
+{{{area-chart}}}
+
+** COMMENT Bar chart macro
    :PROPERTIES:
    :CUSTOM_ID: bar-chart
    :END:
@@ -535,11 +587,13 @@ Data to be charted:
 Code:
 
 #+name: bar-chart
-#+begin_src R :var data=income-expenses :results graphics :file bar-chart.png :exports both :eval yes
+#+begin_src R :var data=income-expenses :results graphics :file images/bar-chart.png :exports both :eval yes
 plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
 grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
 legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
 #+end_src
+
+XXX See https://confluence.atlassian.com/display/DOC/Creating+Beautiful+and+Dynamic+Pages#CreatingBeautifulandDynamicPages-Bringingnumberstolife
 
 The resulting bar chart:
 
@@ -729,6 +783,8 @@ This is a useful note...
 ,#+MACRO: end_panel @@html:</p></div>@@
 #+end_src
 
+XXX PanelHeader + PanelContent
+
 *** Parameters
 
 None.
@@ -850,7 +906,32 @@ Insert the TOC here, with one headline level:
 
 {{{toc(1)}}}
 
-* Others                                                             :noexport:
+* Dev tools
+
+** Twitter "Share a link"
+   :PROPERTIES:
+   :CUSTOM_ID: twitter-share-link-button
+   :END:
+
+Add a "Share a link" button to your website.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: twitter-share-link-button @@html:<script src="http://platform.twitter.com/widgets.js"></script><a href="https://twitter.com/share" class="twitter-share-button" data-via="$1">Tweet</a>@@
+#+end_src
+
+*** Parameters
+
+1. Username.
+
+*** Examples
+
+Insert the Twitter "Share a link" button here:
+
+{{{twitter-share-link-button(fniessen)}}}
+
+* Others                                                              :noexport:
 
 Keep a library of helpful CSS classes. Useful for debugging, but should be
 avoided in the release version (separate markup and presentation). Since you
@@ -881,3 +962,23 @@ width75">...</p>~), make use of them debugging your markup.
 .noindent      { margin-left: 0; padding-left: 0; }
 .nobullet      { list-style: none; list-style-image: none; }
 #+end_src
+
+* Contributing
+
+I love contributions!  If you'd like to contribute, please send a patch file or
+submit a pull request via GitHub.
+
+* Standard disclaimer
+
+I am furnishing this item "as is". I do *NOT* provide *ANY WARRANTY* of the item
+whatsoever, whether express, implied, or statutory, including, but not limited
+to, any warranty of *MERCHANTABILITY* or *FITNESS FOR A PARTICULAR PURPOSE* or any
+warranty that the contents of the item will be error-free.
+
+In no respect shall I incur any liability for any damages, including, but
+limited to, direct, indirect, special, or consequential damages arising out of,
+resulting from, or any way connected to the use of the item, whether or not
+based upon warranty, contract, tort, or otherwise; whether or not injury was
+sustained by persons or property or otherwise; and whether or not loss was
+sustained from, or arose out of, the results of, the item, or any services that
+may be provided by me.
