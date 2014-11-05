@@ -13,7 +13,6 @@
 #+PROPERTY: tangle   org-macros.setup
 
 #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
-# #+SETUPFILE: ~/src/org-style/setup/bigblow-local-abs.setup
 
 #+INCLUDE: org-macros.setup
 
@@ -54,8 +53,8 @@ Git repository hosted at GitHub:
 #+end_src
 
 #+begin_info
-As there are Babel code blocks inside the ~org-macros.setup~ file, it needs to be
-loaded via the =#+INCLUDE:= directive, not via a =#+SETUPFILE:=!
+As there are Babel code blocks inside the =org-macros.setup= file, it needs to be
+loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
 #+end_info
 
 ** Usage
@@ -90,7 +89,7 @@ Below is a list of the few macros currently available.
 - [[#email][email]] macro
 - [[#input-file][input-file]] macro
 - [[#modification-time][modification-time]] macro
-- =property(node-property)=
+- ~property(node-property)~
 - [[#time][time]] macro
 - [[#title][title]] macro
 
@@ -109,8 +108,8 @@ Below is a list of the few macros currently available.
 - [[#area-chart][area-chart]] macro
 - [[#bar-chart][bar-chart]] macro
 - [[#image][image]] macro
-- =recently-updated= macro
-- =tasklist= macro
+- ~recently-updated~ macro
+- ~tasklist~ macro
 - [[#version-history][version-history]] macro
 
 *** Layout
@@ -125,7 +124,7 @@ Below is a list of the few macros currently available.
 
 *** Navigation and lists
 
-- =children= macro (to display child pages)
+- ~children~ macro (to display child pages)
 - [[#toc][toc]] macro
 
 *** Dev tools
@@ -145,7 +144,7 @@ Below is a list of the few macros currently available.
    :CUSTOM_ID: author
    :END:
 
-The =author= macro outputs a list of users who have created or edited the
+The ~author~ macro outputs a list of users who have created or edited the
 document.
 
 *** Parameters
@@ -158,14 +157,14 @@ People who have created and edited this document: {{{author}}}.
 
 *** See also
 
-Option =#+AUTHOR:=.
+Option ~#+AUTHOR:~.
 
 ** Date macro
    :PROPERTIES:
    :CUSTOM_ID: date
    :END:
 
-The =date= macro outputs the *date and time* specified in the document.
+The ~date~ macro outputs the *date and time* specified in the document.
 
 *** Parameters
 
@@ -177,7 +176,8 @@ The date of this document is: {{{date}}}.
 
 *** See also
 
-- Option =#+DATE:=.
+- Option ~#+DATE:~ (for the whole document).
+- Property ~:EXPORT_DATE:~ (for specific subtrees).
 - [[#modification-time][modification-time]] macro.
 - [[#time][time]] macro.
 
@@ -186,7 +186,7 @@ The date of this document is: {{{date}}}.
    :CUSTOM_ID: email
    :END:
 
-The =email= macro outputs the email of the author(s).
+The ~email~ macro outputs the email of the author(s).
 
 *** Parameters
 
@@ -198,14 +198,14 @@ The email of this document is: {{{email}}}.
 
 *** See also
 
-Option =#+EMAIL:=.
+Option ~#+EMAIL:~.
 
 ** Input-file macro
    :PROPERTIES:
    :CUSTOM_ID: input-file
    :END:
 
-The =input-file= macro displays the name of the input Org file.
+The ~input-file~ macro displays the name of the input Org file.
 
 *** Parameters
 
@@ -220,12 +220,12 @@ The input file name for this document is: {{{input-file}}}.
    :CUSTOM_ID: modification-time
    :END:
 
-The =modification-time= macro outputs the *modification date and time* /of/ the file
+The ~modification-time~ macro outputs the *modification date and time* /of/ the file
 being exported.
 
 *** Parameters
 
-1. *Format string* understood by =format-time-string=.
+1. *Format string* understood by ~format-time-string~.
 
 *** Examples
 
@@ -241,12 +241,12 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
    :CUSTOM_ID: time
    :END:
 
-The =time= macro outputs the *current date and time* /when/ the document is being
+The ~time~ macro outputs the *current date and time* /when/ the document is being
 exported.
 
 *** Parameters
 
-1. *Format string* understood by =format-time-string=.
+1. *Format string* understood by ~format-time-string~.
 
 *** Examples
 
@@ -262,7 +262,7 @@ This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
    :CUSTOM_ID: title
    :END:
 
-The =title= macro outputs the document title.
+The ~title~ macro outputs the document title.
 
 *** Parameters
 
@@ -274,7 +274,7 @@ The title of this document is: {{{title}}}.
 
 *** See also
 
-Option =#+TITLE:=.
+Option ~#+TITLE:~.
 
 * Basic formatting
 
@@ -283,7 +283,7 @@ Option =#+TITLE:=.
    :CUSTOM_ID: bgcolor
    :END:
 
-The =bgcolor= macro allows you to change the background color of a block of text.
+The ~bgcolor~ macro allows you to change the background color of a block of text.
 
 *** Code
 
@@ -328,7 +328,7 @@ You can also use hexadecimal color codes:
    :CUSTOM_ID: color
    :END:
 
-The =color= macro allows you to change the foreground color of inline text.
+The ~color~ macro allows you to change the foreground color of inline text.
 
 *** Code
 
@@ -373,7 +373,7 @@ You can also use hexadecimal color codes:
    :CUSTOM_ID: fixme
    :END:
 
-The =fixme= macro inserts a "Fix Me!" image (with adequate CSS).
+The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 
 *** Code
 
@@ -414,7 +414,7 @@ testing testing
    :CUSTOM_ID: highlight
    :END:
 
-The =highlight= macro allows you to change the background color of inline text.
+The ~highlight~ macro allows you to change the background color of inline text.
 
 *** Code
 
@@ -459,7 +459,7 @@ You can also use hexadecimal color codes:
    :CUSTOM_ID: hl
    :END:
 
-The =hl= macro allows you to highlight text with a "neon marker" effect.
+The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 
 *** Code
 
@@ -487,7 +487,7 @@ The =hl= macro allows you to highlight text with a "neon marker" effect.
    :CUSTOM_ID: loremipsum
    :END:
 
-The =loremipsum= macro displays one paragraph of meaningless text that you can
+The ~loremipsum~ macro displays one paragraph of meaningless text that you can
 use for demonstration purposes of visual elements such as font, typography or
 layout.
 
@@ -503,7 +503,7 @@ None.
 
 *** Examples
 
-This is a basic example of the =Loremipsum= text:
+This is a basic example of the ~Loremipsum~ text:
 
 {{{loremipsum}}}
 
@@ -514,7 +514,7 @@ This is a basic example of the =Loremipsum= text:
    :CUSTOM_ID: area-chart
    :END:
 
-The =area-chart= macro displays a chart.
+The ~area-chart~ macro displays a chart.
 
 *** Code
 
@@ -554,14 +554,14 @@ The resulting area chart:
 #+results: area-chart
 [[file:bar-chart.png]]
 
-{{{area-chart}}}
+# {{{area-chart}}}
 
 ** COMMENT Bar chart macro
    :PROPERTIES:
    :CUSTOM_ID: bar-chart
    :END:
 
-The =bar-chart= macro displays a chart.
+The ~bar-chart~ macro displays a chart.
 
 *** Code
 
@@ -600,14 +600,14 @@ The resulting bar chart:
 #+results: bar-chart
 [[file:bar-chart.png]]
 
-{{{bar-chart}}}
+# {{{bar-chart}}}
 
 ** Image macro
    :PROPERTIES:
    :CUSTOM_ID: image
    :END:
 
-The =image= macro displays an image.
+The ~image~ macro displays an image.
 
 *** Code
 
@@ -631,7 +631,7 @@ The =image= macro displays an image.
    :CUSTOM_ID: version-history
    :END:
 
-The =version-history= macro inserts the history of (the last 5) updates made to
+The ~version-history~ macro inserts the history of (the last 5) updates made to
 a document: version number, date, author and comment.
 
 XXX + link to View Changes?
@@ -670,7 +670,7 @@ This only will work with *Git repositories*.
    :CUSTOM_ID: collapse
    :END:
 
-The =collapse= macro inserts of collapsed block of text.
+The ~collapse~ macro inserts of collapsed block of text.
 
 *** Code
 
@@ -690,7 +690,7 @@ It can be expanded by clicking a link.
    :CUSTOM_ID: info
    :END:
 
-The =info= macro is useful for including helpful information.
+The ~info~ macro is useful for including helpful information.
 
 *** Code
 
@@ -898,7 +898,7 @@ Insert a table of contents.
 
 *** Remarks
 
-The =toc= macro *can't be inlined* in text.
+The ~toc~ macro *can't be inlined* in text.
 
 *** Examples
 
@@ -929,7 +929,7 @@ Add a "Share a link" button to your website.
 
 Insert the Twitter "Share a link" button here:
 
-{{{twitter-share-link-button(fniessen)}}}
+{{{twitter-share-link-button(f_niessen)}}}
 
 * Others                                                              :noexport:
 
