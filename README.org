@@ -145,9 +145,9 @@ Below is a list of the few macros currently available.
 ** Org built-ins
 
 *** Author macro
-   :PROPERTIES:
-   :CUSTOM_ID: author
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: author
+    :END:
 
 The ~author~ macro outputs a list of users who have created or edited the
 document.
@@ -165,9 +165,9 @@ People who have created and edited this document: {{{author}}}.
 Option ~#+AUTHOR:~.
 
 *** Date macro
-   :PROPERTIES:
-   :CUSTOM_ID: date
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: date
+    :END:
 
 The ~date~ macro outputs the *date and time* specified in the document.
 
@@ -187,9 +187,9 @@ The date of this document is: {{{date}}}.
 - [[#time][time]] macro.
 
 *** Email macro
-   :PROPERTIES:
-   :CUSTOM_ID: email
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: email
+    :END:
 
 The ~email~ macro outputs the email of the author(s).
 
@@ -206,9 +206,9 @@ The email of this document is: {{{email}}}.
 Option ~#+EMAIL:~.
 
 *** Input-file macro
-   :PROPERTIES:
-   :CUSTOM_ID: input-file
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: input-file
+    :END:
 
 The ~input-file~ macro displays the name of the input Org file.
 
@@ -221,9 +221,9 @@ None.
 The input file name for this document is: {{{input-file}}}.
 
 *** Modification-time macro
-   :PROPERTIES:
-   :CUSTOM_ID: modification-time
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: modification-time
+    :END:
 
 The ~modification-time~ macro outputs the *modification date and time* /of/ the file
 being exported.
@@ -242,9 +242,9 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 - [[#time][time]] macro.
 
 *** Time macro
-   :PROPERTIES:
-   :CUSTOM_ID: time
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: time
+    :END:
 
 The ~time~ macro outputs the *current date and time* /when/ the document is being
 exported.
@@ -263,9 +263,9 @@ This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
 - [[#modification-time][modification-time]] macro.
 
 *** Title macro
-   :PROPERTIES:
-   :CUSTOM_ID: title
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: title
+    :END:
 
 The ~title~ macro outputs the document title.
 
@@ -284,9 +284,9 @@ Option ~#+TITLE:~.
 ** Basic formatting
 
 *** BgColor macro
-   :PROPERTIES:
-   :CUSTOM_ID: bgcolor
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: bgcolor
+    :END:
 
 The ~bgcolor~ macro allows you to change the background color of a block of text.
 
@@ -329,9 +329,9 @@ You can also use hexadecimal color codes:
 - [[#hl][hl]] macro
 
 *** Color macro
-   :PROPERTIES:
-   :CUSTOM_ID: color
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: color
+    :END:
 
 The ~color~ macro allows you to change the foreground color of inline text.
 
@@ -374,9 +374,9 @@ You can also use hexadecimal color codes:
 - [[#hl][hl]] macro
 
 *** Fixme macro
-   :PROPERTIES:
-   :CUSTOM_ID: fixme
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: fixme
+    :END:
 
 The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 
@@ -415,9 +415,9 @@ testing testing testing testing testing testing testing testing testing testing
 testing testing
 
 *** Highlight macro
-   :PROPERTIES:
-   :CUSTOM_ID: highlight
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: highlight
+    :END:
 
 The ~highlight~ macro allows you to change the background color of inline text.
 
@@ -460,9 +460,9 @@ You can also use hexadecimal color codes:
 - [[#hl][hl]] macro
 
 *** Hl macro
-   :PROPERTIES:
-   :CUSTOM_ID: hl
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: hl
+    :END:
 
 The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 
@@ -488,9 +488,9 @@ The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 - [[#highlight][highlight]] macro
 
 *** LoremIpsum macro
-   :PROPERTIES:
-   :CUSTOM_ID: loremipsum
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: loremipsum
+    :END:
 
 The ~loremipsum~ macro displays one paragraph of meaningless text that you can
 use for demonstration purposes of visual elements such as font, typography or
@@ -515,9 +515,9 @@ This is a basic example of the ~Loremipsum~ text:
 ** Advanced
 
 *** if-latex macro
-   :PROPERTIES:
-   :CUSTOM_ID: if-latex-else
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: if-latex-else
+    :END:
 
 XXX
 
@@ -539,9 +539,9 @@ XXX
 ** Generic
 
 *** COMMENT Area chart macro
-   :PROPERTIES:
-   :CUSTOM_ID: area-chart
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: area-chart
+    :END:
 
 The ~area-chart~ macro displays a chart.
 
@@ -586,9 +586,9 @@ The resulting area chart:
 # {{{area-chart}}}
 
 *** COMMENT Bar chart macro
-   :PROPERTIES:
-   :CUSTOM_ID: bar-chart
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: bar-chart
+    :END:
 
 The ~bar-chart~ macro displays a chart.
 
@@ -632,9 +632,9 @@ The resulting bar chart:
 # {{{bar-chart}}}
 
 *** Image macro
-   :PROPERTIES:
-   :CUSTOM_ID: image
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: image
+    :END:
 
 The ~image~ macro displays an image.
 
@@ -656,9 +656,9 @@ The ~image~ macro displays an image.
 | {{{image(c.png)}}} | {{{image(d.png)}}} |
 
 *** Version-history macro
-   :PROPERTIES:
-   :CUSTOM_ID: version-history
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: version-history
+    :END:
 
 The ~version-history~ macro inserts the history of (the last 5) updates made to
 a document: version number, date, author and comment.
@@ -695,9 +695,9 @@ This only will work with *Git repositories*.
 ** Layout
 
 *** Collapse macro
-   :PROPERTIES:
-   :CUSTOM_ID: collapse
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: collapse
+    :END:
 
 The ~collapse~ macro inserts of collapsed block of text.
 
@@ -715,9 +715,9 @@ It can be expanded by clicking a link.
 }}}
 
 *** Info macro
-   :PROPERTIES:
-   :CUSTOM_ID: info
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: info
+    :END:
 
 The ~info~ macro is useful for including helpful information.
 
@@ -751,9 +751,9 @@ Did you know...
 #+end_example
 
 *** MiniPage macro
-   :PROPERTIES:
-   :CUSTOM_ID: minipage
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: minipage
+    :END:
 
 **** Code
 
@@ -767,9 +767,9 @@ Did you know...
 **** Examples
 
 *** Note macro
-   :PROPERTIES:
-   :CUSTOM_ID: note
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: note
+    :END:
 
 **** Code
 
@@ -801,9 +801,9 @@ This is a useful note...
 #+end_example
 
 *** Panel macro
-   :PROPERTIES:
-   :CUSTOM_ID: panel
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: panel
+    :END:
 
 **** Code
 
@@ -837,9 +837,9 @@ This is a formatted block of text...
 #+end_example
 
 *** Tip macro
-   :PROPERTIES:
-   :CUSTOM_ID: tip
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: tip
+    :END:
 
 **** Code
 
@@ -871,9 +871,9 @@ Try doing it this way...
 #+end_example
 
 *** Warning macro
-   :PROPERTIES:
-   :CUSTOM_ID: warning
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: warning
+    :END:
 
 **** Code
 
@@ -909,9 +909,9 @@ Be careful! Check that you have...
 FIXME Problem with the tab title.
 
 *** Toc macro
-   :PROPERTIES:
-   :CUSTOM_ID: toc
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: toc
+    :END:
 
 Insert a table of contents.
 
@@ -938,9 +938,9 @@ Insert the TOC here, with one headline level:
 ** Dev tools
 
 *** Twitter "Share a link"
-   :PROPERTIES:
-   :CUSTOM_ID: twitter-share-link-button
-   :END:
+    :PROPERTIES:
+    :CUSTOM_ID: twitter-share-link-button
+    :END:
 
 Add a "Share a link" button to your website.
 
