@@ -104,6 +104,10 @@ Below is a list of the few macros currently available.
 
 - LaTeX keys macro (see menukeys)
 
+**** Advanced
+
+- [[#if-latex-else][if-latex-else]] macro
+
 **** Generic macros
 
 - [[#area-chart][area-chart]] macro
@@ -507,6 +511,30 @@ None.
 This is a basic example of the ~Loremipsum~ text:
 
 {{{loremipsum}}}
+
+** Advanced
+
+*** if-latex macro
+   :PROPERTIES:
+   :CUSTOM_ID: if-latex-else
+   :END:
+
+XXX
+
+**** Code
+
+#+begin_src org
+,#+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
+#+end_src
+
+**** Parameters
+
+1. Code for LaTeX back-end.
+2. Code for other back-ends.
+
+**** Examples
+
+{{{if-latex-else(latex code,something else)}}}
 
 ** Generic
 
