@@ -2,7 +2,7 @@
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
 #+DATE:      2014-01-22 12:34
 #+DESCRIPTION:
-#+KEYWORDS:  org mode, macros
+#+KEYWORDS:  org-mode, macro, examples
 #+LANGUAGE:  en
 
 #+PROPERTY: comments no
