@@ -90,7 +90,7 @@ Below is a list of the few macros currently available.
 - [[#email][email]] macro
 - [[#input-file][input-file]] macro
 - [[#modification-time][modification-time]] macro
-- ~property(node-property)~
+- ~property(node-property)~ macro
 - [[#time][time]] macro
 - [[#title][title]] macro
 
