@@ -17,7 +17,7 @@
 #+MACRO: image \includegraphics{$1}
 
 #+name: version-history
-#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)
+#+begin_src shell :exports none :results silent :colnames '(Version Date Author Comment)
 git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+end_src
 
