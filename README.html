@@ -11,7 +11,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Org-mode" />
   <meta name="author" content="Fabrice Niessen" />
-  <meta name="keywords" content="org mode, macros" />
+  <meta name="keywords" content="org-mode, macro, examples" />
   <link rel="stylesheet" type="text/css" href=
   "http://www.pirilampo.org/styles/bigblow/css/htmlize.css" />
   <link rel="stylesheet" type="text/css" href=
@@ -97,138 +97,25 @@
             <a href="#sec-1">1. Org Macros</a>
 
             <ul>
-              <li>
-                <a href="#sec-1-1">1.1. Overview</a>
+              <li><a href="#sec-1-1">1.1. Overview</a></li>
 
-                <ul>
-                  <li><a href="#sec-1-1-1">1.1.1. Description</a></li>
+              <li><a href="#sec-1-2">1.2. Code</a></li>
 
-                  <li><a href="#sec-1-1-2">1.1.2. Objectives</a></li>
+              <li><a href="#sec-1-3">1.3. Org built-ins</a></li>
 
-                  <li><a href="#sec-1-1-3">1.1.3. Features</a></li>
-                </ul>
-              </li>
+              <li><a href="#sec-1-4">1.4. Basic formatting</a></li>
 
-              <li>
-                <a href="#sec-1-2">1.2. Code</a>
+              <li><a href="#sec-1-5">1.5. Advanced</a></li>
 
-                <ul>
-                  <li><a href="#sec-1-2-1">1.2.1. Checkout</a></li>
+              <li><a href="#sec-1-6">1.6. Generic</a></li>
 
-                  <li><a href="#sec-1-2-2">1.2.2. Installation</a></li>
+              <li><a href="#sec-1-7">1.7. Layout</a></li>
 
-                  <li><a href="#sec-1-2-3">1.2.3. Usage</a></li>
+              <li><a href="#sec-1-8">1.8. Navigation and lists</a></li>
 
-                  <li><a href="#sec-1-2-4">1.2.4. Macros</a></li>
-                </ul>
-              </li>
+              <li><a href="#sec-1-9">1.9. Dev tools</a></li>
 
-              <li>
-                <a href="#sec-1-3">1.3. Org built-ins</a>
-
-                <ul>
-                  <li><a href="#author">1.3.1. Author macro</a></li>
-
-                  <li><a href="#date">1.3.2. Date macro</a></li>
-
-                  <li><a href="#email">1.3.3. Email macro</a></li>
-
-                  <li><a href="#input-file">1.3.4. Input-file macro</a></li>
-
-                  <li><a href="#modification-time">1.3.5. Modification-time
-                  macro</a></li>
-
-                  <li><a href="#time">1.3.6. Time macro</a></li>
-
-                  <li><a href="#title">1.3.7. Title macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-4">1.4. Basic formatting</a>
-
-                <ul>
-                  <li><a href="#bgcolor">1.4.1. BgColor macro</a></li>
-
-                  <li><a href="#color">1.4.2. Color macro</a></li>
-
-                  <li><a href="#fixme">1.4.3. Fixme macro</a></li>
-
-                  <li><a href="#highlight">1.4.4. Highlight macro</a></li>
-
-                  <li><a href="#hl">1.4.5. Hl macro</a></li>
-
-                  <li><a href="#loremipsum">1.4.6. LoremIpsum macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-5">1.5. Advanced</a>
-
-                <ul>
-                  <li><a href="#if-latex-else">1.5.1. if-latex macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-6">1.6. Generic</a>
-
-                <ul>
-                  <li><a href="#image">1.6.1. Image macro</a></li>
-
-                  <li><a href="#version-history">1.6.2. Version-history
-                  macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-7">1.7. Layout</a>
-
-                <ul>
-                  <li><a href="#collapse">1.7.1. Collapse macro</a></li>
-
-                  <li><a href="#info">1.7.2. Info macro</a></li>
-
-                  <li><a href="#minipage">1.7.3. MiniPage macro</a></li>
-
-                  <li><a href="#note">1.7.4. Note macro</a></li>
-
-                  <li><a href="#panel">1.7.5. Panel macro</a></li>
-
-                  <li><a href="#tip">1.7.6. Tip macro</a></li>
-
-                  <li><a href="#warning">1.7.7. Warning macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-8">1.8. Navigation and lists</a>
-
-                <ul>
-                  <li><a href="#toc">1.8.1. Toc macro</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-9">1.9. Dev tools</a>
-
-                <ul>
-                  <li><a href="#twitter-share-link-button">1.9.1. Twitter
-                  “Share a link”</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#sec-1-10">1.10. Contributing</a>
-
-                <ul>
-                  <li><a href="#sec-1-10-1">1.10.1. Issues</a></li>
-
-                  <li><a href="#sec-1-10-2">1.10.2. Patches</a></li>
-
-                  <li><a href="#sec-1-10-3">1.10.3. Donations</a></li>
-                </ul>
-              </li>
+              <li><a href="#sec-1-10">1.10. Contributing</a></li>
 
               <li><a href="#sec-1-11">1.11. License</a></li>
             </ul>
@@ -372,129 +259,126 @@ git clone git@github.com:fniessen/org-macros.git
             <p>Below is a list of the few macros currently available.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-2-4-1" name="sec-1-2-4-1"></a>Org built-ins<br />
+          <div id="outline-container-unnumbered-1" class="outline-5">
+            <h5 id="unnumbered-1">Org built-ins</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-1">
-                <ul class="org-ul">
-                  <li><a href="#author">author</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-1">
+              <ul class="org-ul">
+                <li><a href="#author">author</a> macro</li>
 
-                  <li><a href="#date">date</a> macro</li>
+                <li><a href="#date">date</a> macro</li>
 
-                  <li><a href="#email">email</a> macro</li>
+                <li><a href="#email">email</a> macro</li>
 
-                  <li><a href="#input-file">input-file</a> macro</li>
+                <li><a href="#input-file">input-file</a> macro</li>
 
-                  <li><a href="#modification-time">modification-time</a>
-                  macro</li>
+                <li><a href="#modification-time">modification-time</a>
+                macro</li>
 
-                  <li><code>property(node-property)</code></li>
+                <li><code>property(node-property)</code> macro</li>
 
-                  <li><a href="#time">time</a> macro</li>
+                <li><a href="#time">time</a> macro</li>
 
-                  <li><a href="#title">title</a> macro</li>
-                </ul>
-              </div>
-            </li>
+                <li><a href="#title">title</a> macro</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-2" name="sec-1-2-4-2"></a>Basic formatting<br />
+          <div id="outline-container-unnumbered-2" class="outline-5">
+            <h5 id="unnumbered-2">Basic formatting</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-2">
-                <ul class="org-ul">
-                  <li><a href="#bgcolor">bgcolor</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-2">
+              <ul class="org-ul">
+                <li><a href="#bgcolor">bgcolor</a> macro</li>
 
-                  <li><a href="#color">color</a> macro</li>
+                <li><a href="#color">color</a> macro</li>
 
-                  <li><a href="#fixme">fixme</a> macro</li>
+                <li><a href="#fixme">fixme</a> macro</li>
 
-                  <li><a href="#highlight">highlight</a> macro</li>
+                <li><a href="#highlight">highlight</a> macro</li>
 
-                  <li><a href="#loremipsum">loremipsum</a> macro</li>
+                <li><a href="#loremipsum">loremipsum</a> macro</li>
 
-                  <li>LaTeX keys macro (see menukeys)</li>
-                </ul>
-              </div>
-            </li>
+                <li>LaTeX keys macro (see menukeys)</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-3" name="sec-1-2-4-3"></a>Advanced<br />
+          <div id="outline-container-unnumbered-3" class="outline-5">
+            <h5 id="unnumbered-3">Advanced</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-3">
-                <ul class="org-ul">
-                  <li><a href="#if-latex-else">if-latex-else</a> macro</li>
-                </ul>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-3">
+              <ul class="org-ul">
+                <li><a href="#if-latex-else">if-latex-else</a> macro</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-4" name="sec-1-2-4-4"></a>Generic macros<br />
+          <div id="outline-container-unnumbered-4" class="outline-5">
+            <h5 id="unnumbered-4">Generic macros</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-4">
-                <ul class="org-ul">
-                  <li><i>area-chart</i> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-4">
+              <ul class="org-ul">
+                <li><i>area-chart</i> macro</li>
 
-                  <li><i>bar-chart</i> macro</li>
+                <li><i>bar-chart</i> macro</li>
 
-                  <li><a href="#image">image</a> macro</li>
+                <li><a href="#image">image</a> macro</li>
 
-                  <li><code>recently-updated</code> macro</li>
+                <li><code>recently-updated</code> macro</li>
 
-                  <li><code>tasklist</code> macro</li>
+                <li><code>tasklist</code> macro</li>
 
-                  <li><a href="#version-history">version-history</a> macro</li>
-                </ul>
-              </div>
-            </li>
+                <li><a href="#version-history">version-history</a> macro</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-5" name="sec-1-2-4-5"></a>Layout<br />
+          <div id="outline-container-unnumbered-5" class="outline-5">
+            <h5 id="unnumbered-5">Layout</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-5">
-                <ul class="org-ul">
-                  <li><a href="#collapse">collapse</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-5">
+              <ul class="org-ul">
+                <li><a href="#collapse">collapse</a> macro</li>
 
-                  <li><a href="#info">info</a> macro</li>
+                <li><a href="#info">info</a> macro</li>
 
-                  <li><a href="#minipage">minipage</a> macro</li>
+                <li><a href="#minipage">minipage</a> macro</li>
 
-                  <li><a href="#note">note</a> macro</li>
+                <li><a href="#note">note</a> macro</li>
 
-                  <li><a href="#panel">panel</a> macro</li>
+                <li><a href="#panel">panel</a> macro</li>
 
-                  <li><a href="#tip">tip</a> macro</li>
+                <li><a href="#tip">tip</a> macro</li>
 
-                  <li><a href="#warning">warning</a> macro</li>
-                </ul>
-              </div>
-            </li>
+                <li><a href="#warning">warning</a> macro</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-6" name="sec-1-2-4-6"></a>Navigation and
-              lists<br />
+          <div id="outline-container-unnumbered-6" class="outline-5">
+            <h5 id="unnumbered-6">Navigation and lists</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-6">
-                <ul class="org-ul">
-                  <li><code>children</code> macro (to display child pages)</li>
+            <div class="outline-text-5" id="text-unnumbered-6">
+              <ul class="org-ul">
+                <li><code>children</code> macro (to display child pages)</li>
 
-                  <li><a href="#toc">toc</a> macro</li>
-                </ul>
-              </div>
-            </li>
+                <li><a href="#toc">toc</a> macro</li>
+              </ul>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-2-4-7" name="sec-1-2-4-7"></a>Dev tools<br />
+          <div id="outline-container-unnumbered-7" class="outline-5">
+            <h5 id="unnumbered-7">Dev tools</h5>
 
-              <div class="outline-text-5" id="text-1-2-4-7">
-                <ul class="org-ul">
-                  <li><a href=
-                  "#twitter-share-link-button">twitter-share-link-button</a>
-                  macro</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-7">
+              <ul class="org-ul">
+                <li><a href=
+                "#twitter-share-link-button">twitter-share-link-button</a>
+                macro</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -513,32 +397,30 @@ git clone git@github.com:fniessen/org-macros.git
             created or edited the document.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-1-1" name="sec-1-3-1-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-8" class="outline-5">
+            <h5 id="unnumbered-8">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-1-1">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-8">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-1-2" name="sec-1-3-1-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-9" class="outline-5">
+            <h5 id="unnumbered-9">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-1-2">
-                <p>People who have created and edited this document: Fabrice
-                Niessen.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-9">
+              <p>People who have created and edited this document: Fabrice
+              Niessen.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-1-3" name="sec-1-3-1-3"></a>See also<br />
+          <div id="outline-container-unnumbered-10" class="outline-5">
+            <h5 id="unnumbered-10">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-1-3">
-                <p>Option <code>#+AUTHOR:</code>.</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-10">
+              <p>Option <code>#+AUTHOR:</code>.</p>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-date" class="outline-4">
@@ -550,42 +432,39 @@ git clone git@github.com:fniessen/org-macros.git
             specified in the document.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-2-1" name="sec-1-3-2-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-11" class="outline-5">
+            <h5 id="unnumbered-11">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-2-1">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-11">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-2-2" name="sec-1-3-2-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-12" class="outline-5">
+            <h5 id="unnumbered-12">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-2-2">
-                <p>The date of this document is: 2014-01-22 12:34.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-12">
+              <p>The date of this document is: 2014-01-22 12:34.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-2-3" name="sec-1-3-2-3"></a>See also<br />
+          <div id="outline-container-unnumbered-13" class="outline-5">
+            <h5 id="unnumbered-13">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-2-3">
-                <ul class="org-ul">
-                  <li>Option <code>#+DATE:</code> (for the whole
-                  document).</li>
+            <div class="outline-text-5" id="text-unnumbered-13">
+              <ul class="org-ul">
+                <li>Option <code>#+DATE:</code> (for the whole document).</li>
 
-                  <li>Property <code>:EXPORT_DATE:</code> (for specific
-                  subtrees).</li>
+                <li>Property <code>:EXPORT_DATE:</code> (for specific
+                subtrees).</li>
 
-                  <li><a href="#modification-time">modification-time</a>
-                  macro.</li>
+                <li><a href="#modification-time">modification-time</a>
+                macro.</li>
 
-                  <li><a href="#time">time</a> macro.</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#time">time</a> macro.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-email" class="outline-4">
@@ -597,32 +476,30 @@ git clone git@github.com:fniessen/org-macros.git
             author(s).</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-3-1" name="sec-1-3-3-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-14" class="outline-5">
+            <h5 id="unnumbered-14">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-3-1">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-14">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-3-2" name="sec-1-3-3-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-15" class="outline-5">
+            <h5 id="unnumbered-15">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-3-2">
-                <p>The email of this document is: (concat “fniessen” at-sign
-                “pirilampo.org”).</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-15">
+              <p>The email of this document is: (concat “fniessen” at-sign
+              “pirilampo.org”).</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-3-3" name="sec-1-3-3-3"></a>See also<br />
+          <div id="outline-container-unnumbered-16" class="outline-5">
+            <h5 id="unnumbered-16">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-3-3">
-                <p>Option <code>#+EMAIL:</code>.</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-16">
+              <p>Option <code>#+EMAIL:</code>.</p>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-input-file" class="outline-4">
@@ -635,23 +512,21 @@ git clone git@github.com:fniessen/org-macros.git
             Org file.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-4-1" name="sec-1-3-4-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-17" class="outline-5">
+            <h5 id="unnumbered-17">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-4-1">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-17">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-4-2" name="sec-1-3-4-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-18" class="outline-5">
+            <h5 id="unnumbered-18">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-4-2">
-                <p>The input file name for this document is: README.org.</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-18">
+              <p>The input file name for this document is: README.org.</p>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-modification-time" class="outline-4">
@@ -665,39 +540,36 @@ git clone git@github.com:fniessen/org-macros.git
             exported.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-5-1" name="sec-1-3-5-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-19" class="outline-5">
+            <h5 id="unnumbered-19">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-5-1">
-                <ol class="org-ol">
-                  <li><b>Format string</b> understood by
-                  <code>format-time-string</code>.</li>
-                </ol>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-19">
+              <ol class="org-ol">
+                <li><b>Format string</b> understood by
+                <code>format-time-string</code>.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-5-2" name="sec-1-3-5-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-20" class="outline-5">
+            <h5 id="unnumbered-20">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-5-2">
-                <p>This document was last modified on: 2014-11-25 Tue
-                16:39.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-20">
+              <p>This document was last modified on: 2014-12-30 Tue 16:05.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-5-3" name="sec-1-3-5-3"></a>See also<br />
+          <div id="outline-container-unnumbered-21" class="outline-5">
+            <h5 id="unnumbered-21">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-5-3">
-                <ul class="org-ul">
-                  <li><a href="#date">date</a> macro.</li>
+            <div class="outline-text-5" id="text-unnumbered-21">
+              <ul class="org-ul">
+                <li><a href="#date">date</a> macro.</li>
 
-                  <li><a href="#time">time</a> macro.</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#time">time</a> macro.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-time" class="outline-4">
@@ -709,40 +581,37 @@ git clone git@github.com:fniessen/org-macros.git
             time</b> <i>when</i> the document is being exported.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-6-1" name="sec-1-3-6-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-22" class="outline-5">
+            <h5 id="unnumbered-22">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-6-1">
-                <ol class="org-ol">
-                  <li><b>Format string</b> understood by
-                  <code>format-time-string</code>.</li>
-                </ol>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-22">
+              <ol class="org-ol">
+                <li><b>Format string</b> understood by
+                <code>format-time-string</code>.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-6-2" name="sec-1-3-6-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-23" class="outline-5">
+            <h5 id="unnumbered-23">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-6-2">
-                <p>This document was last exported on: 2014-11-25 Tue
-                16:39.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-23">
+              <p>This document was last exported on: 2014-12-30 Tue 16:05.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-6-3" name="sec-1-3-6-3"></a>See also<br />
+          <div id="outline-container-unnumbered-24" class="outline-5">
+            <h5 id="unnumbered-24">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-6-3">
-                <ul class="org-ul">
-                  <li><a href="#date">date</a> macro.</li>
+            <div class="outline-text-5" id="text-unnumbered-24">
+              <ul class="org-ul">
+                <li><a href="#date">date</a> macro.</li>
 
-                  <li><a href="#modification-time">modification-time</a>
-                  macro.</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#modification-time">modification-time</a>
+                macro.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-title" class="outline-4">
@@ -753,31 +622,29 @@ git clone git@github.com:fniessen/org-macros.git
             <p>The <code>title</code> macro outputs the document title.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-3-7-1" name="sec-1-3-7-1"></a>Parameters<br />
+          <div id="outline-container-unnumbered-25" class="outline-5">
+            <h5 id="unnumbered-25">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-3-7-1">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-25">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-7-2" name="sec-1-3-7-2"></a>Examples<br />
+          <div id="outline-container-unnumbered-26" class="outline-5">
+            <h5 id="unnumbered-26">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-3-7-2">
-                <p>The title of this document is: .</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-26">
+              <p>The title of this document is: .</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-3-7-3" name="sec-1-3-7-3"></a>See also<br />
+          <div id="outline-container-unnumbered-27" class="outline-5">
+            <h5 id="unnumbered-27">See also</h5>
 
-              <div class="outline-text-5" id="text-1-3-7-3">
-                <p>Option <code>#+TITLE:</code>.</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-27">
+              <p>Option <code>#+TITLE:</code>.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -796,105 +663,103 @@ git clone git@github.com:fniessen/org-macros.git
             background color of a block of text.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-1-1" name="sec-1-4-1-1"></a>Code<br />
+          <div id="outline-container-unnumbered-28" class="outline-5">
+            <h5 id="unnumbered-28">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-1-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-28">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: bgcolor @@html:&lt;div style="background-color: $1;"&gt;$2&lt;/div&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-1-2" name="sec-1-4-1-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-29" class="outline-5">
+            <h5 id="unnumbered-29">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-1-2">
-                <ol class="org-ol">
-                  <li>Color name or hexadecimal code.</li>
+            <div class="outline-text-5" id="text-unnumbered-29">
+              <ol class="org-ol">
+                <li>Color name or hexadecimal code.</li>
 
-                  <li>Text you want to color.</li>
-                </ol>
+                <li>Text you want to color.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-30" class="outline-5">
+            <h5 id="unnumbered-30">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-30">
+              <div style="background-color: red;">
+                This information is important.
               </div>
-            </li>
 
-            <li>
-              <a id="sec-1-4-1-3" name="sec-1-4-1-3"></a>Examples<br />
-
-              <div class="outline-text-5" id="text-1-4-1-3">
-                <div style="background-color: red;">
-                  This information is important.
-                </div>
-
-                <div style="background-color: #E0E0E0;">
-                  This other isn't.
-                </div>
-
-                <p>Common color names are supported by most Org exporters
-                (HTML, LaTeX):</p>
-
-                <div style="background-color: red;">
-                  red
-                </div>
-
-                <div style="background-color: orange;">
-                  orange
-                </div>
-
-                <div style="background-color: yellow;">
-                  yellow
-                </div>
-
-                <div style="background-color: green;">
-                  green
-                </div>
-
-                <div style="background-color: blue;">
-                  blue
-                </div>
-
-                <div style="background-color: purple;">
-                  purple
-                </div>
-
-                <div style="background-color: violet;">
-                  violet
-                </div>
-
-                <p>You can also use hexadecimal color codes:</p>
-
-                <div style="background-color: #FF0000;">
-                  #FF0000
-                </div>
-
-                <div style="background-color: #00FF00;">
-                  #00FF00
-                </div>
-
-                <div style="background-color: #0000FF;">
-                  #0000FF
-                </div>
+              <div style="background-color: #E0E0E0;">
+                This other isn't.
               </div>
-            </li>
 
-            <li>
-              <a id="sec-1-4-1-4" name="sec-1-4-1-4"></a>See also<br />
+              <p>Common color names are supported by most Org exporters (HTML,
+              LaTeX):</p>
 
-              <div class="outline-text-5" id="text-1-4-1-4">
-                <ul class="org-ul">
-                  <li><a href="#color">color</a> macro</li>
-
-                  <li><a href="#highlight">highlight</a> macro</li>
-
-                  <li><a href="#hl">hl</a> macro</li>
-                </ul>
+              <div style="background-color: red;">
+                red
               </div>
-            </li>
-          </ol>
+
+              <div style="background-color: orange;">
+                orange
+              </div>
+
+              <div style="background-color: yellow;">
+                yellow
+              </div>
+
+              <div style="background-color: green;">
+                green
+              </div>
+
+              <div style="background-color: blue;">
+                blue
+              </div>
+
+              <div style="background-color: purple;">
+                purple
+              </div>
+
+              <div style="background-color: violet;">
+                violet
+              </div>
+
+              <p>You can also use hexadecimal color codes:</p>
+
+              <div style="background-color: #FF0000;">
+                #FF0000
+              </div>
+
+              <div style="background-color: #00FF00;">
+                #00FF00
+              </div>
+
+              <div style="background-color: #0000FF;">
+                #0000FF
+              </div>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-31" class="outline-5">
+            <h5 id="unnumbered-31">See also</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-31">
+              <ul class="org-ul">
+                <li><a href="#color">color</a> macro</li>
+
+                <li><a href="#highlight">highlight</a> macro</li>
+
+                <li><a href="#hl">hl</a> macro</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-color" class="outline-4">
@@ -906,73 +771,69 @@ git clone git@github.com:fniessen/org-macros.git
             color of inline text.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-2-1" name="sec-1-4-2-1"></a>Code<br />
+          <div id="outline-container-unnumbered-32" class="outline-5">
+            <h5 id="unnumbered-32">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-2-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-32">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: color @@html:&lt;span style="color: $1"&gt;$2&lt;/span&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-2-2" name="sec-1-4-2-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-33" class="outline-5">
+            <h5 id="unnumbered-33">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-2-2">
-                <ol class="org-ol">
-                  <li>Color name or hexadecimal code.</li>
+            <div class="outline-text-5" id="text-unnumbered-33">
+              <ol class="org-ol">
+                <li>Color name or hexadecimal code.</li>
 
-                  <li>Text you want to color.</li>
-                </ol>
-              </div>
-            </li>
+                <li>Text you want to color.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-2-3" name="sec-1-4-2-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-34" class="outline-5">
+            <h5 id="unnumbered-34">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-4-2-3">
-                <p><span style="color: red">This information is
-                important.</span> <span style="color: #E0E0E0">This other
-                isn't.</span></p>
+            <div class="outline-text-5" id="text-unnumbered-34">
+              <p><span style="color: red">This information is important.</span>
+              <span style="color: #E0E0E0">This other isn't.</span></p>
 
-                <p>Common color names are supported by most Org exporters
-                (HTML, LaTeX):</p>
+              <p>Common color names are supported by most Org exporters (HTML,
+              LaTeX):</p>
 
-                <p><span style="color: red">red</span> <span style=
-                "color: orange">orange</span> <span style=
-                "color: yellow">yellow</span> <span style=
-                "color: green">green</span> <span style=
-                "color: blue">blue</span> <span style=
-                "color: purple">purple</span> <span style=
-                "color: violet">violet</span></p>
+              <p><span style="color: red">red</span> <span style=
+              "color: orange">orange</span> <span style=
+              "color: yellow">yellow</span> <span style=
+              "color: green">green</span> <span style="color: blue">blue</span>
+              <span style="color: purple">purple</span> <span style=
+              "color: violet">violet</span></p>
 
-                <p>You can also use hexadecimal color codes:</p>
+              <p>You can also use hexadecimal color codes:</p>
 
-                <p><span style="color: #FF0000">#FF0000</span> <span style=
-                "color: #00FF00">#00FF00</span> <span style=
-                "color: #0000FF">#0000FF</span></p>
-              </div>
-            </li>
+              <p><span style="color: #FF0000">#FF0000</span> <span style=
+              "color: #00FF00">#00FF00</span> <span style=
+              "color: #0000FF">#0000FF</span></p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-2-4" name="sec-1-4-2-4"></a>See also<br />
+          <div id="outline-container-unnumbered-35" class="outline-5">
+            <h5 id="unnumbered-35">See also</h5>
 
-              <div class="outline-text-5" id="text-1-4-2-4">
-                <ul class="org-ul">
-                  <li><a href="#bgcolor">bgcolor</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-35">
+              <ul class="org-ul">
+                <li><a href="#bgcolor">bgcolor</a> macro</li>
 
-                  <li><a href="#highlight">highlight</a> macro</li>
+                <li><a href="#highlight">highlight</a> macro</li>
 
-                  <li><a href="#hl">hl</a> macro</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#hl">hl</a> macro</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-fixme" class="outline-4">
@@ -984,22 +845,21 @@ git clone git@github.com:fniessen/org-macros.git
             adequate CSS).</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-3-1" name="sec-1-4-3-1"></a>Code<br />
+          <div id="outline-container-unnumbered-36" class="outline-5">
+            <h5 id="unnumbered-36">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-3-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-36">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span class="org-leuven-highlight"><span class="org-org-meta-line">FIXME</span></span><span class="org-org-meta-line">&lt;/span&gt;@@</span>
 </pre>
-                </div>
+              </div>
 
-                <p>CSS example:</p>
+              <p>CSS example:</p>
 
-                <div class="org-src-container">
-                  <pre class="src src-css">
+              <div class="org-src-container">
+                <pre class="src src-css">
 <span class="org-css-selector">.</span><span class=
 "org-leuven-highlight"><span class=
 "org-css-selector">fixme</span></span><span class="org-css-selector"> </span>{
@@ -1014,35 +874,33 @@ git clone git@github.com:fniessen/org-macros.git
     <span class="org-css-property">width</span>: 82px;
 }
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-3-2" name="sec-1-4-3-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-37" class="outline-5">
+            <h5 id="unnumbered-37">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-3-2">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-37">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-3-3" name="sec-1-4-3-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-38" class="outline-5">
+            <h5 id="unnumbered-38">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-4-3-3">
-                <p><span class="fixme">FIXME</span> Delete this…</p>
+            <div class="outline-text-5" id="text-unnumbered-38">
+              <p><span class="fixme">FIXME</span> Delete this…</p>
 
-                <p>Testing testing testing testing testing testing testing
-                testing testing testing testing testing testing testing testing
-                testing testing testing testing testing testing testing testing
-                testing testing <span class="fixme">FIXME</span> testing
-                testing testing testing testing testing testing testing testing
-                testing testing testing testing testing testing testing testing
-                testing testing testing testing testing testing testing
-                testing</p>
-              </div>
-            </li>
-          </ol>
+              <p>Testing testing testing testing testing testing testing
+              testing testing testing testing testing testing testing testing
+              testing testing testing testing testing testing testing testing
+              testing testing <span class="fixme">FIXME</span> testing testing
+              testing testing testing testing testing testing testing testing
+              testing testing testing testing testing testing testing testing
+              testing testing testing testing testing testing testing</p>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-highlight" class="outline-4">
@@ -1055,73 +913,71 @@ git clone git@github.com:fniessen/org-macros.git
             background color of inline text.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-4-1" name="sec-1-4-4-1"></a>Code<br />
+          <div id="outline-container-unnumbered-39" class="outline-5">
+            <h5 id="unnumbered-39">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-4-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-39">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: highlight @@html:&lt;span style="background-color: $1;"&gt;$2&lt;/span&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-4-2" name="sec-1-4-4-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-40" class="outline-5">
+            <h5 id="unnumbered-40">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-4-2">
-                <ol class="org-ol">
-                  <li>Color name or hexadecimal code.</li>
+            <div class="outline-text-5" id="text-unnumbered-40">
+              <ol class="org-ol">
+                <li>Color name or hexadecimal code.</li>
 
-                  <li>Text you want to color.</li>
-                </ol>
-              </div>
-            </li>
+                <li>Text you want to color.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-4-3" name="sec-1-4-4-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-41" class="outline-5">
+            <h5 id="unnumbered-41">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-4-4-3">
-                <p><span style="background-color: red;">This information is
-                important.</span> <span style="background-color: #E0E0E0;">This
-                other isn't.</span></p>
+            <div class="outline-text-5" id="text-unnumbered-41">
+              <p><span style="background-color: red;">This information is
+              important.</span> <span style="background-color: #E0E0E0;">This
+              other isn't.</span></p>
 
-                <p>Common color names are supported by most Org exporters
-                (HTML, LaTeX):</p>
+              <p>Common color names are supported by most Org exporters (HTML,
+              LaTeX):</p>
 
-                <p><span style="background-color: red;">red</span> <span style=
-                "background-color: orange;">orange</span> <span style=
-                "background-color: yellow;">yellow</span> <span style=
-                "background-color: green;">green</span> <span style=
-                "background-color: blue;">blue</span> <span style=
-                "background-color: purple;">purple</span> <span style=
-                "background-color: violet;">violet</span></p>
+              <p><span style="background-color: red;">red</span> <span style=
+              "background-color: orange;">orange</span> <span style=
+              "background-color: yellow;">yellow</span> <span style=
+              "background-color: green;">green</span> <span style=
+              "background-color: blue;">blue</span> <span style=
+              "background-color: purple;">purple</span> <span style=
+              "background-color: violet;">violet</span></p>
 
-                <p>You can also use hexadecimal color codes:</p>
+              <p>You can also use hexadecimal color codes:</p>
 
-                <p><span style="background-color: #FF0000;">#FF0000</span>
-                <span style="background-color: #00FF00;">#00FF00</span>
-                <span style="background-color: #0000FF;">#0000FF</span></p>
-              </div>
-            </li>
+              <p><span style="background-color: #FF0000;">#FF0000</span>
+              <span style="background-color: #00FF00;">#00FF00</span>
+              <span style="background-color: #0000FF;">#0000FF</span></p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-4-4" name="sec-1-4-4-4"></a>See also<br />
+          <div id="outline-container-unnumbered-42" class="outline-5">
+            <h5 id="unnumbered-42">See also</h5>
 
-              <div class="outline-text-5" id="text-1-4-4-4">
-                <ul class="org-ul">
-                  <li><a href="#bgcolor">bgcolor</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-42">
+              <ul class="org-ul">
+                <li><a href="#bgcolor">bgcolor</a> macro</li>
 
-                  <li><a href="#color">color</a> macro</li>
+                <li><a href="#color">color</a> macro</li>
 
-                  <li><a href="#hl">hl</a> macro</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#hl">hl</a> macro</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-hl" class="outline-4">
@@ -1133,54 +989,52 @@ git clone git@github.com:fniessen/org-macros.git
             “neon marker” effect.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-5-1" name="sec-1-4-5-1"></a>Code<br />
+          <div id="outline-container-unnumbered-43" class="outline-5">
+            <h5 id="unnumbered-43">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-5-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-43">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class="org-org-meta-line">#+MACRO: hl highlight(#FFFF00,$1)</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-5-2" name="sec-1-4-5-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-44" class="outline-5">
+            <h5 id="unnumbered-44">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-5-2">
-                <ol class="org-ol">
-                  <li>Color name or hexadecimal code.</li>
+            <div class="outline-text-5" id="text-unnumbered-44">
+              <ol class="org-ol">
+                <li>Color name or hexadecimal code.</li>
 
-                  <li>Text you want to color.</li>
-                </ol>
-              </div>
-            </li>
+                <li>Text you want to color.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-5-3" name="sec-1-4-5-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-45" class="outline-5">
+            <h5 id="unnumbered-45">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-4-5-3">
-                <p><span style="background-color: #FFFF00;">This information is
-                important.</span></p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-45">
+              <p><span style="background-color: #FFFF00;">This information is
+              important.</span></p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-5-4" name="sec-1-4-5-4"></a>See also<br />
+          <div id="outline-container-unnumbered-46" class="outline-5">
+            <h5 id="unnumbered-46">See also</h5>
 
-              <div class="outline-text-5" id="text-1-4-5-4">
-                <ul class="org-ul">
-                  <li><a href="#bgcolor">bgcolor</a> macro</li>
+            <div class="outline-text-5" id="text-unnumbered-46">
+              <ul class="org-ul">
+                <li><a href="#bgcolor">bgcolor</a> macro</li>
 
-                  <li><a href="#color">color</a> macro</li>
+                <li><a href="#color">color</a> macro</li>
 
-                  <li><a href="#highlight">highlight</a> macro</li>
-                </ul>
-              </div>
-            </li>
-          </ol>
+                <li><a href="#highlight">highlight</a> macro</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-loremipsum" class="outline-4">
@@ -1194,46 +1048,44 @@ git clone git@github.com:fniessen/org-macros.git
             visual elements such as font, typography or layout.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-4-6-1" name="sec-1-4-6-1"></a>Code<br />
+          <div id="outline-container-unnumbered-47" class="outline-5">
+            <h5 id="unnumbered-47">Code</h5>
 
-              <div class="outline-text-5" id="text-1-4-6-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-47">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-6-2" name="sec-1-4-6-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-48" class="outline-5">
+            <h5 id="unnumbered-48">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-4-6-2">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-48">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-4-6-3" name="sec-1-4-6-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-49" class="outline-5">
+            <h5 id="unnumbered-49">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-4-6-3">
-                <p>This is a basic example of the <code>Loremipsum</code>
-                text:</p>
+            <div class="outline-text-5" id="text-unnumbered-49">
+              <p>This is a basic example of the <code>Loremipsum</code>
+              text:</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.</p>
-              </div>
-            </li>
-          </ol>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est
+              laborum.</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1252,40 +1104,38 @@ git clone git@github.com:fniessen/org-macros.git
             <p>XXX</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-5-1-1" name="sec-1-5-1-1"></a>Code<br />
+          <div id="outline-container-unnumbered-50" class="outline-5">
+            <h5 id="unnumbered-50">Code</h5>
 
-              <div class="outline-text-5" id="text-1-5-1-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-50">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-5-1-2" name="sec-1-5-1-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-51" class="outline-5">
+            <h5 id="unnumbered-51">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-5-1-2">
-                <ol class="org-ol">
-                  <li>Code for LaTeX back-end.</li>
+            <div class="outline-text-5" id="text-unnumbered-51">
+              <ol class="org-ol">
+                <li>Code for LaTeX back-end.</li>
 
-                  <li>Code for other back-ends.</li>
-                </ol>
-              </div>
-            </li>
+                <li>Code for other back-ends.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-5-1-3" name="sec-1-5-1-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-52" class="outline-5">
+            <h5 id="unnumbered-52">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-5-1-3">
-                <p>something else</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-52">
+              <p>something else</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1302,59 +1152,57 @@ git clone git@github.com:fniessen/org-macros.git
             <p>The <code>image</code> macro displays an image.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-6-1-1" name="sec-1-6-1-1"></a>Code<br />
+          <div id="outline-container-unnumbered-59" class="outline-5">
+            <h5 id="unnumbered-59">Code</h5>
 
-              <div class="outline-text-5" id="text-1-6-1-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-59">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class="org-org-meta-line">#+MACRO: image \includegraphics{$1}</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-6-1-2" name="sec-1-6-1-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-60" class="outline-5">
+            <h5 id="unnumbered-60">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-6-1-2">
-                <ol class="org-ol">
-                  <li>Path to image file.</li>
-                </ol>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-60">
+              <ol class="org-ol">
+                <li>Path to image file.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-6-1-3" name="sec-1-6-1-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-61" class="outline-5">
+            <h5 id="unnumbered-61">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-6-1-3">
-                <p>\includegraphics{}</p>
+            <div class="outline-text-5" id="text-unnumbered-61">
+              <p>\includegraphics{}</p>
 
-                <table border="2" cellspacing="0" cellpadding="6" rules=
-                "groups" frame="hsides">
-                  <colgroup>
-                    <col class="left" />
-                    <col class="left" />
-                  </colgroup>
+              <table border="2" cellspacing="0" cellpadding="6" rules="groups"
+              frame="hsides">
+                <colgroup>
+                  <col class="left" />
+                  <col class="left" />
+                </colgroup>
 
-                  <tbody>
-                    <tr>
-                      <td class="left">\includegraphics{a.png}</td>
+                <tbody>
+                  <tr>
+                    <td class="left">\includegraphics{a.png}</td>
 
-                      <td class="left">\includegraphics{b.png}</td>
-                    </tr>
+                    <td class="left">\includegraphics{b.png}</td>
+                  </tr>
 
-                    <tr>
-                      <td class="left">\includegraphics{c.png}</td>
+                  <tr>
+                    <td class="left">\includegraphics{c.png}</td>
 
-                      <td class="left">\includegraphics{d.png}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </li>
-          </ol>
+                    <td class="left">\includegraphics{d.png}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-version-history" class="outline-4">
@@ -1370,16 +1218,15 @@ git clone git@github.com:fniessen/org-macros.git
             <p>XXX + link to View Changes?</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-6-2-1" name="sec-1-6-2-1"></a>Code<br />
+          <div id="outline-container-unnumbered-62" class="outline-5">
+            <h5 id="unnumbered-62">Code</h5>
 
-              <div class="outline-text-5" id="text-1-6-2-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-62">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class="org-org-meta-line">#+name: version-history</span>
 <span class=
-"org-org-block-begin-line">#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)</span>
+"org-org-block-begin-line">#+begin_src shell :exports none :results silent :colnames '(Version Date Author Comment)</span>
 git log --pretty=format:<span class=
 "org-string">"%h%x09%ad%x09%an%x09%s"</span> --date=short | head -n 5
 <span class="org-org-block-end-line">#+end_src</span>
@@ -1387,33 +1234,34 @@ git log --pretty=format:<span class=
 <span class=
 "org-org-meta-line">#+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]</span>
 </pre>
-                </div>
-
-                <div class="tip">
-                  <p>We chose an inline Babel call so that the macro can be
-                  used in a paragraph.</p>
-                </div>
               </div>
-            </li>
 
-            <li>
-              <a id="sec-1-6-2-2" name="sec-1-6-2-2"></a>Parameters<br />
-
-              <div class="outline-text-5" id="text-1-6-2-2">
-                <p>None.</p>
+              <div class="tip">
+                <p>We chose an inline Babel call so that the macro can be used
+                in a paragraph.</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-6-2-3" name="sec-1-6-2-3"></a>Remarks<br />
+          <div id="outline-container-unnumbered-63" class="outline-5">
+            <h5 id="unnumbered-63">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-6-2-3">
-                <p>This only will work with <b>Git repositories</b>.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-63">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li><a id="sec-1-6-2-4" name="sec-1-6-2-4"></a>Examples<br /></li>
-          </ol>
+          <div id="outline-container-unnumbered-64" class="outline-5">
+            <h5 id="unnumbered-64">Remarks</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-64">
+              <p>This only will work with <b>Git repositories</b>.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-65" class="outline-5">
+            <h5 id="unnumbered-65">Examples</h5>
+          </div>
         </div>
       </div>
 
@@ -1431,27 +1279,27 @@ git log --pretty=format:<span class=
             text.</p>
           </div>
 
-          <ol class="org-ol">
-            <li><a id="sec-1-7-1-1" name="sec-1-7-1-1"></a>Code<br /></li>
+          <div id="outline-container-unnumbered-66" class="outline-5">
+            <h5 id="unnumbered-66">Code</h5>
+          </div>
 
-            <li>
-              <a id="sec-1-7-1-2" name="sec-1-7-1-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-67" class="outline-5">
+            <h5 id="unnumbered-67">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-7-1-2">
-                <p>None.</p>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-67">
+              <p>None.</p>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-1-3" name="sec-1-7-1-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-68" class="outline-5">
+            <h5 id="unnumbered-68">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-7-1-3">
-                <p>{{{collapse(View details…) This is a block of text that is
-                collapsed by default. It can be expanded by clicking a link.
-                }}}</p>
-              </div>
-            </li>
-          </ol>
+            <div class="outline-text-5" id="text-unnumbered-68">
+              <p>{{{collapse(View details…) This is a block of text that is
+              collapsed by default. It can be expanded by clicking a link.
+              }}}</p>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-info" class="outline-4">
@@ -1463,55 +1311,53 @@ git log --pretty=format:<span class=
             information.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-2-1" name="sec-1-7-2-1"></a>Code<br />
+          <div id="outline-container-unnumbered-69" class="outline-5">
+            <h5 id="unnumbered-69">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-2-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-69">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: begin_info @@html:&lt;div class="info"&gt;&lt;p&gt;@@</span>
 <span class=
 "org-org-meta-line">#+MACRO: end_info @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-2-2" name="sec-1-7-2-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-70" class="outline-5">
+            <h5 id="unnumbered-70">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-7-2-2">
-                <p>None.</p>
+            <div class="outline-text-5" id="text-unnumbered-70">
+              <p>None.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-71" class="outline-5">
+            <h5 id="unnumbered-71">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-71">
+              <div class="info">
+                <p><b>Info example</b><br />
+                Did you know…</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-2-3" name="sec-1-7-2-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-72" class="outline-5">
+            <h5 id="unnumbered-72">Remarks</h5>
 
-              <div class="outline-text-5" id="text-1-7-2-3">
-                <div class="info">
-                  <p><b>Info example</b><br />
-                  Did you know…</p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-7-2-4" name="sec-1-7-2-4"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-7-2-4">
-                <p>You’d better use a “special block”, such as:</p>
-                <pre class="example">
+            <div class="outline-text-5" id="text-unnumbered-72">
+              <p>You’d better use a “special block”, such as:</p>
+              <pre class="example">
 #+begin_info
 *Info example* \\
 Did you know...
 #+end_info
 </pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-minipage" class="outline-4">
@@ -1520,26 +1366,27 @@ Did you know...
 
           <div class="outline-text-4" id="text-minipage"></div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-3-1" name="sec-1-7-3-1"></a>Code<br />
+          <div id="outline-container-unnumbered-73" class="outline-5">
+            <h5 id="unnumbered-73">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-3-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-73">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: BeginMiniPage @&lt;div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;"&gt;</span>
 <span class="org-org-meta-line">#+MACRO: EndMiniPage @&lt;/div&gt;</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li><a id="sec-1-7-3-2" name=
-            "sec-1-7-3-2"></a>Parameters<br /></li>
+          <div id="outline-container-unnumbered-74" class="outline-5">
+            <h5 id="unnumbered-74">Parameters</h5>
+          </div>
 
-            <li><a id="sec-1-7-3-3" name="sec-1-7-3-3"></a>Examples<br /></li>
-          </ol>
+          <div id="outline-container-unnumbered-75" class="outline-5">
+            <h5 id="unnumbered-75">Examples</h5>
+          </div>
         </div>
 
         <div id="outline-container-note" class="outline-4">
@@ -1548,55 +1395,53 @@ Did you know...
 
           <div class="outline-text-4" id="text-note"></div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-4-1" name="sec-1-7-4-1"></a>Code<br />
+          <div id="outline-container-unnumbered-76" class="outline-5">
+            <h5 id="unnumbered-76">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-4-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-76">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: begin_note @@html:&lt;div class="note"&gt;&lt;p&gt;@@</span>
 <span class=
 "org-org-meta-line">#+MACRO: end_note @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-4-2" name="sec-1-7-4-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-77" class="outline-5">
+            <h5 id="unnumbered-77">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-7-4-2">
-                <p>None.</p>
+            <div class="outline-text-5" id="text-unnumbered-77">
+              <p>None.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-78" class="outline-5">
+            <h5 id="unnumbered-78">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-78">
+              <div class="note">
+                <p><b>Note example</b><br />
+                This is a useful note…</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-4-3" name="sec-1-7-4-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-79" class="outline-5">
+            <h5 id="unnumbered-79">Remarks</h5>
 
-              <div class="outline-text-5" id="text-1-7-4-3">
-                <div class="note">
-                  <p><b>Note example</b><br />
-                  This is a useful note…</p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-7-4-4" name="sec-1-7-4-4"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-7-4-4">
-                <p>You’d better use a “special block”, such as:</p>
-                <pre class="example">
+            <div class="outline-text-5" id="text-unnumbered-79">
+              <p>You’d better use a “special block”, such as:</p>
+              <pre class="example">
 #+begin_note
 *Note example* \\
 This is a useful note...
 #+end_note
 </pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-panel" class="outline-4">
@@ -1605,57 +1450,55 @@ This is a useful note...
 
           <div class="outline-text-4" id="text-panel"></div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-5-1" name="sec-1-7-5-1"></a>Code<br />
+          <div id="outline-container-unnumbered-80" class="outline-5">
+            <h5 id="unnumbered-80">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-5-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-80">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: begin_panel @@html:&lt;div class="panel"&gt;&lt;p&gt;@@</span>
 <span class=
 "org-org-meta-line">#+MACRO: end_panel @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
-                </div>
-
-                <p>XXX PanelHeader + PanelContent</p>
               </div>
-            </li>
 
-            <li>
-              <a id="sec-1-7-5-2" name="sec-1-7-5-2"></a>Parameters<br />
+              <p>XXX PanelHeader + PanelContent</p>
+            </div>
+          </div>
 
-              <div class="outline-text-5" id="text-1-7-5-2">
-                <p>None.</p>
+          <div id="outline-container-unnumbered-81" class="outline-5">
+            <h5 id="unnumbered-81">Parameters</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-81">
+              <p>None.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-82" class="outline-5">
+            <h5 id="unnumbered-82">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-82">
+              <div class="panel">
+                <p><b>Panel example</b><br />
+                This is a formatted block of text…</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-5-3" name="sec-1-7-5-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-83" class="outline-5">
+            <h5 id="unnumbered-83">Remarks</h5>
 
-              <div class="outline-text-5" id="text-1-7-5-3">
-                <div class="panel">
-                  <p><b>Panel example</b><br />
-                  This is a formatted block of text…</p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-7-5-4" name="sec-1-7-5-4"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-7-5-4">
-                <p>You’d better use a “special block”, such as:</p>
-                <pre class="example">
+            <div class="outline-text-5" id="text-unnumbered-83">
+              <p>You’d better use a “special block”, such as:</p>
+              <pre class="example">
 #+begin_panel
 *Panel example* \\
 This is a formatted block of text...
 #+end_panel
 </pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-tip" class="outline-4">
@@ -1664,55 +1507,53 @@ This is a formatted block of text...
 
           <div class="outline-text-4" id="text-tip"></div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-6-1" name="sec-1-7-6-1"></a>Code<br />
+          <div id="outline-container-unnumbered-84" class="outline-5">
+            <h5 id="unnumbered-84">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-6-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-84">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: begin_tip @@html:&lt;div class="tip"&gt;&lt;p&gt;@@</span>
 <span class=
 "org-org-meta-line">#+MACRO: end_tip @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-6-2" name="sec-1-7-6-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-85" class="outline-5">
+            <h5 id="unnumbered-85">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-7-6-2">
-                <p>None.</p>
+            <div class="outline-text-5" id="text-unnumbered-85">
+              <p>None.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-86" class="outline-5">
+            <h5 id="unnumbered-86">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-86">
+              <div class="tip">
+                <p><b>Tip example</b><br />
+                Try doing it this way…</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-6-3" name="sec-1-7-6-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-87" class="outline-5">
+            <h5 id="unnumbered-87">Remarks</h5>
 
-              <div class="outline-text-5" id="text-1-7-6-3">
-                <div class="tip">
-                  <p><b>Tip example</b><br />
-                  Try doing it this way…</p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-7-6-4" name="sec-1-7-6-4"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-7-6-4">
-                <p>You’d better use a “special block”, such as:</p>
-                <pre class="example">
+            <div class="outline-text-5" id="text-unnumbered-87">
+              <p>You’d better use a “special block”, such as:</p>
+              <pre class="example">
 #+begin_tip
 *Tip example* \\
 Try doing it this way...
 #+end_tip
 </pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
 
         <div id="outline-container-warning" class="outline-4">
@@ -1721,55 +1562,53 @@ Try doing it this way...
 
           <div class="outline-text-4" id="text-warning"></div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-7-7-1" name="sec-1-7-7-1"></a>Code<br />
+          <div id="outline-container-unnumbered-88" class="outline-5">
+            <h5 id="unnumbered-88">Code</h5>
 
-              <div class="outline-text-5" id="text-1-7-7-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-88">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: begin_warning @@html:&lt;div class="warning"&gt;&lt;p&gt;@@</span>
 <span class=
 "org-org-meta-line">#+MACRO: end_warning @@html:&lt;/p&gt;&lt;/div&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-7-2" name="sec-1-7-7-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-89" class="outline-5">
+            <h5 id="unnumbered-89">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-7-7-2">
-                <p>None.</p>
+            <div class="outline-text-5" id="text-unnumbered-89">
+              <p>None.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-90" class="outline-5">
+            <h5 id="unnumbered-90">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-90">
+              <div class="warning">
+                <p><b>Warning example</b><br />
+                Be careful! Check that you have…</p>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-7-7-3" name="sec-1-7-7-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-91" class="outline-5">
+            <h5 id="unnumbered-91">Remarks</h5>
 
-              <div class="outline-text-5" id="text-1-7-7-3">
-                <div class="warning">
-                  <p><b>Warning example</b><br />
-                  Be careful! Check that you have…</p>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-7-7-4" name="sec-1-7-7-4"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-7-7-4">
-                <p>You’d better use a “special block”, such as:</p>
-                <pre class="example">
+            <div class="outline-text-5" id="text-unnumbered-91">
+              <p>You’d better use a “special block”, such as:</p>
+              <pre class="example">
 #+begin_warning
 *Warning example* \\
 Be careful! Check that you have...
 #+end_warning
 </pre>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1789,56 +1628,54 @@ Be careful! Check that you have...
             <p>Insert a table of contents.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-8-1-1" name="sec-1-8-1-1"></a>Code<br />
+          <div id="outline-container-unnumbered-92" class="outline-5">
+            <h5 id="unnumbered-92">Code</h5>
 
-              <div class="outline-text-5" id="text-1-8-1-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-92">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class="org-org-meta-line">#+MACRO: toc #+toc: headlines $1</span>
 </pre>
+              </div>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-93" class="outline-5">
+            <h5 id="unnumbered-93">Parameters</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-93">
+              <ol class="org-ol">
+                <li>Number of headline levels.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-94" class="outline-5">
+            <h5 id="unnumbered-94">Remarks</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-94">
+              <p>The <code>toc</code> macro <b>can’t be inlined</b> in
+              text.</p>
+            </div>
+          </div>
+
+          <div id="outline-container-unnumbered-95" class="outline-5">
+            <h5 id="unnumbered-95">Examples</h5>
+
+            <div class="outline-text-5" id="text-unnumbered-95">
+              <p>Insert the TOC here, with one headline level:</p>
+
+              <div id="table-of-contents">
+                <h2>Table of Contents</h2>
+
+                <div id="text-table-of-contents">
+                  <ul>
+                    <li><a href="#sec-1">1. Org Macros</a></li>
+                  </ul>
                 </div>
               </div>
-            </li>
-
-            <li>
-              <a id="sec-1-8-1-2" name="sec-1-8-1-2"></a>Parameters<br />
-
-              <div class="outline-text-5" id="text-1-8-1-2">
-                <ol class="org-ol">
-                  <li>Number of headline levels.</li>
-                </ol>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-8-1-3" name="sec-1-8-1-3"></a>Remarks<br />
-
-              <div class="outline-text-5" id="text-1-8-1-3">
-                <p>The <code>toc</code> macro <b>can’t be inlined</b> in
-                text.</p>
-              </div>
-            </li>
-
-            <li>
-              <a id="sec-1-8-1-4" name="sec-1-8-1-4"></a>Examples<br />
-
-              <div class="outline-text-5" id="text-1-8-1-4">
-                <p>Insert the TOC here, with one headline level:</p>
-
-                <div id="table-of-contents">
-                  <h2>Table of Contents</h2>
-
-                  <div id="text-table-of-contents">
-                    <ul>
-                      <li><a href="#sec-1">1. Org Macros</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ol>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1858,43 +1695,41 @@ Be careful! Check that you have...
             <p>Add a “Share a link” button to your website.</p>
           </div>
 
-          <ol class="org-ol">
-            <li>
-              <a id="sec-1-9-1-1" name="sec-1-9-1-1"></a>Code<br />
+          <div id="outline-container-unnumbered-96" class="outline-5">
+            <h5 id="unnumbered-96">Code</h5>
 
-              <div class="outline-text-5" id="text-1-9-1-1">
-                <div class="org-src-container">
-                  <pre class="src src-org">
+            <div class="outline-text-5" id="text-unnumbered-96">
+              <div class="org-src-container">
+                <pre class="src src-org">
 <span class=
 "org-org-meta-line">#+MACRO: twitter-share-link-button @@html:&lt;script src="<a href="http://platform.twitter.com/widgets.js">http://platform.twitter.com/widgets.js</a>"&gt;&lt;/script&gt;&lt;a href="<a href="https://twitter.com/share">https://twitter.com/share</a>" class="twitter-share-button" data-via="$1"&gt;Tweet&lt;/a&gt;@@</span>
 </pre>
-                </div>
               </div>
-            </li>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-9-1-2" name="sec-1-9-1-2"></a>Parameters<br />
+          <div id="outline-container-unnumbered-97" class="outline-5">
+            <h5 id="unnumbered-97">Parameters</h5>
 
-              <div class="outline-text-5" id="text-1-9-1-2">
-                <ol class="org-ol">
-                  <li>Username.</li>
-                </ol>
-              </div>
-            </li>
+            <div class="outline-text-5" id="text-unnumbered-97">
+              <ol class="org-ol">
+                <li>Username.</li>
+              </ol>
+            </div>
+          </div>
 
-            <li>
-              <a id="sec-1-9-1-3" name="sec-1-9-1-3"></a>Examples<br />
+          <div id="outline-container-unnumbered-98" class="outline-5">
+            <h5 id="unnumbered-98">Examples</h5>
 
-              <div class="outline-text-5" id="text-1-9-1-3">
-                <p>Insert the Twitter “Share a link” button here:</p>
+            <div class="outline-text-5" id="text-unnumbered-98">
+              <p>Insert the Twitter “Share a link” button here:</p>
 
-                <p><script src="http://platform.twitter.com/widgets.js" type=
-                "text/javascript">
+              <p><script src="http://platform.twitter.com/widgets.js" type=
+              "text/javascript">
 </script><a href="https://twitter.com/share" class="twitter-share-button"
-                data-via="f_niessen">Tweet</a></p>
-              </div>
-            </li>
-          </ol>
+              data-via="f_niessen">Tweet</a></p>
+            </div>
+          </div>
         </div>
       </div>
 

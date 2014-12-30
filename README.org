@@ -4,6 +4,7 @@
 #+DESCRIPTION:
 #+KEYWORDS:  org-mode, macro, examples
 #+LANGUAGE:  en
+#+OPTIONS:   H:4 num:3 toc:2
 
 #+PROPERTY: comments no
 #+PROPERTY: eval     no
@@ -669,7 +670,7 @@ XXX + link to View Changes?
 
 #+begin_src org
 ,#+name: version-history
-,#+begin_src sh :exports none :results silent :colnames '(Version Date Author Comment)
+,#+begin_src shell :exports none :results silent :colnames '(Version Date Author Comment)
 git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 ,#+end_src
 
