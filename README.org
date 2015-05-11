@@ -1,10 +1,11 @@
+#+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+DATE:      2014-01-22 12:34
+#+DATE:      2015-05-11 12:34
 #+DESCRIPTION:
 #+KEYWORDS:  org-mode, macro, examples
 #+LANGUAGE:  en
-#+OPTIONS:   H:4 num:3 toc:2
+#+OPTIONS:   H:4 num:nil toc:2
 
 #+PROPERTY: comments no
 #+PROPERTY: eval     no
@@ -12,15 +13,24 @@
 #+PROPERTY: noweb    yes
 #+PROPERTY: tangle   org-macros.setup
 
-#+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+# #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
+#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
 
 #+INCLUDE: org-macros.setup
 
-* Org Macros [[http://opensource.org/licenses/GPL-3.0][http://img.shields.io/:license-gpl-blue.svg]] [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dmacros&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted][https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif]]
+#+begin_html
+<a href="http://opensource.org/licenses/GPL-3.0">
+  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
 
-** Overview
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dhtml%2dthemes&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+#+end_html
 
-*** Description
+* Overview
+
+** Description
 
 The *macros* in Org allow you to add text or code to an Org document that will be
 *expanded during export*: the text between the 3 pairs of accolades is expanded
@@ -28,27 +38,27 @@ so that readers can see it in the exported versions of the document.
 
 Some people (such as me) use it to construct complex HTML or LaTeX code.
 
-*** Objectives
+** Objectives
 
 Using macros allows you to *insert dynamic content* or *add extra functionality* in
 exports of an Org document.
 
-*** Features
+** Features
 
 These [[https://github.com/fniessen/org-macros][Org-macros]] have been tested for HTML exports.
 
 FIXME They will be soon made available for PDF exports.
 
-** Code
+* Code
 
-*** Checkout
+** Checkout
 
 Use this command to check out the latest source code of the project from the
-Git repository hosted at GitHub:
+Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 
 : git clone git@github.com:fniessen/org-macros.git
 
-*** Installation
+** Installation
 
 #+begin_src org :tangle no
 ,#+INCLUDE: /path/to/org-macros.setup
@@ -59,7 +69,7 @@ As there are Babel code blocks inside the =org-macros.setup= file, it needs to b
 loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
 #+end_info
 
-*** Usage
+** Usage
 
 Once you've cloned [[https://github.com/fniessen/org-macros][Org-macros]], many macros will be ready to use within your Org
 files.
@@ -80,22 +90,22 @@ Examples:
   {{{name-of-the-macro(arg1,arg2)}}}
   #+end_example
 
-*** Macros
+** Macros
 
 Below is a list of the few macros currently available.
 
-**** Org built-ins
+*** Org built-ins
 
 - [[#author][author]] macro
 - [[#date][date]] macro
 - [[#email][email]] macro
 - [[#input-file][input-file]] macro
 - [[#modification-time][modification-time]] macro
-- ~property(node-property)~ macro
+- [[#property][property]] macro
 - [[#time][time]] macro
 - [[#title][title]] macro
 
-**** Basic formatting
+*** Basic formatting
 
 - [[#bgcolor][bgcolor]] macro
 - [[#color][color]] macro
@@ -103,22 +113,35 @@ Below is a list of the few macros currently available.
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
 
+- [[#newline][newline]] macro
+- [[#redact][redact]] macro
 - LaTeX keys macro (see menukeys)
 
-**** Advanced
+# HTML phrase tags:
+# - <em> :: Renders as emphasized text
+# - <strong> :: Defines important text
+# - <code> :: Defines a piece of computer code
+# - <samp> :: Defines sample output from a computer program
+# - <kbd> :: Defines keyboard input
+# - <var> :: Defines a variable
+
+# #+MACRO: sup \zwnj^{$1}
+
+*** Advanced
 
 - [[#if-latex-else][if-latex-else]] macro
+- [[#style][style]] macro
 
-**** Generic macros
+*** Generic macros
 
-- [[#area-chart][area-chart]] macro
-- [[#bar-chart][bar-chart]] macro
+# - [[#area-chart][area-chart]] macro
+# - [[#bar-chart][bar-chart]] macro
 - [[#image][image]] macro
 - ~recently-updated~ macro
 - ~tasklist~ macro
 - [[#version-history][version-history]] macro
 
-**** Layout
+*** Layout
 
 - [[#collapse][collapse]] macro
 - [[#info][info]] macro
@@ -128,24 +151,24 @@ Below is a list of the few macros currently available.
 - [[#tip][tip]] macro
 - [[#warning][warning]] macro
 
-**** Navigation and lists
+*** Navigation and lists
 
 - ~children~ macro (to display child pages)
 - [[#toc][toc]] macro
 
-**** Dev tools
+*** Dev tools
 
 - [[#twitter-share-link-button][twitter-share-link-button]] macro
 
-*** Cookie                                                            :noexport:
+** Cookie                                                             :noexport:
 
 #+begin_src org
 # -*- mode: org; -*-
 #+end_src
 
-** Org built-ins
+* Org built-ins
 
-*** Author macro
+** Author macro
     :PROPERTIES:
     :CUSTOM_ID: author
     :END:
@@ -153,75 +176,75 @@ Below is a list of the few macros currently available.
 The ~author~ macro outputs a list of users who have created or edited the
 document.
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 People who have created and edited this document: {{{author}}}.
 
-**** See also
+*** See also
 
 Option ~#+AUTHOR:~.
 
-*** Date macro
+** Date macro
     :PROPERTIES:
     :CUSTOM_ID: date
     :END:
 
 The ~date~ macro outputs the *date and time* specified in the document.
 
-**** Parameters
+*** Parameters
 
-None.
+1. *Format string* understood by ~format-time-string~.
 
-**** Examples
+*** Examples
 
-The date of this document is: {{{date}}}.
+The date of this document is: {{{date}}} or {{{date(%Y-%m)}}}.
 
-**** See also
+*** See also
 
 - Option ~#+DATE:~ (for the whole document).
 - Property ~:EXPORT_DATE:~ (for specific subtrees).
 - [[#modification-time][modification-time]] macro.
 - [[#time][time]] macro.
 
-*** Email macro
+** Email macro
     :PROPERTIES:
     :CUSTOM_ID: email
     :END:
 
 The ~email~ macro outputs the email of the author(s).
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 The email of this document is: {{{email}}}.
 
-**** See also
+*** See also
 
 Option ~#+EMAIL:~.
 
-*** Input-file macro
+** Input-file macro
     :PROPERTIES:
     :CUSTOM_ID: input-file
     :END:
 
 The ~input-file~ macro displays the name of the input Org file.
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 The input file name for this document is: {{{input-file}}}.
 
-*** Modification-time macro
+** Modification-time macro
     :PROPERTIES:
     :CUSTOM_ID: modification-time
     :END:
@@ -229,20 +252,42 @@ The input file name for this document is: {{{input-file}}}.
 The ~modification-time~ macro outputs the *modification date and time* /of/ the file
 being exported.
 
-**** Parameters
+*** Parameters
 
 1. *Format string* understood by ~format-time-string~.
 
-**** Examples
+*** Examples
 
 This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 
-**** See also
+*** See also
 
 - [[#date][date]] macro.
 - [[#time][time]] macro.
 
-*** Time macro
+** Property macro
+    :PROPERTIES:
+    :CUSTOM_ID: property
+    :END:
+
+The ~property~ macro outputs ...
+
+*** Parameters
+
+1. Node property name.
+
+*** Examples
+
+#+begin_src org :tangle no
+,* TODO Do it!
+  :PROPERTIES:
+  :Effort:   1:00
+  :END:
+
+This task should take no more than {{{property(Effort)}}} hours.
+#+end_src
+
+** Time macro
     :PROPERTIES:
     :CUSTOM_ID: time
     :END:
@@ -250,59 +295,59 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 The ~time~ macro outputs the *current date and time* /when/ the document is being
 exported.
 
-**** Parameters
+*** Parameters
 
 1. *Format string* understood by ~format-time-string~.
 
-**** Examples
+*** Examples
 
 This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
 
-**** See also
+*** See also
 
 - [[#date][date]] macro.
 - [[#modification-time][modification-time]] macro.
 
-*** Title macro
+** Title macro
     :PROPERTIES:
     :CUSTOM_ID: title
     :END:
 
 The ~title~ macro outputs the document title.
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 The title of this document is: {{{title}}}.
 
-**** See also
+*** See also
 
 Option ~#+TITLE:~.
 
-** Basic formatting
+* Basic formatting
 
-*** BgColor macro
+** BgColor macro
     :PROPERTIES:
     :CUSTOM_ID: bgcolor
     :END:
 
 The ~bgcolor~ macro allows you to change the background color of a block of text.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Color name or hexadecimal code.
 2. Text you want to color.
 
-**** Examples
+*** Examples
 
 {{{bgcolor(red, This information is important.)}}}
 {{{bgcolor(#E0E0E0, This other isn't.)}}}
@@ -323,31 +368,31 @@ You can also use hexadecimal color codes:
 {{{bgcolor(#00FF00, #00FF00)}}}
 {{{bgcolor(#0000FF, #0000FF)}}}
 
-**** See also
+*** See also
 
 - [[#color][color]] macro
 - [[#highlight][highlight]] macro
 - [[#hl][hl]] macro
 
-*** Color macro
+** Color macro
     :PROPERTIES:
     :CUSTOM_ID: color
     :END:
 
 The ~color~ macro allows you to change the foreground color of inline text.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: color @@html:<span style="color: $1">$2</span>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Color name or hexadecimal code.
 2. Text you want to color.
 
-**** Examples
+*** Examples
 
 {{{color(red, This information is important.)}}}
 {{{color(#E0E0E0, This other isn't.)}}}
@@ -368,20 +413,20 @@ You can also use hexadecimal color codes:
 {{{color(#00FF00, #00FF00)}}}
 {{{color(#0000FF, #0000FF)}}}
 
-**** See also
+*** See also
 
 - [[#bgcolor][bgcolor]] macro
 - [[#highlight][highlight]] macro
 - [[#hl][hl]] macro
 
-*** Fixme macro
+** Fixme macro
     :PROPERTIES:
     :CUSTOM_ID: fixme
     :END:
 
 The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
@@ -400,11 +445,11 @@ CSS example:
 }
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{fixme}}} Delete this...
 
@@ -415,25 +460,25 @@ testing testing testing testing testing testing testing testing testing testing
 testing testing testing testing testing testing testing testing testing testing
 testing testing
 
-*** Highlight macro
+** Highlight macro
     :PROPERTIES:
     :CUSTOM_ID: highlight
     :END:
 
 The ~highlight~ macro allows you to change the background color of inline text.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Color name or hexadecimal code.
 2. Text you want to color.
 
-**** Examples
+*** Examples
 
 {{{highlight(red, This information is important.)}}}
 {{{highlight(#E0E0E0, This other isn't.)}}}
@@ -454,41 +499,41 @@ You can also use hexadecimal color codes:
 {{{highlight(#00FF00, #00FF00)}}}
 {{{highlight(#0000FF, #0000FF)}}}
 
-**** See also
+*** See also
 
 - [[#bgcolor][bgcolor]] macro
 - [[#color][color]] macro
 - [[#hl][hl]] macro
 
-*** Hl macro
+** Hl macro
     :PROPERTIES:
     :CUSTOM_ID: hl
     :END:
 
 The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: hl {{{highlight(#FFFF00,$1)}}}
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Color name or hexadecimal code.
 2. Text you want to color.
 
-**** Examples
+*** Examples
 
 {{{hl(This information is important.)}}}
 
-**** See also
+*** See also
 
 - [[#bgcolor][bgcolor]] macro
 - [[#color][color]] macro
 - [[#highlight][highlight]] macro
 
-*** LoremIpsum macro
+** LoremIpsum macro
     :PROPERTIES:
     :CUSTOM_ID: loremipsum
     :END:
@@ -497,66 +542,135 @@ The ~loremipsum~ macro displays one paragraph of meaningless text that you can
 use for demonstration purposes of visual elements such as font, typography or
 layout.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 This is a basic example of the ~Loremipsum~ text:
 
 {{{loremipsum}}}
 
-** Advanced
+** Newline macro
+    :PROPERTIES:
+    :CUSTOM_ID: newline
+    :END:
 
-*** if-latex macro
+~\\~ in headlines doesn't cause a line break, but gets exported in LaTeX to
+~$\backslash$~.
+
+You have to put it in a macro.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: newline @@latex:\\@@ @@html:<br>@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+#+begin_src org :tangle no
+,#+TITLE: Foo {{{newline}}} bar
+#+end_src
+
+** Redact macro
+    :PROPERTIES:
+    :CUSTOM_ID: redact
+    :END:
+
+Is there any way to completely redact text in HTML export, so it just looks like
+black boxes?
+
+I'm not sure I fully understand, but it this what you are looking for?
+
+#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+
+To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
+
+* Advanced
+
+** if-latex macro
     :PROPERTIES:
     :CUSTOM_ID: if-latex-else
     :END:
 
 XXX
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Code for LaTeX back-end.
 2. Code for other back-ends.
 
-**** Examples
+*** Examples
 
 {{{if-latex-else(latex code,something else)}}}
 
-** Generic
+** style
+    :PROPERTIES:
+    :CUSTOM_ID: style
+    :END:
 
-*** COMMENT Area chart macro
+The ~style~ macro allows you to add custom style sheets to a page or import from
+an external URL.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <style></style>"))
+#+end_src
+
+*** Parameters
+
+URL to import an external style sheet.
+
+*** Examples
+
+# {{{style}}}
+
+   <style type="text/css">
+        .atb-sidebar.expanded {display:run-in;}
+        .atb-sidebar.collapsed {display:none;visibility:collapse;}
+    </style>
+
+    <link type="text/css" rel="stylesheet" href="http://whatever.com/mystyle.css" media="all">
+
+* Generic
+
+** COMMENT Area chart macro
     :PROPERTIES:
     :CUSTOM_ID: area-chart
     :END:
 
 The ~area-chart~ macro displays a chart.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: area-chart ...
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Path to chart file.
 
-**** Examples
+*** Examples
 
 Data to be charted:
 
@@ -586,24 +700,24 @@ The resulting area chart:
 
 # {{{area-chart}}}
 
-*** COMMENT Bar chart macro
+** COMMENT Bar chart macro
     :PROPERTIES:
     :CUSTOM_ID: bar-chart
     :END:
 
 The ~bar-chart~ macro displays a chart.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: bar-chart ...
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Path to chart file.
 
-**** Examples
+*** Examples
 
 Data to be charted:
 
@@ -632,31 +746,31 @@ The resulting bar chart:
 
 # {{{bar-chart}}}
 
-*** Image macro
+** Image macro
     :PROPERTIES:
     :CUSTOM_ID: image
     :END:
 
 The ~image~ macro displays an image.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: image \includegraphics{$1}
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Path to image file.
 
-**** Examples
+*** Examples
 
 {{{image}}}
 
 | {{{image(a.png)}}} | {{{image(b.png)}}} |
 | {{{image(c.png)}}} | {{{image(d.png)}}} |
 
-*** Version-history macro
+** Version-history macro
     :PROPERTIES:
     :CUSTOM_ID: version-history
     :END:
@@ -666,7 +780,7 @@ a document: version number, date, author and comment.
 
 XXX + link to View Changes?
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+name: version-history
@@ -681,66 +795,66 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 We chose an inline Babel call so that the macro can be used in a paragraph.
 #+end_tip
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Remarks
+*** Remarks
 
 This only will work with *Git repositories*.
 
-**** Examples
+*** Examples
 
 {{{version-history}}}
 
-** Layout
+* Layout
 
-*** Collapse macro
+** Collapse macro
     :PROPERTIES:
     :CUSTOM_ID: collapse
     :END:
 
 The ~collapse~ macro inserts of collapsed block of text.
 
-**** Code
+*** Code
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{collapse(View details...)
 This is a block of text that is collapsed by default.
 It can be expanded by clicking a link.
 }}}
 
-*** Info macro
+** Info macro
     :PROPERTIES:
     :CUSTOM_ID: info
     :END:
 
 The ~info~ macro is useful for including helpful information.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: begin_info @@html:<div class="info"><p>@@
 ,#+MACRO: end_info @@html:</p></div>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{begin_info}}}
 *Info example* \\
 Did you know...
 {{{end_info}}}
 
-**** Remarks
+*** Remarks
 
 You'd better use a "special block", such as:
 
@@ -751,46 +865,46 @@ Did you know...
 ,#+end_info
 #+end_example
 
-*** MiniPage macro
+** MiniPage macro
     :PROPERTIES:
     :CUSTOM_ID: minipage
     :END:
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
 ,#+MACRO: EndMiniPage @</div>
 #+end_src
 
-**** Parameters
+*** Parameters
 
-**** Examples
+*** Examples
 
-*** Note macro
+** Note macro
     :PROPERTIES:
     :CUSTOM_ID: note
     :END:
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: begin_note @@html:<div class="note"><p>@@
 ,#+MACRO: end_note @@html:</p></div>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{begin_note}}}
 *Note example* \\
 This is a useful note...
 {{{end_note}}}
 
-**** Remarks
+*** Remarks
 
 You'd better use a "special block", such as:
 
@@ -801,12 +915,12 @@ This is a useful note...
 ,#+end_note
 #+end_example
 
-*** Panel macro
+** Panel macro
     :PROPERTIES:
     :CUSTOM_ID: panel
     :END:
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: begin_panel @@html:<div class="panel"><p>@@
@@ -815,18 +929,18 @@ This is a useful note...
 
 XXX PanelHeader + PanelContent
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{begin_panel}}}
 *Panel example* \\
 This is a formatted block of text...
 {{{end_panel}}}
 
-**** Remarks
+*** Remarks
 
 You'd better use a "special block", such as:
 
@@ -837,30 +951,30 @@ This is a formatted block of text...
 ,#+end_panel
 #+end_example
 
-*** Tip macro
+** Tip macro
     :PROPERTIES:
     :CUSTOM_ID: tip
     :END:
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: begin_tip @@html:<div class="tip"><p>@@
 ,#+MACRO: end_tip @@html:</p></div>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{begin_tip}}}
 *Tip example* \\
 Try doing it this way...
 {{{end_tip}}}
 
-**** Remarks
+*** Remarks
 
 You'd better use a "special block", such as:
 
@@ -871,30 +985,30 @@ Try doing it this way...
 ,#+end_tip
 #+end_example
 
-*** Warning macro
+** Warning macro
     :PROPERTIES:
     :CUSTOM_ID: warning
     :END:
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: begin_warning @@html:<div class="warning"><p>@@
 ,#+MACRO: end_warning @@html:</p></div>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 None.
 
-**** Examples
+*** Examples
 
 {{{begin_warning}}}
 *Warning example* \\
 Be careful! Check that you have...
 {{{end_warning}}}
 
-**** Remarks
+*** Remarks
 
 You'd better use a "special block", such as:
 
@@ -905,63 +1019,76 @@ Be careful! Check that you have...
 ,#+end_warning
 #+end_example
 
-** Navigation and lists
+** Vertically aligning table row contents
+
+I'm trying to create a simple two-column table. The left column will show images
+of symbols used in the document, and the right column will explain what those
+images mean.
+
+#+MACRO: p @@latex:\raisebox{-.5\height}{\includegraphics[scale=.35]{$1}}@@
+#+CAPTION: Document Symbols
+#+ATTR_LATEX: :align lp{5in} :float nil :border 2 :frame border
+| {{{p(./GreenDot.png)}}}   | This symbol indicates that the associated item is in a /normal/ or /successful/ state.                 |
+| {{{p(./YellowDots.png)}}} | This symbol denotes a state of /concern/ or /potential trouble/ for the associated item.               |
+| {{{p(./RedDots.png)}}}    | This symbol indicates that the associated item is in a /severely troubled/ or /non-functioning/ state. |
+
+* Navigation and lists
 
 FIXME Problem with the tab title.
 
-*** Toc macro
+** Toc macro
     :PROPERTIES:
     :CUSTOM_ID: toc
     :END:
 
 Insert a table of contents.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: toc #+toc: headlines $1
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Number of headline levels.
 
-**** Remarks
+*** Remarks
 
 The ~toc~ macro *can't be inlined* in text.
 
-**** Examples
+*** Examples
 
 Insert the TOC here, with one headline level:
 
 {{{toc(1)}}}
 
-** Dev tools
+* Dev tools
 
-*** Twitter "Share a link"
+** Twitter "Share a link"
     :PROPERTIES:
     :CUSTOM_ID: twitter-share-link-button
     :END:
 
 Add a "Share a link" button to your website.
 
-**** Code
+*** Code
 
 #+begin_src org
 ,#+MACRO: twitter-share-link-button @@html:<script src="http://platform.twitter.com/widgets.js"></script><a href="https://twitter.com/share" class="twitter-share-button" data-via="$1">Tweet</a>@@
 #+end_src
 
-**** Parameters
+*** Parameters
 
 1. Username.
 
-**** Examples
+*** Examples
 
 Insert the Twitter "Share a link" button here:
 
 {{{twitter-share-link-button(f_niessen)}}}
 
-** Others                                                             :noexport:
+* Others                                                              :noexport:
 
 Keep a library of helpful CSS classes. Useful for debugging, but should be
 avoided in the release version (separate markup and presentation). Since you
@@ -993,25 +1120,25 @@ width75">...</p>~), make use of them debugging your markup.
 .nobullet      { list-style: none; list-style-image: none; }
 #+end_src
 
-** Contributing
+* Contributing
 
-*** Issues
+** Issues
 
 Report issues and suggest features and improvements on the [[https://github.com/fniessen/org-macros/issues/new][GitHub issue tracker]].
 
-*** Patches
+** Patches
 
 I love contributions!  Patches under any form are always welcome!
 
-*** Donations
+** Donations
 
-If you like the org-macros project, you can show your appreciation and
+If you like the org-macros project, you can show your appreciation and help
 support future development by making a [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dmacros&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted][donation]] through PayPal.
 
-Regardless of the donations, org-macros will always be free both as in
-beer and as in speech.
+Regardless of the donations, org-macros will always be free both as in beer and
+as in speech.
 
-** License
+* License
 
 Copyright (C) 2014-2014 Free Software Foundation, Inc.
 
@@ -1029,3 +1156,13 @@ A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program. If not, see http://www.gnu.org/licenses/.
+
+#+begin_html
+<a href="http://opensource.org/licenses/GPL-3.0">
+  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dhtml%2dthemes&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+#+end_html
