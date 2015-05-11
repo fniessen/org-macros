@@ -6,6 +6,7 @@
 #+KEYWORDS:  org-mode, macro, examples
 #+LANGUAGE:  en
 #+OPTIONS:   H:4 num:nil toc:2
+#+EXCLUDE_TAGS: noexport
 
 #+PROPERTY: comments no
 #+PROPERTY: eval     no
