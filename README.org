@@ -116,7 +116,7 @@ Below is a list of the few macros currently available.
 
 - [[#newline][newline]] macro
 - [[#redact][redact]] macro
-- LaTeX keys macro (see menukeys)
+- [[#kbd][kbd]] macro
 
 # HTML phrase tags:
 # - <em> :: Renders as emphasized text
@@ -172,9 +172,9 @@ Below is a list of the few macros currently available.
 * Org built-ins
 
 ** Author macro
-    :PROPERTIES:
-    :CUSTOM_ID: author
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: author
+   :END:
 
 The ~author~ macro outputs a list of users who have created or edited the
 document.
@@ -194,9 +194,9 @@ Option ~#+AUTHOR:~.
 -----
 
 ** Date macro
-    :PROPERTIES:
-    :CUSTOM_ID: date
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: date
+   :END:
 
 The ~date~ macro outputs the *date and time* specified in the document.
 
@@ -218,9 +218,9 @@ The date of this document is: {{{date}}} or {{{date(%Y-%m)}}}.
 -----
 
 ** Email macro
-    :PROPERTIES:
-    :CUSTOM_ID: email
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: email
+   :END:
 
 The ~email~ macro outputs the email of the author(s).
 
@@ -239,9 +239,9 @@ Option ~#+EMAIL:~.
 -----
 
 ** Input-file macro
-    :PROPERTIES:
-    :CUSTOM_ID: input-file
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: input-file
+   :END:
 
 The ~input-file~ macro displays the name of the input Org file.
 
@@ -256,9 +256,9 @@ The input file name for this document is: {{{input-file}}}.
 -----
 
 ** Modification-time macro
-    :PROPERTIES:
-    :CUSTOM_ID: modification-time
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: modification-time
+   :END:
 
 The ~modification-time~ macro outputs the *modification date and time* /of/ the file
 being exported.
@@ -279,9 +279,9 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 -----
 
 ** Property macro
-    :PROPERTIES:
-    :CUSTOM_ID: property
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: property
+   :END:
 
 The ~property~ macro outputs ...
 
@@ -303,9 +303,9 @@ This task should take no more than {{{property(Effort)}}} hours.
 -----
 
 ** Time macro
-    :PROPERTIES:
-    :CUSTOM_ID: time
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: time
+   :END:
 
 The ~time~ macro outputs the *current date and time* /when/ the document is being
 exported.
@@ -326,9 +326,9 @@ This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
 -----
 
 ** Title macro
-    :PROPERTIES:
-    :CUSTOM_ID: title
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: title
+   :END:
 
 The ~title~ macro outputs the document title.
 
@@ -349,9 +349,9 @@ Option ~#+TITLE:~.
 * Basic formatting
 
 ** BgColor macro
-    :PROPERTIES:
-    :CUSTOM_ID: bgcolor
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: bgcolor
+   :END:
 
 The ~bgcolor~ macro allows you to change the background color of a block of text.
 
@@ -396,9 +396,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Color macro
-    :PROPERTIES:
-    :CUSTOM_ID: color
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: color
+   :END:
 
 The ~color~ macro allows you to change the foreground color of inline text.
 
@@ -443,9 +443,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Fixme macro
-    :PROPERTIES:
-    :CUSTOM_ID: fixme
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: fixme
+   :END:
 
 The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 
@@ -486,9 +486,9 @@ testing testing
 -----
 
 ** Highlight macro
-    :PROPERTIES:
-    :CUSTOM_ID: highlight
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: highlight
+   :END:
 
 The ~highlight~ macro allows you to change the background color of inline text.
 
@@ -533,9 +533,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Hl macro
-    :PROPERTIES:
-    :CUSTOM_ID: hl
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: hl
+   :END:
 
 The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 
@@ -563,9 +563,9 @@ The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 -----
 
 ** LoremIpsum macro
-    :PROPERTIES:
-    :CUSTOM_ID: loremipsum
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: loremipsum
+   :END:
 
 The ~loremipsum~ macro displays one paragraph of meaningless text that you can
 use for demonstration purposes of visual elements such as font, typography or
@@ -590,9 +590,9 @@ This is a basic example of the ~Loremipsum~ text:
 -----
 
 ** Newline macro
-    :PROPERTIES:
-    :CUSTOM_ID: newline
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: newline
+   :END:
 
 ~\\~ in headlines doesn't cause a line break, but gets exported in LaTeX to
 ~$\backslash$~.
@@ -618,9 +618,9 @@ None.
 -----
 
 ** Redact macro
-    :PROPERTIES:
-    :CUSTOM_ID: redact
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: redact
+   :END:
 
 Is there any way to completely redact text in HTML export, so it just looks like
 black boxes?
@@ -633,12 +633,37 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 
 -----
 
+** Kbd macro
+   :PROPERTIES:
+   :CUSTOM_ID: kbd
+   :END:
+
+*** Code
+
+#+begin_src org
+,#+MACRO: kbd @@html:<kbd>@@$1@@html:</kdb>@@
+#+end_src
+
+See ~menukeys~ for LaTeX.
+
+*** Parameters
+
+1. Text to markup.
+
+*** Examples
+
+#+begin_src org :tangle no
+Use {{{kbd(C-c a a)}}} to launch the agenda.
+#+end_src
+
+-----
+
 * Advanced
 
 ** if-latex macro
-    :PROPERTIES:
-    :CUSTOM_ID: if-latex-else
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: if-latex-else
+   :END:
 
 XXX
 
@@ -660,9 +685,9 @@ XXX
 -----
 
 ** style
-    :PROPERTIES:
-    :CUSTOM_ID: style
-    :END:
+   :PROPERTIES:
+   :CUSTOM_ID: style
+   :END:
 
 The ~style~ macro allows you to add custom style sheets to a page or import from
 an external URL.
