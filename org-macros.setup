@@ -2,7 +2,7 @@
 
 #+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 
-#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@
 
 #+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
 

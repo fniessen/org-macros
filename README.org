@@ -8,11 +8,7 @@
 #+OPTIONS:   H:4 num:nil toc:2
 #+EXCLUDE_TAGS: noexport
 
-#+PROPERTY: comments no
-#+PROPERTY: eval     no
-#+PROPERTY: exports  code
-#+PROPERTY: noweb    yes
-#+PROPERTY: tangle   org-macros.setup
+#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org-macros.setup
 
 # #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
 #+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
@@ -405,7 +401,7 @@ The ~color~ macro allows you to change the foreground color of inline text.
 *** Code
 
 #+begin_src org
-,#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+,#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@
 #+end_src
 
 *** Parameters
