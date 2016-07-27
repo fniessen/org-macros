@@ -1,8 +1,11 @@
+
 # -*- mode: org; -*-
 
 #+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 
-#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@
+#+MACRO: clearpage @@latex:\\clearpage@@@@odt:<text:p text:style-name="PageBreak"/>@@
+
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
 
 #+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
 
@@ -16,9 +19,15 @@
 
 #+MACRO: kbd @@html:<kbd>@@$1@@html:</kdb>@@
 
+#+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ))
+
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 
 #+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <style></style>"))
+
+#+MACRO: area-chart ...
+
+#+MACRO: bar-chart ...
 
 #+MACRO: image \includegraphics{$1}
 

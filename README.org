@@ -10,8 +10,7 @@
 
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org-macros.setup
 
-# #+SETUPFILE: ~/src/org-style/setup/bigblow-pirilampo.setup
-#+SETUPFILE: ~/src/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: ~/.dotfiles/org/theme-readtheorg.setup
 
 #+INCLUDE: org-macros.setup
 
@@ -105,6 +104,7 @@ Below is a list of the few macros currently available.
 *** Basic formatting
 
 - [[#bgcolor][bgcolor]] macro
+- [[#clearpage][clearpage]] macro
 - [[#color][color]] macro
 - [[#fixme][fixme]] macro
 - [[#highlight][highlight]] macro
@@ -126,6 +126,7 @@ Below is a list of the few macros currently available.
 
 *** Advanced
 
+- [[#dvipng-when-odt][dvipng-when-odt]] macro
 - [[#if-latex-else][if-latex-else]] macro
 - [[#style][style]] macro
 
@@ -391,6 +392,38 @@ You can also use hexadecimal color codes:
 
 -----
 
+** Clearpage macro
+   :PROPERTIES:
+   :CUSTOM_ID: clearpage
+   :END:
+
+*** Code
+
+#+begin_src org
+,#+MACRO: clearpage @@latex:\\clearpage@@@@odt:<text:p text:style-name="PageBreak"/>@@
+#+end_src
+
+#+begin_warning
+To see the above example in action in ODT, edit your ~styles.xml~ file and add
+a custom style:
+
+: <style:style style:name="PageBreak" style:family="paragraph"
+: style:parent-style-name="Text_20_body">
+: <style:paragraph-properties fo:break-before="page"/>
+: </style:style>
+
+See
+https://www.gnu.org/software/emacs/manual/html_node/org/Creating-one_002doff-styles.html.
+#+end_warning
+
+*** Parameters
+
+None.
+
+*** Examples
+
+-----
+
 ** Color macro
    :PROPERTIES:
    :CUSTOM_ID: color
@@ -401,8 +434,16 @@ The ~color~ macro allows you to change the foreground color of inline text.
 *** Code
 
 #+begin_src org
-,#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@
+,#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
 #+end_src
+
+#+begin_warning
+To see the above example in action in ODT, edit your ~styles.xml~ file and add
+a custom style for each new color.
+
+See
+https://www.gnu.org/software/emacs/manual/html_node/org/Creating-one_002doff-styles.html.
+#+end_warning
 
 *** Parameters
 
@@ -656,6 +697,23 @@ Use {{{kbd(C-c a a)}}} to launch the agenda.
 
 * Advanced
 
+** dvipng-when-odt
+   :PROPERTIES:
+   :CUSTOM_ID: dvipng-when-odt
+   :END:
+
+*** Code
+
+#+begin_src org
+,#+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ))
+#+end_src
+
+*** Parameters
+
+*** Examples
+
+-----
+
 ** if-latex macro
    :PROPERTIES:
    :CUSTOM_ID: if-latex-else
@@ -745,7 +803,7 @@ Data to be charted:
 Code:
 
 #+name: area-chart
-#+begin_src R :var data=satisfaction :results graphics :file images/area-chart.png :exports both :eval yes
+#+begin_src R :var data=satisfaction :results graphics :file images/area-chart.png :exports both :eval yes :tangle no
 plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
 grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
 legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
@@ -793,7 +851,7 @@ Data to be charted:
 Code:
 
 #+name: bar-chart
-#+begin_src R :var data=income-expenses :results graphics :file images/bar-chart.png :exports both :eval yes
+#+begin_src R :var data=income-expenses :results graphics :file images/bar-chart.png :exports both :eval yes :tangle no
 plot(data, type="b", bty="l", col=c("#ABD249"), las=1, lwd=4)
 grid(nx=NULL, ny=NULL, col=c("#E8E8E8"), lwd=1)
 legend("bottom", legend=c("Degrees"), col=c("#ABD249"), pch=c(19))
@@ -1228,7 +1286,7 @@ as in speech.
 
 * License
 
-Copyright (C) 2014-2015 Free Software Foundation, Inc.
+Copyright (C) 2014-2016 Free Software Foundation, Inc.
 
 Author: Fabrice Niessen \\
 Keywords: org-mode macros
