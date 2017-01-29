@@ -24,6 +24,11 @@
 </a>
 #+end_html
 
+* Tasks                                                               :noexport:
+
+On 2016-12-19, Nicolas Goaziou added ~org-export-global-macros~ in master.  Could
+be interesting to use!
+
 * Overview
 
 ** Description
@@ -1207,6 +1212,26 @@ Insert the TOC here, with one headline level:
 
 -----
 
+** Listing
+
+>> This makes it tricky to reference figures in a way that works with
+>> both HTML and LaTeX: for HTML one needs to write "Figure [[fig:a]]
+>> shows x, Listing [[lst:b]] shows y" (which exports into "Figure
+>> 1 shows x, Listing 1 shows y", while for LaTeX one needs to write
+>> "Figure [[fig:a]] shows x, Figure [[lst:a]] shows y" (which exports
+>> into "Figure 1 shows x, Figure 2 shows y"). I don't know of an easy
+>> way to achieve this.
+> 
+> You can use @@html:Listing@@@@latex:Figure@@ [[lst:a]], or with a macro
+> 
+>   #+macro: listing @@html:Listing@@@@latex:Figure@@
+> 
+> and
+> 
+>   {{{listing}}} [[lst:a]]
+
+-----
+
 * Dev tools
 
 ** Twitter "Share a link"
@@ -1278,15 +1303,16 @@ I love contributions!  Patches under any form are always welcome!
 
 ** Donations
 
-If you like the org-macros project, you can show your appreciation and help
-support future development by making today a [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dmacros&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted][donation]] through PayPal.
+If you use the org-macros project and feel it is making your life better and
+easier, you can show your appreciation and help support future development by
+making today a [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=org%2dmacros&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted][donation]] through PayPal.  Thank you!
 
 Regardless of the donations, org-macros will always be free both as in beer and
 as in speech.
 
 * License
 
-Copyright (C) 2014-2016 Free Software Foundation, Inc.
+Copyright (C) 2014-2017 Free Software Foundation, Inc.
 
 Author: Fabrice Niessen \\
 Keywords: org-mode macros
