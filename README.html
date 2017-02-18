@@ -213,6 +213,7 @@
 <li><a href="#sec-8">Navigation and lists</a>
 <ul>
 <li><a href="#toc">Toc macro</a></li>
+<li><a href="#sec-8-2">Listing</a></li>
 </ul>
 </li>
 <li><a href="#sec-9">Dev tools</a>
@@ -671,7 +672,7 @@ being exported.
 <h4 id="sec-3-5-2">Examples</h4>
 <div class="outline-text-4" id="text-3-5-2">
 <p>
-This document was last modified on: 2016-07-27 Wed 21:45.
+This document was last modified on: 2017-01-14 Sat 20:56.
 </p>
 </div>
 </div>
@@ -753,7 +754,7 @@ exported.
 <h4 id="sec-3-7-2">Examples</h4>
 <div class="outline-text-4" id="text-3-7-2">
 <p>
-This document was last exported on: 2016-07-27 Wed 21:45.
+This document was last exported on: 2017-01-14 Sat 20:56.
 </p>
 </div>
 </div>
@@ -1062,7 +1063,7 @@ The <code>fixme</code> macro inserts a &ldquo;Fix Me!&rdquo; image (with adequat
 <div class="outline-text-4" id="text-4-4-1">
 <div class="org-src-container">
 
-<pre class="src src-org"><span class="org-org-meta-line">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span class="org-org-meta-line"><span class="org-leuven-highlight">FIXME</span></span><span class="org-org-meta-line">&lt;/span&gt;@@</span>
+<pre class="src src-org"><span class="org-org-meta-line">#+MACRO: fixme @@html:&lt;span class="fixme"&gt;</span><span class="org-org-meta-line"><span class="org-leuven-highlight-todo-items">FIXME</span></span><span class="org-org-meta-line">&lt;/span&gt;@@</span>
 </pre>
 </div>
 
@@ -1072,8 +1073,8 @@ CSS example:
 
 <div class="org-src-container">
 
-<pre class="src src-css"><span class="org-css-selector">.</span><span class="org-css-selector"><span class="org-leuven-highlight">fixme</span></span><span class="org-css-selector"> </span>{
-    <span class="org-css-property">background</span>: #FFFF88 url(<span class="org-string">'../images/</span><span class="org-string"><span class="org-leuven-highlight">fixme</span></span><span class="org-string">.png'</span>) no-repeat top left;
+<pre class="src src-css"><span class="org-css-selector">.</span><span class="org-css-selector"><span class="org-leuven-highlight-todo-items">fixme</span></span><span class="org-css-selector"> </span>{
+    <span class="org-css-property">background</span>: #FFFF88 url(<span class="org-string">'../images/</span><span class="org-string"><span class="org-leuven-highlight-todo-items">fixme</span></span><span class="org-string">.png'</span>) no-repeat top left;
     <span class="org-css-property">color</span>: #CC0000;
     <span class="org-css-property">display</span>: inline-block;
     <span class="org-css-property">height</span>: 16px;
@@ -2151,6 +2152,31 @@ Insert the TOC here, with one headline level:
 </div>
 </div>
 </div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">Listing</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+&gt;&gt; This makes it tricky to reference figures in a way that works with
+&gt;&gt; both HTML and LaTeX: for HTML one needs to write &ldquo;Figure <i>fig:a</i>
+&gt;&gt; shows x, Listing <i>lst:b</i> shows y&rdquo; (which exports into &ldquo;Figure
+&gt;&gt; 1 shows x, Listing 1 shows y&rdquo;, while for LaTeX one needs to write
+&gt;&gt; &ldquo;Figure <i>fig:a</i> shows x, Figure <i>lst:a</i> shows y&rdquo; (which exports
+&gt;&gt; into &ldquo;Figure 1 shows x, Figure 2 shows y&rdquo;). I don&rsquo;t know of an easy
+&gt;&gt; way to achieve this.
+&gt; 
+&gt; You can use Listing <i>lst:a</i>, or with a macro
+&gt; 
+&gt;   #+macro: listing Listing
+&gt; 
+&gt; and
+&gt; 
+&gt;   <i>lst:a</i>
+</p>
+
+<hr  />
+</div>
+</div>
 </div>
 
 <div id="outline-container-sec-9" class="outline-2">
@@ -2244,7 +2270,7 @@ as in speech.
 <h2 id="sec-11">License</h2>
 <div class="outline-text-2" id="text-11">
 <p>
-Copyright (C) 2014-2016 Free Software Foundation, Inc.
+Copyright (C) 2014-2017 Free Software Foundation, Inc.
 </p>
 
 <p>
@@ -2283,7 +2309,7 @@ this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.
 <div id="postamble" class="status">
 <p class="date">Date: 2015-05-11 12:34</p>
 <p class="author">Author: Fabrice Niessen</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

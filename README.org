@@ -644,7 +644,7 @@ You have to put it in a macro.
 *** Code
 
 #+begin_src org
-,#+MACRO: newline @@latex:\\@@ @@html:<br>@@
+,#+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 #+end_src
 
 *** Parameters
