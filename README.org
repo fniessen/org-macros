@@ -683,7 +683,7 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 *** Code
 
 #+begin_src org
-,#+MACRO: kbd @@html:<kbd>@@$1@@html:</kdb>@@
+,#+MACRO: kbd @@html:<kbd>@@$1@@html:</kbd>@@
 #+end_src
 
 See ~menukeys~ for LaTeX.
