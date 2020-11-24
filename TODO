@@ -1,0 +1,110 @@
+# Hey Emacs, this is a -*- org -*- file ...
+#+TITLE:     Org Macros Tasks
+#+AUTHOR:    Fabrice Niessen
+#+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
+#+DESCRIPTION:
+#+KEYWORDS:  org mode, macros
+#+LANGUAGE:  en
+
+#+PROPERTY: comments no :eval yes :noweb yes
+
+#+HTML_HEAD: <script>var HS_STARTUP_FOLDED = true;</script>
+#+HTML_HEAD: <script>var HS_ALWAYS_DISPLAY_ICON = true;</script>
+
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: org-macros.setup
+
+* Tasks
+
+** TODO =info=, =tip=, =note= and =warning= in Org (HTML and LaTeX)
+
+https://www.anbg.gov.au/confluence/display/WIKIHT/Wiki+Markup+-+Notes,+Tips+and+Warnings
+
+https://wiki.umms.med.umich.edu/display/demo/Useful+Macros (see Highlight text)
+
+** TODO Compare with Confluence
+
+https://confluence.atlassian.com/display/DOC/Working+with+Macros
+
+http://www.adaptavist.com/display/AtlassianConfluence/Macros (<<<)
+
+https://wiki.umms.med.umich.edu/display/demo/Useful+Macros
+
+** TODO Add chart macros
+
+... to display pie, line and bar charts, see
+http://www.adaptavist.com/display/AtlassianConfluence/chart+macro
+
+** TODO Add an opacity value to the highlight color
+
+... to get the same effect as in
+http://www.adaptavist.com/display/AtlassianConfluence/highlight+macro
+
+http://stackoverflow.com/questions/5135019/css-opacity-only-to-background-color-not-the-text-on-it
+
+Though, there, it works with =div= (not =span=).
+
+** TODO Understand call lines
+
+#+begin_src org
+,#+name: current-time
+,#+begin_src emacs-lisp :eval yes :exports none :results silent
+(format-time-string "%Y%m%d.%H%M")
+,#+end_src
+
+,#+MACRO: current-time call_current-time()[:eval yes :results raw]
+#+end_src
+
+is equivalent to:
+
+#+begin_src org
+,#+name: current-time
+,#+begin_src emacs-lisp :exports none :results silent
+(format-time-string "%Y%m%d.%H%M")
+,#+end_src
+
+,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
+#+end_src
+
+But both =:eval yes= must be there, in the last case.
+
+** TODO Document the fact that Org macros can call Emacs Lisp
+
+Example:
+
+#+begin_src org
+,#+MACRO: get-title (eval (or (save-excursion (ignore-errors (let ((org-link-search-inhibit-query t)) (org-open-link-from-string "[[#$1]]") (org-get-heading nil nil)))) "/$1/"))
+#+end_src
+
+   DEADLINE: <2014-04-21 Mon -0d>
+
+** TODO Newlines (from Bastien)
+   [2014-04-17 Thu 21:58]
+
+#+begin_verse
+> It needs to be discussed, but I tend to think that it would be better to
+> allow newlines characters in macros and inline babel calls, even if it
+> means replacing them with a space when needed.
+
+I've given this another thought and I agree here.
+Prevent line breaks here would look weird, and adding
+the space when needed looks easy enough (at least,
+it's easy enough to suppose it is easy... not sure
+about the details.)
+#+end_verse
+
+From [[http://mid.gmane.org/87mwfj20eg.fsf%40bzg.ath.cx][Email from Bastien: Re: Prepare release 8.2.6]]
+
+** TODO Add section and column
+
+See https://wiki.mq.edu.au/pages/viewpage.action?pageId=73796610
+
+{section}
+{column:width=33%}{info:title=Info macro}Did you know...{info}{column}
+{column:width=33%}{tip:title=Tip macro}Have you tried...{tip}{column}
+{column:width=33%}{warning:title=Warning macro}Be careful! Check that you have...{warning}{column}
+{section}
+
+** TODO Add these macros in ELeuven (var =org-macro-default= does exist?)
+
+Or is it =org-macro-templates=?
