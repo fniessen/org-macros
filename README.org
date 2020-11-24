@@ -8,11 +8,11 @@
 #+OPTIONS:   H:4 num:nil toc:2
 #+EXCLUDE_TAGS: noexport
 
-#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org-macros.setup
+#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
 
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
-#+INCLUDE: org-macros.setup
+#+INCLUDE:   org/org-macros.setup
 
 #+begin_html
 <a href="http://opensource.org/licenses/GPL-3.0">
