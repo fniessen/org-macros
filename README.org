@@ -1,7 +1,6 @@
 #+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+DATE:      2015-05-11 12:34
 #+DESCRIPTION:
 #+KEYWORDS:  org-mode, macro, examples
 #+LANGUAGE:  en
@@ -10,7 +9,7 @@
 
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
 
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 
 #+INCLUDE:   org/org-macros.setup
 
@@ -62,12 +61,12 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 ** Installation
 
 #+begin_src org :tangle no
-,#+INCLUDE: /path/to/org-macros.setup
+,#+INCLUDE: /PATH/TO/org/org-macros.setup
 #+end_src
 
 #+begin_info
-As there are Babel code blocks inside the =org-macros.setup= file, it needs to be
-loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
+As there are Babel code blocks inside the =org/org-macros.setup= file, it needs to
+be loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
 #+end_info
 
 ** Usage
@@ -174,9 +173,9 @@ Below is a list of the few macros currently available.
 * Org built-ins
 
 ** Author macro
-   :PROPERTIES:
-   :CUSTOM_ID: author
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: author
+:END:
 
 The ~author~ macro outputs a list of users who have created or edited the
 document.
@@ -196,9 +195,9 @@ Option ~#+AUTHOR:~.
 -----
 
 ** Date macro
-   :PROPERTIES:
-   :CUSTOM_ID: date
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: date
+:END:
 
 The ~date~ macro outputs the *date and time* specified in the document.
 
@@ -220,9 +219,9 @@ The date of this document is: {{{date}}} or {{{date(%Y-%m)}}}.
 -----
 
 ** Email macro
-   :PROPERTIES:
-   :CUSTOM_ID: email
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: email
+:END:
 
 The ~email~ macro outputs the email of the author(s).
 
@@ -241,9 +240,9 @@ Option ~#+EMAIL:~.
 -----
 
 ** Input-file macro
-   :PROPERTIES:
-   :CUSTOM_ID: input-file
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: input-file
+:END:
 
 The ~input-file~ macro displays the name of the input Org file.
 
@@ -258,9 +257,9 @@ The input file name for this document is: {{{input-file}}}.
 -----
 
 ** Modification-time macro
-   :PROPERTIES:
-   :CUSTOM_ID: modification-time
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: modification-time
+:END:
 
 The ~modification-time~ macro outputs the *modification date and time* /of/ the file
 being exported.
@@ -281,9 +280,9 @@ This document was last modified on: {{{modification-time(%Y-%m-%d %a %H:%M)}}}.
 -----
 
 ** Property macro
-   :PROPERTIES:
-   :CUSTOM_ID: property
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: property
+:END:
 
 The ~property~ macro outputs ...
 
@@ -295,9 +294,9 @@ The ~property~ macro outputs ...
 
 #+begin_src org :tangle no
 ,* TODO Do it!
-  :PROPERTIES:
-  :Effort:   1:00
-  :END:
+:PROPERTIES:
+:Effort:   1:00
+:END:
 
 This task should take no more than {{{property(Effort)}}} hours.
 #+end_src
@@ -305,9 +304,9 @@ This task should take no more than {{{property(Effort)}}} hours.
 -----
 
 ** Time macro
-   :PROPERTIES:
-   :CUSTOM_ID: time
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: time
+:END:
 
 The ~time~ macro outputs the *current date and time* /when/ the document is being
 exported.
@@ -328,9 +327,9 @@ This document was last exported on: {{{time(%Y-%m-%d %a %H:%M)}}}.
 -----
 
 ** Title macro
-   :PROPERTIES:
-   :CUSTOM_ID: title
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: title
+:END:
 
 The ~title~ macro outputs the document title.
 
@@ -351,9 +350,9 @@ Option ~#+TITLE:~.
 * Basic formatting
 
 ** BgColor macro
-   :PROPERTIES:
-   :CUSTOM_ID: bgcolor
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: bgcolor
+:END:
 
 The ~bgcolor~ macro allows you to change the background color of a block of text.
 
@@ -398,9 +397,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Clearpage macro
-   :PROPERTIES:
-   :CUSTOM_ID: clearpage
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: clearpage
+:END:
 
 *** Code
 
@@ -430,9 +429,9 @@ None.
 -----
 
 ** Color macro
-   :PROPERTIES:
-   :CUSTOM_ID: color
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: color
+:END:
 
 The ~color~ macro allows you to change the foreground color of inline text.
 
@@ -485,9 +484,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Fixme macro
-   :PROPERTIES:
-   :CUSTOM_ID: fixme
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: fixme
+:END:
 
 The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 
@@ -528,9 +527,9 @@ testing testing
 -----
 
 ** Highlight macro
-   :PROPERTIES:
-   :CUSTOM_ID: highlight
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: highlight
+:END:
 
 The ~highlight~ macro allows you to change the background color of inline text.
 
@@ -575,9 +574,9 @@ You can also use hexadecimal color codes:
 -----
 
 ** Hl macro
-   :PROPERTIES:
-   :CUSTOM_ID: hl
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: hl
+:END:
 
 The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 
@@ -605,9 +604,9 @@ The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 -----
 
 ** LoremIpsum macro
-   :PROPERTIES:
-   :CUSTOM_ID: loremipsum
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: loremipsum
+:END:
 
 The ~loremipsum~ macro displays one paragraph of meaningless text that you can
 use for demonstration purposes of visual elements such as font, typography or
@@ -632,9 +631,9 @@ This is a basic example of the ~Loremipsum~ text:
 -----
 
 ** Newline macro
-   :PROPERTIES:
-   :CUSTOM_ID: newline
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: newline
+:END:
 
 ~\\~ in headlines doesn't cause a line break, but gets exported in LaTeX to
 ~$\backslash$~.
@@ -660,9 +659,9 @@ None.
 -----
 
 ** Redact macro
-   :PROPERTIES:
-   :CUSTOM_ID: redact
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: redact
+:END:
 
 Is there any way to completely redact text in HTML export, so it just looks like
 black boxes?
@@ -676,9 +675,9 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 -----
 
 ** Kbd macro
-   :PROPERTIES:
-   :CUSTOM_ID: kbd
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: kbd
+:END:
 
 *** Code
 
@@ -703,9 +702,9 @@ Use {{{kbd(C-c a a)}}} to launch the agenda.
 * Advanced
 
 ** dvipng-when-odt
-   :PROPERTIES:
-   :CUSTOM_ID: dvipng-when-odt
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: dvipng-when-odt
+:END:
 
 *** Code
 
@@ -720,9 +719,9 @@ Use {{{kbd(C-c a a)}}} to launch the agenda.
 -----
 
 ** if-latex macro
-   :PROPERTIES:
-   :CUSTOM_ID: if-latex-else
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: if-latex-else
+:END:
 
 XXX
 
@@ -744,9 +743,9 @@ XXX
 -----
 
 ** style
-   :PROPERTIES:
-   :CUSTOM_ID: style
-   :END:
+:PROPERTIES:
+:CUSTOM_ID: style
+:END:
 
 The ~style~ macro allows you to add custom style sheets to a page or import from
 an external URL.
@@ -777,9 +776,9 @@ URL to import an external style sheet.
 * Generic
 
 ** COMMENT Area chart macro
-    :PROPERTIES:
-    :CUSTOM_ID: area-chart
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: area-chart
+:END:
 
 The ~area-chart~ macro displays a chart.
 
@@ -826,9 +825,9 @@ The resulting area chart:
 -----
 
 ** COMMENT Bar chart macro
-    :PROPERTIES:
-    :CUSTOM_ID: bar-chart
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: bar-chart
+:END:
 
 The ~bar-chart~ macro displays a chart.
 
@@ -874,9 +873,9 @@ The resulting bar chart:
 -----
 
 ** Image macro
-    :PROPERTIES:
-    :CUSTOM_ID: image
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: image
+:END:
 
 The ~image~ macro displays an image.
 
@@ -900,9 +899,9 @@ The ~image~ macro displays an image.
 -----
 
 ** Version-history macro
-    :PROPERTIES:
-    :CUSTOM_ID: version-history
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: version-history
+:END:
 
 The ~version-history~ macro inserts the history of (the last 5) updates made to
 a document: version number, date, author and comment.
@@ -941,9 +940,9 @@ This only will work with *Git repositories*.
 * Layout
 
 ** Collapse macro
-    :PROPERTIES:
-    :CUSTOM_ID: collapse
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: collapse
+:END:
 
 The ~collapse~ macro inserts of collapsed block of text.
 
@@ -963,9 +962,9 @@ It can be expanded by clicking a link.
 -----
 
 ** Info macro
-    :PROPERTIES:
-    :CUSTOM_ID: info
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: info
+:END:
 
 The ~info~ macro is useful for including helpful information.
 
@@ -1001,9 +1000,9 @@ Did you know...
 -----
 
 ** MiniPage macro
-    :PROPERTIES:
-    :CUSTOM_ID: minipage
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: minipage
+:END:
 
 *** Code
 
@@ -1019,9 +1018,9 @@ Did you know...
 -----
 
 ** Note macro
-    :PROPERTIES:
-    :CUSTOM_ID: note
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: note
+:END:
 
 *** Code
 
@@ -1055,9 +1054,9 @@ This is a useful note...
 -----
 
 ** Panel macro
-    :PROPERTIES:
-    :CUSTOM_ID: panel
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: panel
+:END:
 
 *** Code
 
@@ -1093,9 +1092,9 @@ This is a formatted block of text...
 -----
 
 ** Tip macro
-    :PROPERTIES:
-    :CUSTOM_ID: tip
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: tip
+:END:
 
 *** Code
 
@@ -1129,9 +1128,9 @@ Try doing it this way...
 -----
 
 ** Warning macro
-    :PROPERTIES:
-    :CUSTOM_ID: warning
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: warning
+:END:
 
 *** Code
 
@@ -1184,9 +1183,9 @@ images mean.
 FIXME Problem with the tab title.
 
 ** Toc macro
-    :PROPERTIES:
-    :CUSTOM_ID: toc
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: toc
+:END:
 
 Insert a table of contents.
 
@@ -1214,30 +1213,30 @@ Insert the TOC here, with one headline level:
 
 ** Listing
 
->> This makes it tricky to reference figures in a way that works with
->> both HTML and LaTeX: for HTML one needs to write "Figure [[fig:a]]
->> shows x, Listing [[lst:b]] shows y" (which exports into "Figure
->> 1 shows x, Listing 1 shows y", while for LaTeX one needs to write
->> "Figure [[fig:a]] shows x, Figure [[lst:a]] shows y" (which exports
->> into "Figure 1 shows x, Figure 2 shows y"). I don't know of an easy
->> way to achieve this.
-> 
-> You can use @@html:Listing@@@@latex:Figure@@ [[lst:a]], or with a macro
-> 
->   #+macro: listing @@html:Listing@@@@latex:Figure@@
-> 
-> and
-> 
->   {{{listing}}} [[lst:a]]
+# >> This makes it tricky to reference figures in a way that works with
+# >> both HTML and LaTeX: for HTML one needs to write "Figure [[fig:a]]
+# >> shows x, Listing [[lst:b]] shows y" (which exports into "Figure
+# >> 1 shows x, Listing 1 shows y", while for LaTeX one needs to write
+# >> "Figure [[fig:a]] shows x, Figure [[lst:a]] shows y" (which exports
+# >> into "Figure 1 shows x, Figure 2 shows y"). I don't know of an easy
+# >> way to achieve this.
+# >
+# > You can use @@html:Listing@@@@latex:Figure@@ [[lst:a]], or with a macro
+# >
+# >   #+macro: listing @@html:Listing@@@@latex:Figure@@
+# >
+# > and
+# >
+# >   {{{listing}}} [[lst:a]]
 
 -----
 
 * Dev tools
 
 ** Twitter "Share a link"
-    :PROPERTIES:
-    :CUSTOM_ID: twitter-share-link-button
-    :END:
+:PROPERTIES:
+:CUSTOM_ID: twitter-share-link-button
+:END:
 
 Add a "Share a link" button to your website.
 
