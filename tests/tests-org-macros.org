@@ -1,4 +1,4 @@
-#+TITLE:     Test file
+#+TITLE:     Org-macros Test file
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
 #+DESCRIPTION:
