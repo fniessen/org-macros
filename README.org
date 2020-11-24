@@ -10,7 +10,7 @@
 
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org-macros.setup
 
-#+SETUPFILE: ~/.dotfiles/org/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
 
 #+INCLUDE: org-macros.setup
 
