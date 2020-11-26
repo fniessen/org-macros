@@ -546,8 +546,8 @@ The ~highlight~ macro allows you to change the background color of inline text.
 
 *** Examples
 
-{{{highlight(red, This information is important.)}}}
-{{{highlight(#E0E0E0, This other isn't.)}}}
+{{{highlight(red, Highlighting text is easy in Org mode.)}}}
+{{{highlight(#E0E0E0, This text isn't important.)}}}
 
 Common color names are supported by most Org exporters (HTML, LaTeX):
 
@@ -1311,7 +1311,7 @@ as in speech.
 
 * License
 
-Copyright (C) 2014-2017 Free Software Foundation, Inc.
+Copyright (C) 2014-2020 Free Software Foundation, Inc.
 
 Author: Fabrice Niessen \\
 Keywords: org-mode macros
