@@ -10,8 +10,8 @@
 #+HTML_HEAD: <script>var HS_STARTUP_FOLDED = true;</script>
 #+HTML_HEAD: <script>var HS_ALWAYS_DISPLAY_ICON = true;</script>
 
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
-#+SETUPFILE: org-macros.setup
+#+SETUPFILE: ~/org/theme-readtheorg.setup
+#+INCLUDE:   ~/org/org-macros.setup
 
 * Lipsum
 
