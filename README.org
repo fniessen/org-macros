@@ -1311,7 +1311,7 @@ as in speech.
 
 * License
 
-Copyright (C) 2014-2021 Free Software Foundation, Inc.
+Copyright (C) 2014-2022 Fabrice Niessen
 
 Author: Fabrice Niessen \\
 Keywords: org-mode macros
