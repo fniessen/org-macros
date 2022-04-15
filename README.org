@@ -56,7 +56,7 @@ FIXME They will be soon made available for PDF exports.
 Use this command to check out the latest source code of the project from the
 Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 
-: git clone git@github.com:fniessen/org-macros.git
+: git clone https://github.com/fniessen/org-macros
 
 ** Installation
 
