@@ -110,6 +110,7 @@ Below is a list of the few macros currently available.
 - [[#bgcolor][bgcolor]] macro
 - [[#clearpage][clearpage]] macro
 - [[#color][color]] macro
+- [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
 - [[#highlight][highlight]] macro
 - [[#loremipsum][loremipsum]] macro
@@ -478,6 +479,48 @@ You can also use hexadecimal color codes:
 *** See also
 
 - [[#bgcolor][bgcolor]] macro
+- [[#highlight][highlight]] macro
+- [[#hl][hl]] macro
+
+-----
+
+** Lcolor macro
+:PROPERTIES:
+:CUSTOM_ID: lcolor
+:END:
+
+The ~lcolor~ macro is similar to [[#color][color]] macro except (a) it first
+converts org markup to latex and then applies color.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: lcolor (eval (concat "\n#+BEGIN_EXPORT latex\n {\color{" $1 (format "}{%s}}\n#+END_EXPORT\n" (org-export-string-as $2 'latex t))))
+#+end_src
+
+*** Parameters
+
+1. Color name
+2. Text you want to color.
+
+*** Examples
+
+{{{lcolor(red, This information is **important**.)}}}
+
+Common color names are supported by most Org exporters (HTML, LaTeX):
+
+{{{color(red, red)}}}
+{{{color(orange, orange)}}}
+{{{color(yellow, yellow)}}}
+{{{color(green, green)}}}
+{{{color(blue, blue)}}}
+{{{color(purple, purple)}}}
+{{{color(violet, violet)}}}
+
+*** See also
+
+- [[#bgcolor][bgcolor]] macro
+- [[#color][color]] macro
 - [[#highlight][highlight]] macro
 - [[#hl][hl]] macro
 
