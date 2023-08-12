@@ -146,6 +146,7 @@ Below is a list of the few macros currently available.
 
 *** Layout
 
+- [[#vspace][vspace]] macro
 - [[#collapse][collapse]] macro
 - [[#info][info]] macro
 - [[#minipage][minipage]] macro
@@ -981,6 +982,27 @@ This only will work with *Git repositories*.
 -----
 
 * Layout
+
+** Vspace macro
+:PROPERTIES:
+:CUSTOM_ID: vspace
+:END:
+
+The ~vspace~ macro XXX.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: vspace @@latex:\vspace{10pt}@@@@html:<div style="margin-bottom: 10pt;"></div>@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+-----
 
 ** Collapse macro
 :PROPERTIES:

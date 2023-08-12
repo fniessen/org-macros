@@ -6,6 +6,8 @@
 
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
 
+#+MACRO: lcolor (eval (concat "\n#+BEGIN_EXPORT latex\n {\color{" $1 (format "}{%s}}\n#+END_EXPORT\n" (org-export-string-as $2 'latex t))))
+
 #+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
 
 #+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
@@ -32,6 +34,8 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+end_src
 
 #+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
+
+#+MACRO: vspace @@latex:\vspace{10pt}@@@@html:<div style="margin-bottom: 10pt;"></div>@@
 
 #+MACRO: begin_info @@html:<div class="info"><p>@@
 #+MACRO: end_info @@html:</p></div>@@
