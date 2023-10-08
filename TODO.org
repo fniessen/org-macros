@@ -16,6 +16,11 @@
 
 * Tasks
 
+** TODO org-export-global-macros
+
+On 2016-12-19, Nicolas Goaziou added ~org-export-global-macros~ in master.  Could
+be interesting to use!
+
 ** TODO =info=, =tip=, =note= and =warning= in Org (HTML and LaTeX)
 
 https://www.anbg.gov.au/confluence/display/WIKIHT/Wiki+Markup+-+Notes,+Tips+and+Warnings
