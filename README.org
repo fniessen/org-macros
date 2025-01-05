@@ -1403,7 +1403,7 @@ as in speech.
 
 * License
 
-Copyright (C) 2014-2022 Fabrice Niessen
+Copyright (C) 2014-2025 Fabrice Niessen. All rights reserved.
 
 Author: Fabrice Niessen \\
 Keywords: org-mode macros
