@@ -53,8 +53,8 @@ Though, there, it works with =div= (not =span=).
 
 #+begin_src org
 ,#+name: current-time
-,#+begin_src emacs-lisp :eval yes :exports none :results silent
-(format-time-string "%Y%m%d.%H%M")
+,#+begin_src emacs-lisp :eval yes :exports none :results value :tangle no
+(format-time-string "<%Y%m%d.%H%M>")
 ,#+end_src
 
 ,#+MACRO: current-time call_current-time()[:eval yes :results raw]
@@ -64,8 +64,8 @@ is equivalent to:
 
 #+begin_src org
 ,#+name: current-time
-,#+begin_src emacs-lisp :exports none :results silent
-(format-time-string "%Y%m%d.%H%M")
+,#+begin_src emacs-lisp :exports none :results value :tangle no
+(format-time-string "<%Y%m%d.%H%M>")
 ,#+end_src
 
 ,#+MACRO: current-time call_current-time[:eval yes]()[:eval yes :results raw]
@@ -109,6 +109,14 @@ See https://wiki.mq.edu.au/pages/viewpage.action?pageId=73796610
 {column:width=33%}{tip:title=Tip macro}Have you tried...{tip}{column}
 {column:width=33%}{warning:title=Warning macro}Be careful! Check that you have...{warning}{column}
 {section}
+
+** TODO Add repo-slug (Nom du dépôt)
+
+** TODO Add Changelog (Journal des modifications)
+
+** TODO Add git-version (Version Git)
+
+** TODO Add path relative from root (Chemin relatif à partir de la racine)
 
 ** TODO Add these macros in ELeuven (var =org-macro-default= does exist?)
 
