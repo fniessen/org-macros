@@ -407,19 +407,19 @@ The ~bgcolor~ macro allows you to change the background color of a block of text
 
 Common color names are supported by most Org exporters (HTML, LaTeX):
 
-{{{bgcolor(red, red)}}}
-{{{bgcolor(orange, orange)}}}
-{{{bgcolor(yellow, yellow)}}}
-{{{bgcolor(green, green)}}}
-{{{bgcolor(blue, blue)}}}
-{{{bgcolor(purple, purple)}}}
-{{{bgcolor(violet, violet)}}}
+{{{bgcolor(red, Attention importante !)}}}
+{{{bgcolor(orange, En cours de traitement)}}}
+{{{bgcolor(yellow, Conseil utile)}}}
+{{{bgcolor(green, Action validée)}}}
+{{{bgcolor(blue, Information)}}}
+{{{bgcolor(purple, Objectif clé)}}}
+{{{bgcolor(violet, Particularité)}}}​
 
-You can also use hexadecimal color codes:
+You can also use hexadecimal color codes (to match an existing design palette):
 
-{{{bgcolor(#FF0000, #FF0000)}}}
-{{{bgcolor(#00FF00, #00FF00)}}}
-{{{bgcolor(#0000FF, #0000FF)}}}
+{{{bgcolor(#FF6B6B, Erreur critique)}}}
+{{{bgcolor(#4ECDC4, Succès confirmé)}}}
+{{{bgcolor(#45B7D1, Lien externe)}}}
 
 *** See also
 
@@ -437,7 +437,7 @@ You can also use hexadecimal color codes:
 *** Code
 
 #+begin_src org
-,#+MACRO: clearpage @@latex:\\clearpage@@@@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after:always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
@@ -658,7 +658,7 @@ The ~hl~ macro allows you to highlight text with a "neon marker" effect.
 *** Code
 
 #+begin_src org
-,#+MACRO: hl {{{highlight(#FFFF00,$1)}}}
+,#+MACRO: hl @@html:<span style="background-color: #FFFF00;">$1</span>@@
 #+end_src
 
 *** Parameters
