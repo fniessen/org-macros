@@ -178,6 +178,7 @@ Below is a list of the few macros currently available.
 *** Layout
 
 - [[#vspace][vspace]] macro
+- [[#vsp][vsp]] macro
 - [[#collapse][collapse]] macro
 - [[#info][info]] macro
 - [[#minipage][minipage]] macro
@@ -1019,7 +1020,7 @@ This only will work with *Git repositories*.
 :CUSTOM_ID: vspace
 :END:
 
-The ~vspace~ macro XXX.
+The ~vspace~ macro adds a fixed vertical gap to your Org document when exporting.
 
 *** Code
 
@@ -1029,9 +1030,61 @@ The ~vspace~ macro XXX.
 
 *** Parameters
 
-None.
+None. The 10 pt value is baked into the macro definition.
 
 *** Examples
+
+Insert space between paragraphs:
+
+#+begin_src org
+First paragraph.
+
+{{{vspace}}}
+
+Second paragraph.
+#+end_src
+
+*** Customization
+
+To change the gap, redefine the macro in your setup:
+
+#+begin_src org
+,#+MACRO: vspace @@latex:\vspace{20pt}@@@@html:<div style="margin-bottom: 20pt;"></div>@@
+#+end_src
+
+-----
+
+** Vsp macro
+:PROPERTIES:
+:CUSTOM_ID: vsp
+:END:
+
+The ~vsp~ macro inserts vertical space in Org-mode exports (LaTeX and HTML). It
+takes one optional parameter -- the amount of space to insert.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: vsp @@latex:\vsp{$1}@@@@html:<div style="margin-bottom: $1;"></div>@@
+#+end_src
+
+*** Parameters
+
+~$1~: any valid TeX/CSS length (e.g. ~10pt~, ~1em~, ~2cm~, ~15px~).
+
+*** Examples
+
+Insert space between paragraphs:
+
+#+begin_src org
+First paragraph.
+
+{{{vsp(20pt)}}}
+
+Second paragraph appears after 20 pt of extra space.
+
+{{{vsp(1.5em)}}}
+#+end_src
 
 -----
 
