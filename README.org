@@ -1,17 +1,18 @@
 #+TITLE:     Org Macros
 #+AUTHOR:    Fabrice Niessen
 #+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+DESCRIPTION:
-#+KEYWORDS:  org-mode, macro, examples
+#+DATE:
+#+DESCRIPTION: Comprehensive collection of Org-mode macros for enhanced formatting, layout, navigation and dynamic content in HTML, LaTeX, and ODT exports.
+#+KEYWORDS:  org-mode, macro, export, formatting, layout, navigation, HTML, LaTeX, ODT, color, typography
 #+LANGUAGE:  en
+
 #+OPTIONS:   H:4 num:nil toc:2
 #+EXCLUDE_TAGS: noexport
 
-#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
-
 #+SETUPFILE: ~/org/theme-readtheorg.setup
-
 #+INCLUDE:   ~/org/org-macros.setup
+
+#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
 
 #+begin_html
 <a href="http://opensource.org/licenses/GPL-3.0">
@@ -91,6 +92,8 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 
 ** Installation
 
+Load macro definitions via:
+
 #+begin_src org :tangle no
 ,#+INCLUDE: /PATH/TO/org/org-macros.setup
 #+end_src
@@ -105,20 +108,20 @@ be loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
 Once you've cloned [[https://github.com/fniessen/org-macros][Org-macros]], many macros will be ready to use within your Org
 files.
 
-You can invoke macros anywhere in the document (even in code examples).
+You can *invoke macros* anywhere in the document (even in code examples).
 
 Examples:
 
 - With no arguments:
 
   #+begin_example
-  {{{name-of-the-macro}}}
+  {{{macro-name}}}
   #+end_example
 
 - With arguments:
 
   #+begin_example
-  {{{name-of-the-macro(arg1,arg2)}}}
+  {{{macro-name(arg1,arg2)}}}
   #+end_example
 
 ** Macros
