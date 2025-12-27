@@ -163,6 +163,8 @@ Below is a list of the few macros currently available.
 - [[#dvipng-when-odt][dvipng-when-odt]] macro
 - [[#if-latex-else][if-latex-else]] macro
 - [[#if-html-else][if-html-else]] macro
+- [[#raw-latex][raw-latex]] macro
+- [[#raw-html][raw-html]] macro
 - [[#P][P (Beamer overlay)]] macro
 - [[#style][style]] macro
 
@@ -932,6 +934,10 @@ When exporting to another backend, it expands to:
 something else
 #+end_src
 
+*** See also
+
+[[#if-html-else][if-html-else]] macro
+
 -----
 
 ** If-html-else macro
@@ -973,6 +979,92 @@ When exporting to another backend, it expands to:
 #+begin_src text :tangle no
 something else
 #+end_src
+
+*** See also
+
+[[#if-latex-else][if-latex-else]] macro
+
+-----
+
+** Raw-latex macro
+:PROPERTIES:
+:CUSTOM_ID: raw-latex
+:END:
+
+The ~raw-latex~ macro inserts raw LaTeX code when exporting to a LaTeX-derived
+backend (LaTeX, Beamer, etc.).
+
+It has no effect for non-LaTeX backends.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: raw-latex @@latex:$1@@
+#+end_src
+
+*** Parameters
+
+1. Raw LaTeX code to be passed verbatim to the LaTeX exporter.
+
+*** Examples
+
+#+begin_src org :tangle no
+{{{raw-latex(\textbf{LaTeX only})}}}
+#+end_src
+
+When exporting to LaTeX or Beamer, this expands to:
+
+#+begin_src latex :tangle no
+\textbf{LaTeX only}
+#+end_src
+
+For non-LaTeX backends, the macro expands to nothing.
+
+*** See also
+
+[[#raw-html][raw-html]] macro
+
+-----
+
+** Raw-html macro
+:PROPERTIES:
+:CUSTOM_ID: raw-html
+:END:
+
+The ~raw-html~ macro inserts raw HTML code when exporting to an HTML-derived
+backend.
+
+It has no effect for non-HTML backends.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: raw-html @@html:$1@@
+#+end_src
+
+*** Parameters
+
+1. Raw HTML code to be passed verbatim to the HTML exporter.
+
+*** Examples
+
+#+begin_src org :tangle no
+{{{raw-html(<span class="note">HTML only</span>)}}}
+#+end_src
+
+When exporting to HTML, this expands to:
+
+#+begin_src html :tangle no
+<span class="note">HTML only</span>
+#+end_src
+
+For non-HTML backends, the macro expands to nothing.
+
+*** See also
+
+[[#raw-latex][raw-latex]] macro
+
+-----
 
 ** P (Beamer overlay) macro
 :PROPERTIES:

@@ -30,6 +30,10 @@
 
 #+MACRO: if-html-else (eval (if (org-export-derived-backend-p org-export-current-backend 'html) "$1" "$2"))
 
+#+MACRO: raw-latex @@latex:$1@@
+
+#+MACRO: raw-html @@html:$1@@
+
 #+MACRO: P @@beamer:\pause@@
 
 #+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <link type=\"text/css\" rel=\"stylesheet\" href=\"" "$1" "\" media=\"all\">"))
