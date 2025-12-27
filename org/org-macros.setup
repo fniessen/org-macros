@@ -18,7 +18,9 @@
 
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
-#+MACRO: kbd @@html:<kbd>@@$1@@html:</kbd>@@
+#+MACRO: k @@latex:\keys{$1} @@@@html:<kbd>$1</kbd>@@
+
+#+MACRO: ik  @@latex:\index{$1}\keys{$1} @@@@html:<kbd>$1</kbd>@@
 
 #+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ))
 

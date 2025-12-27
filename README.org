@@ -151,7 +151,8 @@ Below is a list of the few macros currently available.
 
 - [[#newline][newline]] macro
 - [[#redact][redact]] macro
-- [[#kbd][kbd]] macro
+- [[#k][k]] macro
+- [[#ik][ik]] macro
 
 # HTML phrase tags:
 # - <em> :: Renders as emphasized text
@@ -754,34 +755,93 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 
 -----
 
-** Kbd macro
+** K macro
 :PROPERTIES:
-:CUSTOM_ID: kbd
+:CUSTOM_ID: k
 :END:
+
+The ~k~ macro formats a keyboard shortcut. It is intended for inline keyboard
+notation.
 
 *** Code
 
 #+begin_src org
-,#+MACRO: kbd @@html:<kbd>@@$1@@html:</kbd>@@
+,#+MACRO: k @@latex:\keys{$1} @@@@html:<kbd>$1</kbd>@@
 #+end_src
-
-See ~menukeys~ for LaTeX.
 
 *** Parameters
 
-1. Text to markup.
+1. Key or key sequence to display.
 
 *** Examples
 
 #+begin_src org :tangle no
-Use {{{kbd(C-c a a)}}} to launch the agenda.
+Press {{{k(C-x C-s)}}} to save the buffer.
 #+end_src
+
+LaTeX export:
+
+- Renders the shortcut using ~\keys{C-x C-s}~ (see ~menukeys~)
+
+HTML export:
+
+- Renders ~<kbd>C-x C-s</kbd>~
+
+*** See also
+
+[[#ik][ik]] macro
+
+-----
+
+** Ik macro
+:PROPERTIES:
+:CUSTOM_ID: ik
+:END:
+
+The ~ik~ macro formats a keyboard shortcut and simultaneously creates an index
+entry when exporting to LaTeX.
+
+It provides a unified syntax for documenting keyboard input across LaTeX and
+HTML backends.
+
+In LaTeX, it combines ~\index~ and ~\keys~.
+
+In HTML, it renders the key sequence using the ~<kbd>~ element.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: ik  @@latex:\index{$1}\keys{$1} @@@@html:<kbd>$1</kbd>@@
+#+end_src
+
+*** Parameters
+
+1. Key or key sequence to display and index.
+
+*** Examples
+
+#+begin_src org :tangle no
+Press {{{ik(C-c a a)}}} to launch the agenda.
+#+end_src
+
+LaTeX export:
+
+- Inserts the key sequence using ~\keys{C-c a a}~
+- Adds an index entry ~C-c a a~
+
+HTML export:
+
+- Renders ~<kbd>C-c a a</kbd>~
+
+*** See also
+
+[[#k][k]] macro
 
 -----
 
 * Advanced
 
-** dvipng-when-odt
+** Dvipng-when-odt macro
 :PROPERTIES:
 :CUSTOM_ID: dvipng-when-odt
 :END:
@@ -798,7 +858,7 @@ Use {{{kbd(C-c a a)}}} to launch the agenda.
 
 -----
 
-** if-latex macro
+** If-latex macro
 :PROPERTIES:
 :CUSTOM_ID: if-latex-else
 :END:
@@ -860,7 +920,7 @@ causing the sentences to appear on successive overlays.
 
 -----
 
-** style
+** Style macro
 :PROPERTIES:
 :CUSTOM_ID: style
 :END:
@@ -1421,6 +1481,14 @@ Insert the TOC here, with one headline level:
 # >   {{{listing}}} [[lst:a]]
 
 -----
+
+* See also
+
+Org mode Manual, Macro Replacement
+https://orgmode.org/manual/Macro-Replacement.html
+
+Org mode Manual, Backend-specific inline markup
+https://orgmode.org/manual/Backend-specific-syntax.html
 
 * Dev tools
 
