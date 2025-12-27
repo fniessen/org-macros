@@ -24,6 +24,8 @@
 
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 
+#+MACRO: P @@beamer:\pause@@
+
 #+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <style></style>"))
 
 #+MACRO: image \includegraphics{$1}
@@ -36,6 +38,10 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
 
 #+MACRO: vspace @@latex:\vspace{10pt}@@@@html:<div style="margin-bottom: 10pt;"></div>@@
+
+#+MACRO: vspace @@latex:\vspace{20pt}@@@@html:<div style="margin-bottom: 20pt;"></div>@@
+
+#+MACRO: vsp @@latex:\vsp{$1}@@@@html:<div style="margin-bottom: $1;"></div>@@
 
 #+MACRO: begin_info @@html:<div class="info"><p>@@
 #+MACRO: end_info @@html:</p></div>@@

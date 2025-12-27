@@ -167,6 +167,7 @@ Below is a list of the few macros currently available.
 
 - [[#dvipng-when-odt][dvipng-when-odt]] macro
 - [[#if-latex-else][if-latex-else]] macro
+- [[#P][P (Beamer overlay)]] macro
 - [[#style][style]] macro
 
 *** Generic macros
@@ -821,6 +822,44 @@ XXX
 
 -----
 
+** P (Beamer overlay) macro
+:PROPERTIES:
+:CUSTOM_ID: P
+:END:
+
+The ~P~ macro provides a shortcut for inserting an inline Beamer pause in order to
+create successive overlays in slides exported with ox-beamer.
+
+It wraps the Beamer ~\pause~ command using Org's backend-specific inline syntax.
+
+The macro is intended to simplify the writing of slides where sentences appear
+progressively, without using lists, blocks, or dedicated Beamer environments.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: P @@beamer:\pause@@
+#+end_src
+
+*** Parameters
+
+This macro takes no parameters.
+
+It performs a direct textual substitution into Beamer inline code at export time.
+
+*** Examples
+
+#+begin_src org :tangle no
+First sentence. {{{P}}}
+Second sentence. {{{P}}}
+Third sentence.
+#+end_src
+
+When exporting to Beamer, each occurrence of ~{{{P}}}~ is replaced with \pause,
+causing the sentences to appear on successive overlays.
+
+-----
+
 ** style
 :PROPERTIES:
 :CUSTOM_ID: style
@@ -1039,7 +1078,7 @@ None. The 10 pt value is baked into the macro definition.
 
 Insert space between paragraphs:
 
-#+begin_src org
+#+begin_src org :tangle no
 First paragraph.
 
 {{{vspace}}}
@@ -1079,7 +1118,7 @@ takes one optional parameter -- the amount of space to insert.
 
 Insert space between paragraphs:
 
-#+begin_src org
+#+begin_src org :tangle no
 First paragraph.
 
 {{{vsp(20pt)}}}
