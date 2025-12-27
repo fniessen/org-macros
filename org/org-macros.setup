@@ -18,9 +18,11 @@
 
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
-#+MACRO: k @@latex:\keys{$1} @@@@html:<kbd>$1</kbd>@@
+#+LATEX_HEADER: \usepackage{xspace}
+#+MACRO: k @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 
-#+MACRO: ik  @@latex:\index{$1}\keys{$1} @@@@html:<kbd>$1</kbd>@@
+#+LATEX_HEADER: \usepackage{xspace}
+#+MACRO: ik  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 
 #+MACRO: sup \zwnj^{$1}
 

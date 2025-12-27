@@ -766,7 +766,8 @@ notation.
 *** Code
 
 #+begin_src org
-,#+MACRO: k @@latex:\keys{$1} @@@@html:<kbd>$1</kbd>@@
+,#+LATEX_HEADER: \usepackage{xspace}
+,#+MACRO: k @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
@@ -811,7 +812,8 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 *** Code
 
 #+begin_src org
-,#+MACRO: ik  @@latex:\index{$1}\keys{$1} @@@@html:<kbd>$1</kbd>@@
+,#+LATEX_HEADER: \usepackage{xspace}
+,#+MACRO: ik  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
