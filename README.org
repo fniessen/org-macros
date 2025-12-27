@@ -150,9 +150,9 @@ Below is a list of the few macros currently available.
 - [[#loremipsum][loremipsum]] macro
 - [[#newline][newline]] macro
 - [[#redact][redact]] macro
-- [[#k][k]] macro
-- [[#ik][ik]] macro
-- [[#i][i]] macro
+- [[#kbd][kbd]] macro
+- [[#ikbd][ikbd]] macro
+- [[#idx][idx]] macro
 - [[#sup][sup]] macro
 
 # HTML phrase tags:
@@ -756,19 +756,19 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 
 -----
 
-** K macro
+** Kbd macro
 :PROPERTIES:
-:CUSTOM_ID: k
+:CUSTOM_ID: kbd
 :END:
 
-The ~k~ macro formats a keyboard input. It is intended for inline keyboard
+The ~kbd~ macro formats a keyboard input. It is intended for inline keyboard
 notation.
 
 *** Code
 
 #+begin_src org
 ,#+LATEX_HEADER: \usepackage{xspace}
-,#+MACRO: k @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+,#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
@@ -778,7 +778,7 @@ notation.
 *** Examples
 
 #+begin_src org :tangle no
-Press {{{k(C-x C-s)}}} to save the buffer.
+Press {{{kbd(C-x C-s)}}} to save the buffer.
 #+end_src
 
 LaTeX export:
@@ -791,18 +791,18 @@ HTML export:
 
 *** See also
 
-- [[#ik][ik]] macro
-- [[#i][i]] macro
+- [[#ikbd][ikbd]] macro
+- [[#idx][idx]] macro
 
 -----
 
-** Ik macro
+** Ikbd macro
 :PROPERTIES:
-:CUSTOM_ID: ik
+:CUSTOM_ID: ikbd
 :END:
 
-The ~ik~ macro formats a keyboard input and simultaneously creates an index entry
-when exporting to LaTeX.
+The ~ikbd~ macro formats a keyboard input and simultaneously creates an index
+entry when exporting to LaTeX.
 
 It provides a unified syntax for documenting keyboard input across LaTeX and
 HTML backends.
@@ -814,7 +814,7 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 *** Code
 
 #+begin_src org
-,#+MACRO: ik  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+,#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
@@ -824,7 +824,7 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 *** Examples
 
 #+begin_src org :tangle no
-Press {{{ik(C-c a a)}}} to launch the agenda.
+Press {{{ikbd(C-c a a)}}} to launch the agenda.
 #+end_src
 
 LaTeX export:
@@ -838,17 +838,17 @@ HTML export:
 
 *** See also
 
-- [[#k][k]] macro
-- [[#i][i]] macro
+- [[#kbd][kbd]] macro
+- [[#idx][idx]] macro
 
 -----
 
-** I macro
+** Idx macro
 :PROPERTIES:
-:CUSTOM_ID: i
+:CUSTOM_ID: idx
 :END:
 
-The ~i~ macro creates an index entry when exporting to LaTeX.
+The ~idx~ macro creates an index entry when exporting to LaTeX.
 
 It is intended for situations where a term, key, or key sequence should be added
 to the document index *without producing any visible output*.
@@ -859,7 +859,7 @@ backends, including HTML.
 *** Code
 
 #+begin_src org
-,#+MACRO: i @@latex:\index{$1}\xspace{}@@
+,#+MACRO: idx @@latex:\index{$1}\xspace{}@@
 #+end_src
 
 *** Parameters
@@ -868,8 +868,8 @@ backends, including HTML.
 
 *** See also
 
-- [[#k][k]] macro
-- [[#ik][ik]] macro
+- [[#kbd][kbd]] macro
+- [[#ikbd][ikbd]] macro
 
 -----
 
