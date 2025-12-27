@@ -12,7 +12,7 @@
 #+HTML_HEAD: <script>var HS_ALWAYS_DISPLAY_ICON = true;</script>
 
 #+SETUPFILE: ~/org/theme-readtheorg.setup
-#+INCLUDE:   ~/org-macros.setup
+#+SETUPFILE: org/org-macros.setup
 
 * Tasks
 

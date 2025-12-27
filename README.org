@@ -10,7 +10,7 @@
 #+EXCLUDE_TAGS: noexport
 
 #+SETUPFILE: ~/org/theme-readtheorg.setup
-#+INCLUDE:   ~/org/org-macros.setup
+#+SETUPFILE: org/org-macros.setup
 
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
 
@@ -95,7 +95,7 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 Load macro definitions via:
 
 #+begin_src org :tangle no
-,#+INCLUDE: /PATH/TO/org/org-macros.setup
+,#+SETUPFILE: /PATH/TO/org/org-macros.setup
 #+end_src
 
 #+begin_info
