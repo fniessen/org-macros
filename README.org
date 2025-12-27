@@ -882,7 +882,9 @@ or using export blocks.
 
 *** Examples
 
+#+begin_src org :tangle no
 {{{if-latex-else(latex code,something else)}}}
+#+end_src
 
 When exporting to LaTeX or Beamer, this expands to:
 
