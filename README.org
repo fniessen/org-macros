@@ -724,6 +724,9 @@ You have to put it in a macro.
 ,#+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 #+end_src
 
+# Inserts a raw newline (very common workaround):
+# src_emacs-lisp[:results raw]{'\n'} or similar.
+
 *** Parameters
 
 None.
@@ -919,19 +922,19 @@ or using export blocks.
 *** Examples
 
 #+begin_src org :tangle no
-{{{if-latex-else(latex code,something else)}}}
+{{{if-latex-else(LaTeX stuff,other stuff)}}}
 #+end_src
 
 When exporting to LaTeX or Beamer, this expands to:
 
 #+begin_src latex :tangle no
-latex code
+LaTeX stuff
 #+end_src
 
 When exporting to another backend, it expands to:
 
 #+begin_src text :tangle no
-something else
+other stuff
 #+end_src
 
 *** See also
@@ -965,19 +968,19 @@ or using export blocks.
 *** Examples
 
 #+begin_src org :tangle no
-{{{if-html-else(html code,something else)}}}
+{{{if-html-else(HTML stuff,other stuff)}}}
 #+end_src
 
 When exporting to HTML, this expands to:
 
 #+begin_src html :tangle no
-html code
+HTML stuff
 #+end_src
 
 When exporting to another backend, it expands to:
 
 #+begin_src text :tangle no
-something else
+other stuff
 #+end_src
 
 *** See also
