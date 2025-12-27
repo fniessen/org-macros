@@ -943,29 +943,35 @@ causing the sentences to appear on successive overlays.
 :CUSTOM_ID: style
 :END:
 
-The ~style~ macro allows you to add custom style sheets to a page or import from
-an external URL.
+The ~style~ macro allows importing an external CSS style sheet into an HTML
+export.
+
+It expands to an ~#+HTML_HEAD_EXTRA~ directive and therefore applies only to
+HTML-derived backends.
 
 *** Code
 
 #+begin_src org
-,#+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <style></style>"))
+,#+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <link type=\"text/css\" rel=\"stylesheet\" href=\"" "$1" "\" media=\"all\">"))
 #+end_src
 
 *** Parameters
 
-URL to import an external style sheet.
+1. URL of the external CSS style sheet.
 
 *** Examples
 
-# {{{style}}}
+#+begin_src org :tangle no
+{{{style(http://whatever.com/mystyle.css)}}}
+#+end_src
 
-   <style type="text/css">
-        .atb-sidebar.expanded {display:run-in;}
-        .atb-sidebar.collapsed {display:none;visibility:collapse;}
-    </style>
+This expands during export to:
 
-    <link type="text/css" rel="stylesheet" href="http://whatever.com/mystyle.css" media="all">
+#+begin_src org :tangle no
+,#+HTML_HEAD_EXTRA: <link type="text/css" rel="stylesheet" href="http://whatever.com/mystyle.css" media="all">
+#+end_src
+
+The referenced style sheet is then loaded by the generated HTML page.
 
 -----
 

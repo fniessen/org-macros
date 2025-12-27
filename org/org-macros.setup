@@ -28,7 +28,7 @@
 
 #+MACRO: P @@beamer:\pause@@
 
-#+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <style></style>"))
+#+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <link type=\"text/css\" rel=\"stylesheet\" href=\"" "$1" "\" media=\"all\">"))
 
 #+MACRO: image \includegraphics{$1}
 
