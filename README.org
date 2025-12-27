@@ -863,7 +863,11 @@ HTML export:
 :CUSTOM_ID: if-latex-else
 :END:
 
-XXX
+This macro conditionally expands its content depending on whether the current
+export backend is derived from LaTeX.
+
+It allows writing backend-specific content inline, without duplicating sections
+or using export blocks.
 
 *** Code
 
@@ -873,12 +877,24 @@ XXX
 
 *** Parameters
 
-1. Code for LaTeX back-end.
-2. Code for other back-ends.
+1. Code expanded when exporting to a LaTeX-derived backend (LaTeX, Beamer, etc.).
+2. Code expanded when exporting to any other backend.
 
 *** Examples
 
 {{{if-latex-else(latex code,something else)}}}
+
+When exporting to LaTeX or Beamer, this expands to:
+
+#+begin_src org :tangle no
+latex code
+#+end_src
+
+When exporting to another backend, it expands to:
+
+#+begin_src org :tangle no
+something else
+#+end_src
 
 -----
 
