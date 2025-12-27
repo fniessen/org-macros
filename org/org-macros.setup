@@ -71,6 +71,6 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 #+MACRO: begin_warning @@html:<div class="warning"><p>@@
 #+MACRO: end_warning @@html:</p></div>@@
 
-#+MACRO: toc #+toc: headlines $1
+#+MACRO: toc (eval (concat "#+TOC: headlines " "$1" " " "$2"))
 
 #+MACRO: twitter-share-link-button @@html:<script src="http://platform.twitter.com/widgets.js"></script><a href="https://twitter.com/share" class="twitter-share-button" data-via="$1">Tweet</a>@@

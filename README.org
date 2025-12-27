@@ -1631,27 +1631,58 @@ FIXME Problem with the tab title.
 :CUSTOM_ID: toc
 :END:
 
-Insert a table of contents.
+Insert a customizable headlines table of contents (TOC) at the macro's location
+during export.
 
 *** Code
 
 #+begin_src org
-,#+MACRO: toc #+toc: headlines $1
+,#+MACRO: toc (eval (concat "#+TOC: headlines " "$1" " " "$2"))
 #+end_src
+
+(Where $2 is optional and may contain additional ~#+TOC~ options such as
+~local~ or ~:target #CustomID~.)
 
 *** Parameters
 
-1. Number of headline levels.
+1. Number of headline levels to include (integer, e.g. ~1~, ~2~, ~3~).
+2. (Optional) Extra option(s), such as ~local~ (for relative depth, showing only
+   direct children of the current section) or ~:target #CustomID~.
 
 *** Remarks
 
-The ~toc~ macro *can't be inlined* in text.
+The ~toc~ macro expands to a full ~#+TOC:~ keyword line, so the table of contents
+appears as a block (*can't be inline* within a paragraph of text).
+
+You usually need to disable the default automatic TOC with
+~#+OPTIONS: toc:nil~ (or ~org-export-with-toc nil~) to avoid duplication.
+
+This macro is useful for placing TOCs at specific locations, inserting multiple
+TOCs, or creating local sub-TOCs.
 
 *** Examples
 
-Insert the TOC here, with one headline level:
+- Simple global TOC with 3 levels:
 
-{{{toc(1)}}}
+  #+begin_src org :tangle no
+  ,#+OPTIONS: toc:nil
+
+  {{{toc(3,)}}}
+  #+end_src
+
+- Local TOC showing only direct children of a section:
+
+  #+begin_src org :tangle no
+  ,* My Section
+
+  {{{toc(1,local)}}}
+  #+end_src
+
+  Shows only level-2 children of "My Section".
+
+*** See also
+
+https://orgmode.org/manual/Table-of-Contents.html
 
 -----
 
