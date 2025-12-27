@@ -23,6 +23,8 @@
 
 #+MACRO: ik  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
 
+#+MACRO: i @@latex:\index{$1}\xspace{}@@
+
 #+MACRO: sup \zwnj^{$1}
 
 #+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ))

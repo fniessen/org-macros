@@ -152,6 +152,7 @@ Below is a list of the few macros currently available.
 - [[#redact][redact]] macro
 - [[#k][k]] macro
 - [[#ik][ik]] macro
+- [[#i][i]] macro
 - [[#sup][sup]] macro
 
 # HTML phrase tags:
@@ -790,7 +791,8 @@ HTML export:
 
 *** See also
 
-[[#ik][ik]] macro
+- [[#ik][ik]] macro
+- [[#i][i]] macro
 
 -----
 
@@ -836,7 +838,38 @@ HTML export:
 
 *** See also
 
-[[#k][k]] macro
+- [[#k][k]] macro
+- [[#i][i]] macro
+
+-----
+
+** I macro
+:PROPERTIES:
+:CUSTOM_ID: i
+:END:
+
+The ~i~ macro creates an index entry when exporting to LaTeX.
+
+It is intended for situations where a term, key, or key sequence should be added
+to the document index *without producing any visible output*.
+
+The macro is evaluated *only for LaTeX export* and produces no output for other
+backends, including HTML.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: i @@latex:\index{$1}\xspace{}@@
+#+end_src
+
+*** Parameters
+
+1. Term to add to the index.
+
+*** See also
+
+- [[#k][k]] macro
+- [[#ik][ik]] macro
 
 -----
 
