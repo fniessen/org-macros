@@ -162,6 +162,7 @@ Below is a list of the few macros currently available.
 
 - [[#dvipng-when-odt][dvipng-when-odt]] macro
 - [[#if-latex-else][if-latex-else]] macro
+- [[#if-html-else][if-html-else]] macro
 - [[#P][P (Beamer overlay)]] macro
 - [[#style][style]] macro
 
@@ -891,13 +892,13 @@ with the preceding glyph.
 
 -----
 
-** If-latex macro
+** If-latex-else macro
 :PROPERTIES:
 :CUSTOM_ID: if-latex-else
 :END:
 
-This macro conditionally expands its content depending on whether the current
-export backend is derived from LaTeX.
+The ~if-latex-else~ macro conditionally expands its content depending on whether
+the current export backend is derived from LaTeX.
 
 It allows writing backend-specific content inline, without duplicating sections
 or using export blocks.
@@ -927,11 +928,51 @@ latex code
 
 When exporting to another backend, it expands to:
 
-#+begin_src html :tangle no
+#+begin_src text :tangle no
 something else
 #+end_src
 
 -----
+
+** If-html-else macro
+:PROPERTIES:
+:CUSTOM_ID: if-html-else
+:END:
+
+The ~if-html-else~ macro conditionally expands its content depending on whether
+the current export backend is derived from HTML.
+
+It allows writing backend-specific content inline, without duplicating sections
+or using export blocks.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: if-html-else (eval (if (org-export-derived-backend-p org-export-current-backend 'html) "$1" "$2"))
+#+end_src
+
+*** Parameters
+
+1. Code expanded when exporting to an HTML-derived backend.
+2. Code expanded when exporting to any other backend.
+
+*** Examples
+
+#+begin_src org :tangle no
+{{{if-html-else(html code,something else)}}}
+#+end_src
+
+When exporting to HTML, this expands to:
+
+#+begin_src html :tangle no
+html code
+#+end_src
+
+When exporting to another backend, it expands to:
+
+#+begin_src text :tangle no
+something else
+#+end_src
 
 ** P (Beamer overlay) macro
 :PROPERTIES:
