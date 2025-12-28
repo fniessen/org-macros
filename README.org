@@ -443,6 +443,9 @@ The ~clearpage~ macro forces a page break in all supported export backends.
 
 In LaTeX, it also flushes pending floats before starting the new page.
 
+In HTML, the page break is not visible in the browser, but it is applied when
+printing.
+
 *** Code
 
 #+begin_src org
@@ -493,6 +496,9 @@ Insert a forced page break:
 The ~pagebreak~ macro forces a page break without flushing floats.
 
 Its behavior is equivalent to ~\newpage~ in LaTeX.
+
+In HTML, the page break is not visible in the browser, but it is applied when
+printing.
 
 *** Code
 
