@@ -11,7 +11,7 @@
 #+HTML_HEAD: <script>var HS_STARTUP_FOLDED = true;</script>
 #+HTML_HEAD: <script>var HS_ALWAYS_DISPLAY_ICON = true;</script>
 
-#+SETUPFILE: ~/org/theme-readtheorg.setup
+#+SETUPFILE: ~/org/html-theme-readtheorg.setup
 #+SETUPFILE: org/org-macros.setup
 
 * Tasks
