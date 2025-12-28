@@ -2,11 +2,11 @@
 
 #+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 
-#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+#+MACRO: clearpage @@latex:\clearpage@@ @@html:<div style="page-break-after: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 
-#+MACRO: pagebreak @@latex:\newpage@@@@html:<div style="page-break-before: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 
-#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@ @@latex:\textcolor{$1}{$2}@@ @@odt:<text:span text:style-name="$1">$2</text:span>@@
 
 #+MACRO: lcolor (eval (concat "\n#+BEGIN_EXPORT latex\n {\color{" $1 (format "}{%s}}\n#+END_EXPORT\n" (org-export-string-as $2 'latex t))))
 
@@ -21,9 +21,9 @@
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
 #+LATEX_HEADER: \usepackage{xspace}
-#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
 
-#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
 
 #+MACRO: idx @@latex:\index{$1}\xspace{}@@
 
@@ -52,11 +52,11 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
 
-#+MACRO: vspace @@latex:\vspace{10pt}@@@@html:<div style="margin-bottom: 10pt;"></div>@@
+#+MACRO: vspace @@latex:\vspace{10pt}@@ @@html:<div style="margin-bottom: 10pt;"></div>@@
 
-#+MACRO: vspace @@latex:\vspace{20pt}@@@@html:<div style="margin-bottom: 20pt;"></div>@@
+#+MACRO: vspace @@latex:\vspace{20pt}@@ @@html:<div style="margin-bottom: 20pt;"></div>@@
 
-#+MACRO: vsp @@latex:\vsp{$1}@@@@html:<div style="margin-bottom: $1;"></div>@@
+#+MACRO: vsp @@latex:\vsp{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
 
 #+MACRO: begin_info @@html:<div class="info"><p>@@
 #+MACRO: end_info @@html:</p></div>@@

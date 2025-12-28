@@ -446,7 +446,7 @@ In LaTeX, it also flushes pending floats before starting the new page.
 *** Code
 
 #+begin_src org
-,#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: clearpage @@latex:\clearpage@@ @@html:<div style="page-break-after: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
@@ -497,7 +497,7 @@ Its behavior is equivalent to ~\newpage~ in LaTeX.
 *** Code
 
 #+begin_src org
-,#+MACRO: pagebreak @@latex:\newpage@@@@html:<div style="page-break-before: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
@@ -534,7 +534,7 @@ The ~color~ macro allows you to change the foreground color of inline text.
 *** Code
 
 #+begin_src org
-,#+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
+,#+MACRO: color @@html:<span style="color: $1">$2</span>@@ @@latex:\textcolor{$1}{$2}@@ @@odt:<text:span text:style-name="$1">$2</text:span>@@
 #+end_src
 
 #+begin_warning
@@ -827,7 +827,7 @@ notation.
 
 #+begin_src org
 ,#+LATEX_HEADER: \usepackage{xspace}
-,#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+,#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
@@ -873,7 +873,7 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 *** Code
 
 #+begin_src org
-,#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@@@html:<kbd>$1</kbd>@@
+,#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
 #+end_src
 
 *** Parameters
@@ -1413,7 +1413,7 @@ The ~vspace~ macro adds a fixed vertical gap to your Org document when exporting
 *** Code
 
 #+begin_src org
-,#+MACRO: vspace @@latex:\vspace{10pt}@@@@html:<div style="margin-bottom: 10pt;"></div>@@
+,#+MACRO: vspace @@latex:\vspace{10pt}@@ @@html:<div style="margin-bottom: 10pt;"></div>@@
 #+end_src
 
 *** Parameters
@@ -1437,7 +1437,7 @@ Second paragraph.
 To change the gap, redefine the macro in your setup:
 
 #+begin_src org
-,#+MACRO: vspace @@latex:\vspace{20pt}@@@@html:<div style="margin-bottom: 20pt;"></div>@@
+,#+MACRO: vspace @@latex:\vspace{20pt}@@ @@html:<div style="margin-bottom: 20pt;"></div>@@
 #+end_src
 
 -----
@@ -1453,7 +1453,7 @@ takes one optional parameter -- the amount of space to insert.
 *** Code
 
 #+begin_src org
-,#+MACRO: vsp @@latex:\vsp{$1}@@@@html:<div style="margin-bottom: $1;"></div>@@
+,#+MACRO: vsp @@latex:\vsp{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
 #+end_src
 
 *** Parameters
@@ -1789,9 +1789,9 @@ https://orgmode.org/manual/Table-of-Contents.html
 # >> into "Figure 1 shows x, Figure 2 shows y"). I don't know of an easy
 # >> way to achieve this.
 # >
-# > You can use @@html:Listing@@@@latex:Figure@@ [[lst:a]], or with a macro
+# > You can use @@html:Listing@@ @@latex:Figure@@ [[lst:a]], or with a macro
 # >
-# >   #+macro: listing @@html:Listing@@@@latex:Figure@@
+# >   #+macro: listing @@html:Listing@@ @@latex:Figure@@
 # >
 # > and
 # >
