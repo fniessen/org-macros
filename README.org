@@ -9,7 +9,7 @@
 #+OPTIONS:   H:4 num:nil toc:2
 #+EXCLUDE_TAGS: noexport
 
-#+SETUPFILE: ~/org/theme-readtheorg.setup
+#+SETUPFILE: ~/org/html-theme-readtheorg.setup
 #+SETUPFILE: org/org-macros.setup
 
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
@@ -143,6 +143,7 @@ Below is a list of the few macros currently available.
 
 - [[#bgcolor][bgcolor]] macro
 - [[#clearpage][clearpage]] macro
+- [[#pagebreak][pagebreak]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -438,23 +439,32 @@ You can also use hexadecimal color codes (to match an existing design palette):
 :CUSTOM_ID: clearpage
 :END:
 
+The ~clearpage~ macro forces a page break in all supported export backends.
+
+In LaTeX, it also flushes pending floats before starting the new page.
+
 *** Code
 
 #+begin_src org
-,#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after:always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
-To see the above example in action in ODT, edit your ~styles.xml~ file and add
-a custom style:
+ODT requirements -- For ODT export, this macro relies on a custom paragraph
+style named ~PageBreak~. This style must be defined in the ~styles.xml~ file of the
+generated ODT document.
 
-: <style:style style:name="PageBreak" style:family="paragraph"
-: style:parent-style-name="Text_20_body">
-: <style:paragraph-properties fo:break-before="page"/>
-: </style:style>
+Add the following style definition:
 
-See
-https://www.gnu.org/software/emacs/manual/html_node/org/Creating-one_002doff-styles.html.
+#+begin_src xml :tangle no
+<style:style style:name="PageBreak" style:family="paragraph"
+             style:parent-style-name="Text_20_body">
+  <style:paragraph-properties fo:break-before="page"/>
+</style:style>
+#+end_src
+
+For details on defining custom ODT styles in Org-mode, see
+[[https://www.gnu.org/software/emacs/manual/html_node/org/Advanced-topics-in-ODT-export.html#Creating-one_002doff-styles][Creating one-off styles]].
 #+end_warning
 
 *** Parameters
@@ -462,6 +472,55 @@ https://www.gnu.org/software/emacs/manual/html_node/org/Creating-one_002doff-sty
 None.
 
 *** Examples
+
+Insert a forced page break:
+
+#+begin_src org :tangle no
+{{{clearpage}}}
+#+end_src
+
+*** See also
+
+[[#pagebreak][pagebreak]] macro
+
+-----
+
+** Pagebreak macro
+:PROPERTIES:
+:CUSTOM_ID: pagebreak
+:END:
+
+The ~pagebreak~ macro forces a page break without flushing floats.
+
+Its behavior is equivalent to ~\newpage~ in LaTeX.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: pagebreak @@latex:\newpage@@@@html:<div style="page-break-before: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+#+end_src
+
+#+begin_warning
+ODT requirements -- As with ~clearpage~, ODT export requires the ~PageBreak~
+paragraph style to be defined in ~styles.xml~. The same style definition can be
+reused.
+#+begin_warning
+
+*** Parameters
+
+None.
+
+*** Examples
+
+Insert a simple page break:
+
+#+begin_src org :tangle no
+{{{pagebreak}}}
+#+end_src
+
+*** See also
+
+[[#clearpage][clearpage]] macro
 
 -----
 

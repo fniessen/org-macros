@@ -2,7 +2,9 @@
 
 #+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
 
-#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after:always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+#+MACRO: clearpage @@latex:\clearpage@@@@html:<div style="page-break-after: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
+
+#+MACRO: pagebreak @@latex:\newpage@@@@html:<div style="page-break-before: always;"></div>@@@@odt:<text:p text:style-name="PageBreak"/>@@
 
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@@@latex:\textcolor{$1}{$2}@@@@odt:<text:span text:style-name="$1">$2</text:span>@@
 
