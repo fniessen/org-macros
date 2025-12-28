@@ -446,7 +446,7 @@ In LaTeX, it also flushes pending floats before starting the new page.
 *** Code
 
 #+begin_src org
-,#+MACRO: clearpage @@latex:\clearpage@@ @@html:<div style="page-break-after: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: clearpage @@latex:\clearpage@@ @@html:<div style="page-break-after: always;">&nbsp;</div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
@@ -497,7 +497,7 @@ Its behavior is equivalent to ~\newpage~ in LaTeX.
 *** Code
 
 #+begin_src org
-,#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always;"></div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
+,#+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always;">&nbsp;</div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 #+end_src
 
 #+begin_warning
