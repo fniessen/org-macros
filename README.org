@@ -144,6 +144,7 @@ Below is a list of the few macros currently available.
 - [[#bgcolor][bgcolor]] macro
 - [[#clearpage][clearpage]] macro
 - [[#pagebreak][pagebreak]] macro
+- [[#framebreak][framebreak]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -484,7 +485,8 @@ Insert a forced page break:
 
 *** See also
 
-[[#pagebreak][pagebreak]] macro
+- [[#pagebreak][pagebreak]] macro
+- [[#framebreak][framebreak]] macro
 
 -----
 
@@ -526,7 +528,70 @@ Insert a simple page break:
 
 *** See also
 
-[[#clearpage][clearpage]] macro
+- [[#clearpage][clearpage]] macro
+- [[#framebreak][framebreak]] macro
+
+-----
+
+** Framebreak macro
+:PROPERTIES:
+:CUSTOM_ID: framebreak
+:END:
+
+The ~framebreak~ macro inserts a Beamer frame break.
+
+It is equivalent to the Beamer command ~\framebreak~. It is useful to split
+a single frame into multiple slides (multiple overlays) at a precise point.
+
+This macro is intended for Beamer export only. It has no effect for non-Beamer
+backends.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: framebreak @@beamer:\framebreak@@
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+Insert a frame break inside a frame:
+
+#+begin_src org :tangle no
+,* My slide title
+:PROPERTIES:
+:BEAMER_OPT: allowframebreaks
+:END:
+
+First part of the frame.
+
+{{{framebreak}}}
+
+Second part of the same frame (exported as the next slide).
+#+end_src
+
+You can also insert multiple breaks:
+
+#+begin_src org :tangle no
+Part 1. {{{framebreak}}}
+Part 2. {{{framebreak}}}
+Part 3.
+#+end_src
+
+*** Remarks
+
+For the "split into multiple slides" behavior, Beamer frames typically need the
+~allowframebreaks~ option (for example via ~:BEAMER_OPT: allowframebreaks~).
+
+Without ~allowframebreaks~, Beamer may not split the frame as expected.
+
+*** See also
+
+- [[#clearpage][clearpage]] macro
+- [[#pagebreak][pagebreak]] macro
 
 -----
 
