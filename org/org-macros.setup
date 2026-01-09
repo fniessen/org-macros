@@ -6,6 +6,8 @@
 
 #+MACRO: pagebreak @@latex:\newpage@@ @@html:<div style="page-break-before: always;">&nbsp;</div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 
+#+MACRO: framebreak @@beamer:\framebreak@@
+
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@ @@latex:\textcolor{$1}{$2}@@ @@odt:<text:span text:style-name="$1">$2</text:span>@@
 
 #+MACRO: lcolor (eval (concat "\n#+BEGIN_EXPORT latex\n {\color{" $1 (format "}{%s}}\n#+END_EXPORT\n" (org-export-string-as $2 'latex t))))
