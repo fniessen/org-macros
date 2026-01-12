@@ -16,22 +16,27 @@
 
 #+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
 
-#+MACRO: hl @@html:<span style="background-color: #FFFF00;">$1</span>@@
+#+MACRO: hl @@latex:\hl{$1}@@ @@html:<span style="background-color:#FFFF00;">$1</span>@@
 
 #+MACRO: loremipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
-#+LATEX_HEADER: \usepackage{xspace}
-#+MACRO: kbd @@latex:\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
+#+HTML_HEAD: <style>
+#+HTML_HEAD: kbd.kbd  {background:#eee;border:none;padding:0 .25em}
+#+HTML_HEAD: </style>
+#+MACRO: kbd @@latex:{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0pt}\fcolorbox{black!45}{black!10}{\lstinline[basicstyle=\ttfamily]§$1§}}@@ @@html:<kbd class="kbd">$1</kbd>@@
 
-#+MACRO: ikbd  @@latex:\index{$1}\keys{$1}\xspace{}@@ @@html:<kbd>$1</kbd>@@
+#+HTML_HEAD: <style>
+#+HTML_HEAD: kbd.ikbd {background:#e8f1ff;border:1px solid #4f6fb3;padding:0 .25em}
+#+HTML_HEAD: </style>
+#+MACRO: ikbd @@latex:\index{$1}{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0.4pt}\fcolorbox{blue!55!black}{blue!12}{\lstinline[basicstyle=\ttfamily]§$1§}}@@ @@html:<kbd class="ikbd">$1</kbd>@@
 
-#+MACRO: idx @@latex:\index{$1}\xspace{}@@
+#+MACRO: idx @@latex:\index{$1}@@
 
 #+MACRO: sup \zwnj^{$1}
 
-#+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ))
+#+MACRO: dvipng-when-odt (eval (if (org-export-derived-backend-p org-export-current-backend 'odt) "#+OPTIONS: tex:dvipng" ""))
 
 #+MACRO: if-latex-else (eval (if (org-export-derived-backend-p org-export-current-backend 'latex) "$1" "$2"))
 
@@ -58,13 +63,16 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: vspace @@latex:\vspace{20pt}@@ @@html:<div style="margin-bottom: 20pt;"></div>@@
 
-#+MACRO: vsp @@latex:\vsp{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
+#+MACRO: vsp @@latex:\vspace{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
+
+#+MACRO: begin_collapse @@html:<details><summary>$1</summary>@@
+#+MACRO: end_collapse @@html:</details>@@
 
 #+MACRO: begin_info @@html:<div class="info"><p>@@
 #+MACRO: end_info @@html:</p></div>@@
 
-#+MACRO: BeginMiniPage @<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">
-#+MACRO: EndMiniPage @</div>
+#+MACRO: begin_minipage @@html:<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">@@
+#+MACRO: end_minipage @@html:</div>@@
 
 #+MACRO: begin_note @@html:<div class="note"><p>@@
 #+MACRO: end_note @@html:</p></div>@@
