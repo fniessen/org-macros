@@ -144,7 +144,7 @@ Below is a list of the few macros currently available.
 - [[#bgcolor][bgcolor]] macro
 - [[#clearpage][clearpage]] macro
 - [[#pagebreak][pagebreak]] macro
-- [[#framebreak][framebreak]] macro
+- [[#framebrea--k][framebreak]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -539,12 +539,12 @@ Insert a simple page break:
 
 -----
 
-** Framebreak macro
+** framebreak macro
 :PROPERTIES:
 :CUSTOM_ID: framebreak
 :END:
 
-The ~framebreak~ macro inserts a Beamer frame break.
+The ~framebreak~ (or ~framebreak---~) macro inserts a Beamer frame break.
 
 It is equivalent to the Beamer command ~\framebreak~. It is useful to split
 a single frame into multiple slides (multiple overlays) at a precise point.
@@ -556,6 +556,7 @@ backends.
 
 #+begin_src org
 ,#+MACRO: framebreak @@beamer:\framebreak@@
+,#+MACRO: framebreak--- @@beamer:\framebreak@@
 #+end_src
 
 *** Parameters
@@ -574,7 +575,7 @@ Insert a frame break inside a frame:
 
 First part of the frame.
 
-{{{framebreak}}}
+{{{framebreak---}}}
 
 Second part of the same frame (exported as the next slide).
 #+end_src
@@ -920,7 +921,7 @@ notation.
 ,#+HTML_HEAD: <style>
 ,#+HTML_HEAD: kbd.kbd  {background:#eee;border:none;padding:0 .25em}
 ,#+HTML_HEAD: </style>
-,#+MACRO: kbd @@latex:{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0pt}\fcolorbox{black!45}{black!10}{\lstinline[basicstyle=\ttfamily]§$1§}}@@ @@html:<kbd class="kbd">$1</kbd>@@
+,#+MACRO: kbd @@latex:{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0pt}\fcolorbox{black!45}{black!10}{\lstinline[language=shell,basicstyle=\ttfamily\scriptsize]§$1§}}@@ @@html:<kbd class="kbd">$1</kbd>@@
 #+end_src
 
 *** Requirements
@@ -977,7 +978,7 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 ,#+HTML_HEAD: <style>
 ,#+HTML_HEAD: kbd.ikbd {background:#e8f1ff;border:1px solid #4f6fb3;padding:0 .25em}
 ,#+HTML_HEAD: </style>
-,#+MACRO: ikbd @@latex:\index{$1}{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0.4pt}\fcolorbox{blue!55!black}{blue!12}{\lstinline[basicstyle=\ttfamily]§$1§}}@@ @@html:<kbd class="ikbd">$1</kbd>@@
+,#+MACRO: ikbd @@latex:\index{$1}{\setlength{\fboxsep}{1.2pt}\setlength{\fboxrule}{0.4pt}\fcolorbox{blue!55!black}{blue!12}{\lstinline[language=shell,basicstyle=\ttfamily\scriptsize]§$1§}}@@ @@html:<kbd class="ikbd">$1</kbd>@@
 #+end_src
 
 *** Parameters
