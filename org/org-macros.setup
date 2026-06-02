@@ -24,9 +24,9 @@
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
 #+HTML_HEAD: <style>
-#+HTML_HEAD: kbd.kbd  {background:#eee;border:none;padding:0 .25em}
+#+HTML_HEAD: kbd.kbd {background:#eee;border:none;padding:0 .25em}
 #+HTML_HEAD: </style>
-#+MACRO: kbd  @@latex:\lightcommandbox{$1}@@ @@html:<kbd class="kbd">$1</kbd>@@
+#+MACRO: kbd @@latex:\lightcommandbox{$1}@@ @@html:<kbd class="kbd">$1</kbd>@@
 
 #+HTML_HEAD: <style>
 #+HTML_HEAD: kbd.ikbd {background:#e8f1ff;border:1px solid #4f6fb3;padding:0 .25em}

@@ -912,43 +912,56 @@ To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
 :CUSTOM_ID: kbd
 :END:
 
-The ~kbd~ macro formats a keyboard input. It is intended for inline keyboard
-notation.
+The ~kbd~ macro formats an inline command, keyboard shortcut, or shell fragment.
+
+It provides a consistent rendering across LaTeX/PDF and HTML exports.
 
 *** Code
 
 #+begin_src org
 ,#+HTML_HEAD: <style>
-,#+HTML_HEAD: kbd.kbd  {background:#eee;border:none;padding:0 .25em}
+,#+HTML_HEAD: kbd.kbd {background:#eee;border:none;padding:0 .25em}
 ,#+HTML_HEAD: </style>
-,#+MACRO: kbd  @@latex:\lightcommandbox{$1}@@ @@html:<kbd class="kbd">$1</kbd>@@
+,#+MACRO: kbd @@latex:\lightcommandbox{$1}@@ @@html:<kbd class="kbd">$1</kbd>@@
 #+end_src
 
 *** Requirements
 
-For LaTeX or PDF export, the ~menukeys~ package must be loaded.
+For LaTeX or PDF export, the ~latex-listings.setup~ setup file must be loaded, as
+it defines the ~\lightcommandbox~ command and its required dependencies.
 
 #+begin_src org :tangle no
-,#+LATEX_HEADER: \usepackage{menukeys}
+,#+SETUPFILE: ~/org/latex-listings.setup
+#+end_src
+
+When exporting Beamer presentations, frames containing ~kbd~ or ~ikbd~ macros
+must be marked as ~fragile~ because the underlying implementation relies on
+~\lstinline~.
+
+A convenient way is to enable fragile frames globally in the document:
+
+#+begin_src org :tangle no
+,#+BIND: org-beamer-frame-default-options "fragile"
 #+end_src
 
 *** Parameters
 
-1. Key or key sequence to display.
+1. Text to display.
 
 *** Examples
 
 #+begin_src org :tangle no
 Press {{{kbd(C-x C-s)}}} to save the buffer.
+Use {{{kbd(git status)}}} to display the repository status.
 #+end_src
 
 LaTeX export:
 
-- Renders the shortcut using ~\keys{C-x C-s}~ (see ~menukeys~)
+- Renders the text using ~\lightcommandbox{...}~ (see ~tcolorbox~)
 
 HTML export:
 
-- Renders ~<kbd>C-x C-s</kbd>~
+- Renders ~<kbd>...</kbd>~
 
 *** See also
 
@@ -962,15 +975,15 @@ HTML export:
 :CUSTOM_ID: ikbd
 :END:
 
-The ~ikbd~ macro formats a keyboard input and simultaneously creates an index
-entry when exporting to LaTeX.
+The ~ikbd~ macro formats an inline command, keyboard shortcut, or shell fragment
+and simultaneously creates an index entry when exporting to LaTeX.
 
-It provides a unified syntax for documenting keyboard input across LaTeX and
-HTML backends.
+It provides a unified syntax for documenting commands across LaTeX/PDF and HTML
+backends.
 
-In LaTeX, it combines ~\index~ and ~\keys~.
+In LaTeX, it combines ~\index~ and ~\commandbox~.
 
-In HTML, it renders the key sequence using the ~<kbd>~ element.
+In HTML, it renders the content using the ~<kbd>~ element.
 
 *** Code
 
@@ -981,24 +994,44 @@ In HTML, it renders the key sequence using the ~<kbd>~ element.
 ,#+MACRO: ikbd @@latex:\index{$1}\commandbox{$1}@@ @@html:<kbd class="ikbd">$1</kbd>@@
 #+end_src
 
+*** Requirements
+
+For LaTeX or PDF export, the ~latex-listings.setup~ setup file must be loaded, as
+it defines the ~\commandbox~ command and its required dependencies.
+
+#+begin_src org :tangle no
+,#+SETUPFILE: ~/org/latex-listings.setup
+#+end_src
+
+When exporting Beamer presentations, frames containing ~ikbd~ or ~kbd~ macros
+must be marked as ~fragile~ because the underlying implementation relies on
+~\lstinline~.
+
+A convenient way is to enable fragile frames globally in the document:
+
+#+begin_src org :tangle no
+,#+BIND: org-beamer-frame-default-options "fragile"
+#+end_src
+
 *** Parameters
 
-1. Key or key sequence to display and index.
+1. Text to display and index.
 
 *** Examples
 
 #+begin_src org :tangle no
 Press {{{ikbd(C-c a a)}}} to launch the agenda.
+Use {{{ikbd(git status)}}} to display the repository status.
 #+end_src
 
 LaTeX export:
 
-- Inserts the key sequence using ~\keys{C-c a a}~
-- Adds an index entry ~C-c a a~
+- Inserts the content using ~\commandbox{...}~
+- Adds an index entry for the same text
 
 HTML export:
 
-- Renders ~<kbd>C-c a a</kbd>~
+- Renders ~<kbd>...</kbd>~
 
 *** See also
 
