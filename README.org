@@ -144,7 +144,8 @@ Below is a list of the few macros currently available.
 - [[#bgcolor][bgcolor]] macro
 - [[#clearpage][clearpage]] macro
 - [[#pagebreak][pagebreak]] macro
-- [[#framebrea--k][framebreak]] macro
+- [[#framebreak][framebreak]] macro
+- [[#fnbeamer][fnbeamer]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -599,6 +600,67 @@ Without ~allowframebreaks~, Beamer may not split the frame as expected.
 
 - [[#clearpage][clearpage]] macro
 - [[#pagebreak][pagebreak]] macro
+
+-----
+
+** Fnbeamer (Beamer footnote) macro
+:PROPERTIES:
+:CUSTOM_ID: fnbeamer
+:END:
+
+The ~fnbeamer~ macro inserts a raw LaTeX footnote using the ~\footnote{...}~
+command.
+
+Unlike Org's native footnotes, this macro bypasses Org's footnote processing and
+injects the LaTeX command directly into the exported document.
+
+This is particularly useful in Beamer presentations, where direct control over
+footnote rendering may be desirable.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: fnbeamer @@latex:\footnote{$1}@@
+#+end_src
+
+*** Parameters
+
+| Parameter | Description              |
+|-----------+--------------------------|
+| =$1=        | Footnote text to insert. |
+
+*** Examples
+
+Insert a footnote in a Beamer slide:
+
+#+begin_src org :tangle no
+Here is some text {{{fnbeamer(This is a footnote.)}}}.
+#+end_src
+
+which expands to:
+
+#+begin_src org :tangle no
+Here is some text @@latex:\footnote{This is a footnote.}@@.
+#+end_src
+
+and produces:
+
+#+begin_src latex :tangle no
+\footnote{This is a footnote.}
+#+end_src
+
+during LaTeX/Beamer export.
+
+*** Advantages
+
+- Full control over the generated LaTeX code.
+- Avoids potential issues with Org footnote conversion in Beamer frames.
+- Useful when the document is intended exclusively for LaTeX/Beamer PDF output.
+
+*** Limitations
+
+- Produces no output for non-LaTeX export backends.
+- Not portable across export formats.
 
 -----
 
