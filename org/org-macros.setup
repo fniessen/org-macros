@@ -9,7 +9,7 @@
 #+MACRO: framebreak @@beamer:\framebreak@@
 #+MACRO: framebreak--- @@beamer:\framebreak@@
 
-#+MACRO: fnbeamer @@latex:\footnote{$1}@@
+#+MACRO: fnb @@latex:\footnote{$1}@@
 
 #+MACRO: color @@html:<span style="color: $1">$2</span>@@ @@latex:\textcolor{$1}{$2}@@ @@odt:<text:span text:style-name="$1">$2</text:span>@@
 

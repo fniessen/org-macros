@@ -145,7 +145,7 @@ Below is a list of the few macros currently available.
 - [[#clearpage][clearpage]] macro
 - [[#pagebreak][pagebreak]] macro
 - [[#framebreak][framebreak]] macro
-- [[#fnbeamer][fnbeamer]] macro
+- [[#fnb][fnb]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -603,13 +603,12 @@ Without ~allowframebreaks~, Beamer may not split the frame as expected.
 
 -----
 
-** Fnbeamer (Beamer footnote) macro
+** Fnb (Beamer footnote) macro
 :PROPERTIES:
-:CUSTOM_ID: fnbeamer
+:CUSTOM_ID: fnb
 :END:
 
-The ~fnbeamer~ macro inserts a raw LaTeX footnote using the ~\footnote{...}~
-command.
+The ~fnb~ macro inserts a raw LaTeX footnote using the ~\footnote{...}~ command.
 
 Unlike Org's native footnotes, this macro bypasses Org's footnote processing and
 injects the LaTeX command directly into the exported document.
@@ -620,7 +619,7 @@ footnote rendering may be desirable.
 *** Code
 
 #+begin_src org
-,#+MACRO: fnbeamer @@latex:\footnote{$1}@@
+,#+MACRO: fnb @@latex:\footnote{$1}@@
 #+end_src
 
 *** Parameters
@@ -634,7 +633,7 @@ footnote rendering may be desirable.
 Insert a footnote in a Beamer slide:
 
 #+begin_src org :tangle no
-Here is some text {{{fnbeamer(This is a footnote.)}}}.
+Here is some text {{{fnb(This is a footnote.)}}}.
 #+end_src
 
 which expands to:
