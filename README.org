@@ -169,7 +169,7 @@ Below is a list of the few macros currently available.
 - [[#if-html-else][if-html-else]] macro
 - [[#raw-latex][raw-latex]] macro
 - [[#raw-html][raw-html]] macro
-- [[#pause][pause (Beamer overlay)]] macro
+- [[#pause][pause (Beamer overlay)]] macros
 - [[#style][style]] macro
 
 *** Generic macros
@@ -1361,32 +1361,34 @@ For non-HTML backends, the macro expands to nothing.
 
 -----
 
-** pause (Beamer overlay) macro
+** pause (Beamer overlay) macros
 :PROPERTIES:
 :CUSTOM_ID: pause
 :END:
 
-The ~pause~ macro provides a shortcut for inserting an inline Beamer pause in
-slides exported with ox-beamer.
+The ~pause~ and ~pausestar~ macros provide shortcuts for inserting inline Beamer
+overlay pauses in slides exported with ox-beamer.
 
-It wraps the Beamer ~\pause~ command using Org's backend-specific inline syntax.
+They wrap Beamer's ~\pause~ and ~\pause*~ commands using Org's backend-specific
+inline export syntax.
 
-The macro is intended to simplify the writing of slides where sentences,
-paragraphs, examples, or other content should appear progressively, without
-using lists, blocks, or dedicated Beamer overlay specifications.
+These macros simplify the writing of slides where sentences, paragraphs,
+examples, or other content should appear progressively, without using lists,
+blocks, or explicit overlay specifications.
 
 *** Code
 
 #+begin_src org
 ,#+MACRO: pause @@beamer:\pause@@
+,#+MACRO: pausestar @@beamer:\pause*@@
 #+end_src
 
 *** Parameters
 
-This macro takes no parameters.
+Neither macro accepts parameters.
 
-It performs a direct textual substitution into Beamer inline code at export
-time.
+Each macro performs a direct textual substitution during export to the Beamer
+backend.
 
 *** Examples
 
@@ -1396,13 +1398,41 @@ Second sentence. {{{pause}}}
 Third sentence.
 #+end_src
 
-When exporting to Beamer, each occurrence of ~{{{pause}}}~ is replaced with
-~\pause~, causing the sentences to appear on successive overlays.
+Exports to:
+
+#+begin_src latex :tangle no
+First sentence. \pause
+Second sentence. \pause
+Third sentence.
+#+end_src
+
+Similarly:
+
+#+begin_src org :tangle no
+First sentence. {{{pausestar}}}
+Second sentence.
+#+end_src
+
+exports to:
+
+#+begin_src latex :tangle no
+First sentence. \pause*
+Second sentence.
+#+end_src
+
+*** Difference between ~pause~ and ~pausestar~
+
+- ~{{{pause}}}~ expands to ~\pause~.
+- ~{{{pausestar}}}~ expands to ~\pause*~.
+
+The starred form is provided by Beamer and behaves differently from ~\pause~ in
+some overlay situations. Refer to the Beamer User Guide for the precise
+semantics and overlay interaction rules.
 
 *** Important
 
-The Beamer ~\pause~ command should not be used together with frames configured
-with:
+The Beamer ~\pause~ and ~\pause*~ commands should not be used together with frames
+configured with:
 
 #+begin_src org :tangle no
 :BEAMER_opt: allowframebreaks
@@ -1410,15 +1440,16 @@ with:
 
 The ~allowframebreaks~ option automatically splits long frames across multiple
 slides and does not interact reliably with Beamer overlays. When combined with
-~\pause~, only the first frame content may be displayed or exported correctly.
+overlay commands, only part of the frame content may be displayed or exported as
+expected.
 
 Choose one of the following approaches:
 
 - Use ~allowframebreaks~ for long static content that must be split automatically
   across several slides.
 
-- Use ~{{{pause}}}~, overlay specifications such as ~<+->~, or explicit Beamer
-  overlay commands when progressive disclosure is required.
+- Use ~{{{pause}}}~, ~{{{pausestar}}}~, overlay specifications such as ~<+->~, or
+  explicit Beamer overlay commands when progressive disclosure is required.
 
 -----
 
