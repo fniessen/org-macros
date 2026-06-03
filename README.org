@@ -168,7 +168,7 @@ Below is a list of the few macros currently available.
 - [[#if-html-else][if-html-else]] macro
 - [[#raw-latex][raw-latex]] macro
 - [[#raw-html][raw-html]] macro
-- [[#P][P (Beamer overlay)]] macro
+- [[#pause][pause (Beamer overlay)]] macro
 - [[#style][style]] macro
 
 *** Generic macros
@@ -1300,41 +1300,64 @@ For non-HTML backends, the macro expands to nothing.
 
 -----
 
-** P (Beamer overlay) macro
+** pause (Beamer overlay) macro
 :PROPERTIES:
-:CUSTOM_ID: P
+:CUSTOM_ID: pause
 :END:
 
-The ~P~ macro provides a shortcut for inserting an inline Beamer pause in order to
-create successive overlays in slides exported with ox-beamer.
+The ~pause~ macro provides a shortcut for inserting an inline Beamer pause in
+slides exported with ox-beamer.
 
 It wraps the Beamer ~\pause~ command using Org's backend-specific inline syntax.
 
-The macro is intended to simplify the writing of slides where sentences appear
-progressively, without using lists, blocks, or dedicated Beamer environments.
+The macro is intended to simplify the writing of slides where sentences,
+paragraphs, examples, or other content should appear progressively, without
+using lists, blocks, or dedicated Beamer overlay specifications.
 
 *** Code
 
 #+begin_src org
-,#+MACRO: P @@beamer:\pause@@
+,#+MACRO: pause @@beamer:\pause@@
 #+end_src
 
 *** Parameters
 
 This macro takes no parameters.
 
-It performs a direct textual substitution into Beamer inline code at export time.
+It performs a direct textual substitution into Beamer inline code at export
+time.
 
 *** Examples
 
 #+begin_src org :tangle no
-First sentence. {{{P}}}
-Second sentence. {{{P}}}
+First sentence. {{{pause}}}
+Second sentence. {{{pause}}}
 Third sentence.
 #+end_src
 
-When exporting to Beamer, each occurrence of ~{{{P}}}~ is replaced with \pause,
-causing the sentences to appear on successive overlays.
+When exporting to Beamer, each occurrence of ~{{{pause}}}~ is replaced with
+~\pause~, causing the sentences to appear on successive overlays.
+
+*** Important
+
+The Beamer ~\pause~ command should not be used together with frames configured
+with:
+
+#+begin_src org :tangle no
+:BEAMER_opt: allowframebreaks
+#+end_src
+
+The ~allowframebreaks~ option automatically splits long frames across multiple
+slides and does not interact reliably with Beamer overlays. When combined with
+~\pause~, only the first frame content may be displayed or exported correctly.
+
+Choose one of the following approaches:
+
+- Use ~allowframebreaks~ for long static content that must be split automatically
+  across several slides.
+
+- Use ~{{{pause}}}~, overlay specifications such as ~<+->~, or explicit Beamer
+  overlay commands when progressive disclosure is required.
 
 -----
 
