@@ -1379,8 +1379,8 @@ blocks, or explicit overlay specifications.
 *** Code
 
 #+begin_src org
-,#+MACRO: pause @@beamer:\pause@@
-,#+MACRO: pausestar @@beamer:\pause*@@
+,#+MACRO: pause @@beamer:\pause{}@@
+,#+MACRO: pausestar @@beamer:\pause*{}@@
 #+end_src
 
 *** Parameters

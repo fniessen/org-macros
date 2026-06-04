@@ -49,8 +49,8 @@
 
 #+MACRO: raw-html @@html:$1@@
 
-#+MACRO: pause @@beamer:\pause@@
-#+MACRO: pausestar @@beamer:\pause*@@
+#+MACRO: pause @@beamer:\pause{}@@
+#+MACRO: pausestar @@beamer:\pause*{}@@
 
 #+MACRO: style (eval (concat "#+HTML_HEAD_EXTRA: <link type=\"text/css\" rel=\"stylesheet\" href=\"" "$1" "\" media=\"all\">"))
 
