@@ -146,6 +146,7 @@ Below is a list of the few macros currently available.
 - [[#pagebreak][pagebreak]] macro
 - [[#framebreak][framebreak]] macro
 - [[#fnb][fnb]] macro
+- [[#visfootnote][visfootnote]] macro
 - [[#color][color]] macro
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
@@ -662,6 +663,106 @@ during LaTeX/Beamer export.
 - Not portable across export formats.
 
 -----
+
+** visfootnote (Beamer overlay footnote) macro
+:PROPERTIES:
+:CUSTOM_ID: visfootnote
+:END:
+
+The ~visfootnote~ macro provides a shortcut for inserting Beamer footnotes that
+appear only on specific overlays.
+
+It wraps a custom Beamer command based on ~\visible~ and ~\footnote~, allowing
+footnotes to participate in overlay specifications in the same way as other
+Beamer content.
+
+This macro is useful when revealing slide content progressively and a footnote
+should appear only when the associated content becomes visible.
+
+*** Code
+
+The underlying Beamer command (see =beamer-only.setup=):
+
+#+begin_src latex :tangle no
+% Footnote visible only on the specified overlays.
+\newcommand<>{\visfootnote}[1]{%
+  \visible#2{\footnote#2[frame]{#1}}%
+}
+#+end_src
+
+The Org macro:
+
+#+begin_src org
+,#+MACRO: visfootnote @@beamer:\visfootnote<$1>{$2}@@
+#+end_src
+
+*** Parameters
+
+The macro accepts two parameters:
+
+1. An overlay specification.
+2. The footnote text.
+
+*** Examples
+
+#+begin_src org :tangle no
+Git was created by Linus Torvalds.
+{{{visfootnote(2-,Initial development started in 2005.)}}}
+#+end_src
+
+Exports to:
+
+#+begin_src latex :tangle no
+Git was created by Linus Torvalds.
+\visfootnote<2->{Initial development started in 2005.}
+#+end_src
+
+The footnote is hidden on the first overlay and becomes visible starting from
+overlay 2.
+
+*** Typical Usage
+
+The macro is particularly useful together with progressive disclosure:
+
+#+begin_src org :tangle no
+- First point.
+- Second point. {{{visfootnote(2,Additional details.)}}}
+- Third point.
+  #+end_src
+
+This ensures that the footnote appears only when the corresponding item becomes
+visible.
+
+*** Overlay Specifications
+
+Any valid Beamer overlay specification may be used:
+
+| Specification | Meaning               |
+|---------------+-----------------------|
+| ~1~             | Only on overlay 1     |
+| ~2~             | Only on overlay 2     |
+| ~2-~            | From overlay 2 onward |
+| ~3-5~           | Overlays 3 through 5  |
+| ~1,3~           | Overlays 1 and 3      |
+
+For example:
+
+#+begin_src org :tangle no
+{{{visfootnote(3-5,Visible on overlays 3 to 5.)}}}
+#+end_src
+
+*** Important
+
+The macro is intended for Beamer export only.
+
+When exporting to non-Beamer backends, the macro expands to nothing because it
+relies on Beamer-specific overlay commands.
+
+The macro should be used only when a footnote must follow overlay visibility.
+For ordinary footnotes that are always visible, standard Org footnotes remain
+the preferred solution.
+
+---
 
 ** Color macro
 :PROPERTIES:
