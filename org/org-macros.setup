@@ -35,7 +35,7 @@
 #+HTML_HEAD: <style>
 #+HTML_HEAD: kbd.ikbd {background:#e8f1ff;border:1px solid #4f6fb3;padding:0 .25em}
 #+HTML_HEAD: </style>
-#+MACRO: ikbd @@latex:\index{$1}\commandbox{$1}@@ @@html:<kbd class="ikbd">$1</kbd>@@
+#+MACRO: ikbd @@latex:\index{$1}\commandbox[$2]{$1}@@ @@html:<kbd class="ikbd">$1</kbd>@@
 
 #+MACRO: idx @@latex:\index{$1}@@
 

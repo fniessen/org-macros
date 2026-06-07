@@ -1153,7 +1153,7 @@ In HTML, it renders the content using the ~<kbd>~ element.
 ,#+HTML_HEAD: <style>
 ,#+HTML_HEAD: kbd.ikbd {background:#e8f1ff;border:1px solid #4f6fb3;padding:0 .25em}
 ,#+HTML_HEAD: </style>
-,#+MACRO: ikbd @@latex:\index{$1}\commandbox{$1}@@ @@html:<kbd class="ikbd">$1</kbd>@@
+,#+MACRO: ikbd @@latex:\index{$1}\commandbox[$2]{$1}@@ @@html:<kbd class="ikbd">$1</kbd>@@
 #+end_src
 
 *** Requirements
@@ -1179,21 +1179,51 @@ A convenient way is to enable fragile frames globally in the document:
 
 1. Text to display and index.
 
+2. Optional LaTeX options passed directly to ~\commandbox~.
+
+   This parameter is ignored for HTML export.
+
+   It is primarily intended to customize the underlying ~listings~
+   configuration for a specific command, for example when additional
+   characters must be treated as part of an identifier.
+
 *** Examples
 
 #+begin_src org :tangle no
 Press {{{ikbd(C-c a a)}}} to launch the agenda.
+
 Use {{{ikbd(git status)}}} to display the repository status.
+
+Search aliases with {{{ikbd(grep-aliases,alsoletter={-})}}}.
 #+end_src
 
 LaTeX export:
 
-- Inserts the content using ~\commandbox{...}~
-- Adds an index entry for the same text
+#+begin_src latex :tangle no
+Press \index{C-c a a}\commandbox[]{C-c a a} to launch the agenda.
+
+Use \index{git status}\commandbox[]{git status} to display the repository status.
+
+Search aliases with
+\index{grep-aliases}\commandbox[alsoletter={-}]{grep-aliases}.
+#+end_src
 
 HTML export:
 
-- Renders ~<kbd>...</kbd>~
+#+begin_src html :tangle no
+Press <kbd class="ikbd">C-c a a</kbd> to launch the agenda.
+
+Use <kbd class="ikbd">git status</kbd> to display the repository status.
+
+Search aliases with <kbd class="ikbd">grep-aliases</kbd>.
+#+end_src
+
+*** Remarks
+
+The second parameter is LaTeX-specific and is ignored when exporting to HTML.
+
+When omitted, the macro emits ~\commandbox[]...~, which behaves the same as
+~\commandbox...~ because the optional argument is empty.
 
 *** See also
 
