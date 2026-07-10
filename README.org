@@ -9,10 +9,10 @@
 #+OPTIONS:   H:4 num:nil toc:2
 #+EXCLUDE_TAGS: noexport
 
-#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/org-macros.setup
+#+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/setup/org-macros.setup
 
-#+SETUPFILE: ~/org/html-theme-readtheorg.setup
-#+SETUPFILE: org/org-macros.setup
+#+SETUPFILE: ~/org/setup/html-theme-readtheorg.setup
+#+SETUPFILE: org/setup/org-macros.setup
 
 #+begin_html
 <a href="http://opensource.org/licenses/GPL-3.0">
@@ -95,11 +95,11 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 Load macro definitions via:
 
 #+begin_src org :tangle no
-,#+SETUPFILE: /PATH/TO/org/org-macros.setup
+,#+SETUPFILE: /PATH/TO/org/setup/org-macros.setup
 #+end_src
 
 #+begin_info
-As there are Babel code blocks inside the =org/org-macros.setup= file, it needs to
+As there are Babel code blocks inside the =org/setup/org-macros.setup= file, it needs to
 be loaded via the ~#+INCLUDE:~ directive, not via a ~#+SETUPFILE:~!
 #+end_info
 
@@ -1093,7 +1093,7 @@ For LaTeX or PDF export, the ~latex-listings.setup~ setup file must be loaded, a
 it defines the ~\lightcommandbox~ command and its required dependencies.
 
 #+begin_src org :tangle no
-,#+SETUPFILE: ~/org/latex-listings.setup
+,#+SETUPFILE: ~/org/setup/latex-listings.setup
 #+end_src
 
 When exporting Beamer presentations, frames containing ~kbd~ or ~ikbd~ macros
@@ -1162,7 +1162,7 @@ For LaTeX or PDF export, the ~latex-listings.setup~ setup file must be loaded, a
 it defines the ~\commandbox~ command and its required dependencies.
 
 #+begin_src org :tangle no
-,#+SETUPFILE: ~/org/latex-listings.setup
+,#+SETUPFILE: ~/org/setup/latex-listings.setup
 #+end_src
 
 When exporting Beamer presentations, frames containing ~ikbd~ or ~kbd~ macros
