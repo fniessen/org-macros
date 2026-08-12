@@ -914,7 +914,7 @@ The ~highlight~ macro allows you to change the background color of inline text.
 *** Code
 
 #+begin_src org
-,#+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
+,#+MACRO: highlight @@latex:\colorbox{$1}{$2}@@ @@html:<span style="background-color: $1;">$2</span>@@
 #+end_src
 
 *** Parameters

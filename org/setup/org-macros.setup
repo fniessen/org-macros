@@ -19,7 +19,7 @@
 
 #+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
 
-#+MACRO: highlight @@html:<span style="background-color: $1;">$2</span>@@
+#+MACRO: highlight @@latex:\colorbox{$1}{$2}@@ @@html:<span style="background-color: $1;">$2</span>@@
 
 #+MACRO: hl @@latex:\hl{$1}@@ @@html:<span style="background-color:#FFFF00;">$1</span>@@
 
