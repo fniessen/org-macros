@@ -92,7 +92,7 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 
 ** Installation
 
-Load macro definitions via:
+Load the macro definitions via:
 
 #+begin_src org :tangle no
 ,#+SETUPFILE: /PATH/TO/org/setup/org-macros.setup
@@ -151,6 +151,7 @@ Below is a list of the few macros currently available.
 - [[#lcolor][lcolor]] macro
 - [[#fixme][fixme]] macro
 - [[#highlight][highlight]] macro
+- [[#hl][hl]] macro
 - [[#loremipsum][loremipsum]] macro
 - [[#newline][newline]] macro
 - [[#redact][redact]] macro
@@ -549,7 +550,7 @@ Insert a simple page break:
 The ~framebreak~ (or ~framebreak---~) macro inserts a Beamer frame break.
 
 It is equivalent to the Beamer command ~\framebreak~. It is useful to split
-a single frame into multiple slides (multiple overlays) at a precise point.
+a single frame into multiple slides at a precise point.
 
 This macro is intended for Beamer export only. It has no effect for non-Beamer
 backends.
@@ -866,7 +867,8 @@ Common color names are supported by most Org exporters (HTML, LaTeX):
 :CUSTOM_ID: fixme
 :END:
 
-The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
+The ~fixme~ macro inserts a visible "FIXME" marker, with CSS available for
+customizing its appearance.
 
 *** Code
 
@@ -897,7 +899,7 @@ None.
 
 Testing testing testing testing testing testing testing testing testing testing
 testing testing testing testing testing testing testing testing testing testing
-testing testing testing testing testing {{{FIXME}}} testing testing testing
+testing testing testing testing testing {{{fixme}}} testing testing testing
 testing testing testing testing testing testing testing testing testing testing
 testing testing testing testing testing testing testing testing testing testing
 testing testing
@@ -1074,9 +1076,6 @@ foreground and background color, making the text appear as a black box.
 *** Examples
 
 To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
-
-The macro is intended for HTML export and produces no output in other export
-backends.
 
 -----
 
