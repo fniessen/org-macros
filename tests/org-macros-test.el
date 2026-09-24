@@ -1,11 +1,15 @@
 ;;; org-macros-test.el --- ERT tests for org-macros -*- lexical-binding: t; -*-
 
 (require 'ert)
+(require 'package)
+(package-initialize)
 (require 'org)
 (require 'ox)
+(require 'ox-html)
 (require 'ox-latex)
 (require 'ob-core)
 (require 'ob-shell)
+(require 'htmlize)
 
 (defconst org-macros-test-root
   (expand-file-name ".." (file-name-directory (or load-file-name buffer-file-name))))
@@ -38,10 +42,18 @@
     (insert-file-contents (expand-file-name "org/setup/org-macros.setup"
                                             org-macros-test-root))
     (org-mode)
-        (let* ((org-confirm-babel-evaluate nil)
-          (result (org-babel-ref-resolve "version-history")))
+    (let* ((org-confirm-babel-evaluate nil)
+           (result (org-babel-ref-resolve "version-history")))
       (should (listp result))
       (should (> (length result) 1)))))
+
+(ert-deftest org-macros-test-color-html ()
+  (let ((output (org-macros-test-export 'html
+                                         "{{{color(red, colored text)}}}"
+                                         (expand-file-name "README.org"
+                                                           org-macros-test-root))))
+    (should (string-match-p "<span style=\"color: red\">[[:space:]]*colored text[[:space:]]*</span>"
+                            output))))
 
 (ert-deftest org-macros-test-git-version ()
   (let ((repository-output
