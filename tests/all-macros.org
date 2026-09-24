@@ -1,0 +1,112 @@
+#+TITLE:     Org Macros Export Test
+#+AUTHOR:    Fabrice Niessen
+#+EMAIL:     test@example.invalid
+#+DESCRIPTION: Export fixture covering all Org macros.
+#+KEYWORDS:  org mode, macros
+#+LANGUAGE:  en
+
+#+OPTIONS:   H:3 num:nil toc:2
+#+PROPERTY:  header-args :comments no :eval yes :exports code :noweb yes
+#+PROPERTY:  TEST_VALUE property-value
+#+INCLUDE:   ../org/setup/org-macros.setup
+
+#+SETUPFILE: ~/org/setup/html-theme-readtheorg.setup
+
+* Built-in macros
+
+- Author: {{{author}}}
+- Date: {{{date(%Y-%m-%d)}}}
+- Email: {{{email}}}
+- Input file: {{{input-file}}}
+- Modification time: {{{modification-time(%Y-%m-%d %H:%M)}}}
+- Property: {{{property(TEST_VALUE)}}}
+- Time: {{{time(%Y-%m-%d %H:%M)}}}
+- Title: {{{title}}}
+
+* Basic formatting
+
+- Background: {{{bgcolor(yellow, background text)}}}
+- Color: {{{color(red, colored text)}}}
+- LaTeX color: {{{lcolor(blue, **formatted text**)}}}
+- Highlight: {{{highlight(yellow, highlighted text)}}}
+- Neon highlight: {{{hl(neon text)}}}
+- Fixme: {{{fixme}}}
+- Lorem ipsum: {{{loremipsum}}}
+- Newline: first{{{newline}}}second
+- Redacted: {{{redact(secret text)}}}
+- Keyboard: {{{kbd(C-x C-s)}}}
+- Indexed keyboard: {{{ikbd(C-c a)}}}
+- Index only: indexed{{{idx(term)}}}
+- Superscript: E = mc{{{sup(2)}}}
+
+* Page and frame breaks
+
+Before the clear page. {{{clearpage}}}
+
+Before the page break. {{{pagebreak}}}
+
+Frame part one. {{{framebreak}}} Frame part two. {{{framebreak---}}}
+
+Footnote{{{fnb(LaTeX footnote)}}}.
+
+Visible footnote{{{visfootnote(2-,Beamer overlay footnote)}}}.
+
+* Conditional and raw output
+
+- LaTeX branch: {{{if-latex-else(LaTeX content,other content)}}}
+- HTML branch: {{{if-html-else(HTML content,other content)}}}
+- Raw LaTeX: {{{raw-latex(\\textbf{LaTeX only})}}}
+- Raw HTML: {{{raw-html(<strong>HTML only</strong>)}}}
+- Beamer pause: {{{pause}}} after pause{{{pausestar}}}
+- External style: {{{style(https://example.invalid/test.css)}}}
+- ODT option: {{{dvipng-when-odt}}}
+
+* Generic macros
+
+- Image: {{{image(images/fixme.png)}}}
+- Git version: {{{git-version}}}
+- Version history: {{{version-history}}}
+
+* Layout macros
+
+Fixed space: one{{{vspace}}}two
+
+Custom space: one{{{vsp(1em)}}}two
+
+{{{begin_collapse(Details)}}}
+This content is inside a collapsible section.
+{{{end_collapse}}}
+
+{{{begin_info}}}
+Information block.
+{{{end_info}}}
+
+{{{begin_minipage}}}
+Minipage content.
+{{{end_minipage}}}
+
+{{{begin_note}}}
+Note block.
+{{{end_note}}}
+
+{{{begin_panel}}}
+Panel block.
+{{{end_panel}}}
+
+{{{begin_tip}}}
+Tip block.
+{{{end_tip}}}
+
+{{{begin_warning}}}
+Warning block.
+{{{end_warning}}}
+
+* Navigation
+
+This section has a local table of contents below.
+
+{{{toc(2,local)}}}
+
+* Development macro
+
+{{{twitter-share-link-button(org_macros_test)}}}
