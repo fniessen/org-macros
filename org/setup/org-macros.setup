@@ -67,6 +67,8 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: version-history call_version-history[:eval yes]()[:eval yes :results table :colnames '(Version Date Author Comment)]
 
+#+MACRO: git-version (eval (let* ((file (or (and (boundp 'org-export-current-file) org-export-current-file) (buffer-file-name))) (directory (file-name-directory (or file default-directory))) (root (and directory (locate-dominating-file directory ".git")))) (if root (with-temp-buffer (if (= 0 (call-process "git" nil t nil "-C" (expand-file-name root) "describe" "--tags" "--always" "--dirty")) (replace-regexp-in-string "[\n\r]+\\'" "" (buffer-string)) "unknown")) "unknown")))
+
 #+MACRO: vspace @@latex:\vspace{10pt}@@ @@html:<div style="margin-bottom: 10pt;"></div>@@
 
 #+MACRO: vsp @@latex:\vspace{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@

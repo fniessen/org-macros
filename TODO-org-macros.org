@@ -132,8 +132,6 @@ See https://wiki.mq.edu.au/pages/viewpage.action?pageId=73796610
 
 ** TODO Add a changelog macro (Journal des modifications)
 
-** TODO Add a git-version macro (Version Git)
-
 ** TODO Add a repository-relative-path macro (Chemin relatif à partir de la racine)
 
 ** TODO Add the macros to ELeuven (var =org-macro-default= does exist?)

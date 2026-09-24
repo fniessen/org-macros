@@ -12,7 +12,7 @@
 #+PROPERTY:  header-args :comments no :eval no :exports code :noweb yes :tangle org/setup/org-macros.setup
 
 #+SETUPFILE: ~/org/setup/html-theme-readtheorg.setup
-#+SETUPFILE: org/setup/org-macros.setup
+#+INCLUDE:   org/setup/org-macros.setup
 
 #+begin_export html
 <a href="http://opensource.org/licenses/GPL-3.0">
@@ -95,7 +95,7 @@ Git repository hosted at [[https://github.com/fniessen/org-macros][GitHub]]:
 Load the macro definitions via:
 
 #+begin_src org :tangle no
-,#+SETUPFILE: /PATH/TO/org/setup/org-macros.setup
+,#+INCLUDE:   /PATH/TO/org/setup/org-macros.setup
 #+end_src
 
 #+begin_info
@@ -181,6 +181,7 @@ Below is a list of the few macros currently available.
 - [[#image][image]] macro
 - ~recently-updated~ macro
 - ~tasklist~ macro
+- [[#git-version][git-version]] macro
 - [[#version-history][version-history]] macro
 
 *** Layout
@@ -1795,6 +1796,39 @@ the document.
 *** Examples
 
 {{{version-history}}}
+
+-----
+
+** Git-version macro
+:PROPERTIES:
+:CUSTOM_ID: git-version
+:END:
+
+The ~git-version~ macro returns the Git version for the repository containing the
+exported file. It uses the nearest tag when one is available, otherwise it
+returns the abbreviated commit ID. A dirty working tree is marked with ~-dirty~.
+
+If the file is not inside a Git repository, or Git cannot provide a version, the
+macro returns ~unknown~.
+
+*** Code
+
+#+begin_src org
+,#+MACRO: git-version (eval (let* ((file (or (and (boundp 'org-export-current-file) org-export-current-file) (buffer-file-name))) (directory (file-name-directory (or file default-directory))) (root (and directory (locate-dominating-file directory ".git")))) (if root (with-temp-buffer (if (= 0 (call-process "git" nil t nil "-C" (expand-file-name root) "describe" "--tags" "--always" "--dirty")) (replace-regexp-in-string "[\n\r]+\\'" "" (buffer-string)) "unknown")) "unknown")))
+#+end_src
+
+*** Parameters
+
+None.
+
+*** Examples
+
+This document was generated from Git version {{{git-version}}}.
+
+*** Requirements
+
+Git must be installed and available on ~PATH~. Macro evaluation must be enabled
+when exporting the document.
 
 -----
 
