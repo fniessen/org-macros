@@ -1058,14 +1058,25 @@ None.
 :CUSTOM_ID: redact
 :END:
 
-Is there any way to completely redact text in HTML export, so it just looks like
-black boxes?
+The ~redact~ macro conceals inline text in HTML export by applying a black
+foreground and background color, making the text appear as a black box.
 
-I'm not sure I fully understand, but it this what you are looking for?
+*** Code
 
-#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+#+begin_src org
+,#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+#+end_src
+
+*** Parameters
+
+1. Text to conceal.
+
+*** Examples
 
 To {{{redact(redact)}}} or not to {{{redact(redact)}}} that is the question.
+
+The macro is intended for HTML export and produces no output in other export
+backends.
 
 -----
 

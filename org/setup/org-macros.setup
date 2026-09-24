@@ -27,6 +27,8 @@
 
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
+#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+
 #+HTML_HEAD: <style>
 #+HTML_HEAD: kbd.kbd {background:#eee;border:none;padding:0 .25em}
 #+HTML_HEAD: </style>
