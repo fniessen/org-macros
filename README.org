@@ -400,7 +400,7 @@ The ~bgcolor~ macro allows you to change the background color of a block of text
 *** Code
 
 #+begin_src org
-,#+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
+,#+MACRO: bgcolor @@latex:\colorbox{$1}{$2}@@ @@html:<div style="background-color: $1;">$2</div>@@
 #+end_src
 
 *** Parameters
@@ -871,7 +871,7 @@ The ~fixme~ macro inserts a "Fix Me!" image (with adequate CSS).
 *** Code
 
 #+begin_src org
-,#+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
+,#+MACRO: fixme @@latex:\textcolor{red}{\textbf{FIXME}}@@ @@html:<span class="fixme">FIXME</span>@@
 #+end_src
 
 CSS example:
@@ -1064,7 +1064,7 @@ foreground and background color, making the text appear as a black box.
 *** Code
 
 #+begin_src org
-,#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+,#+MACRO: redact @@latex:\colorbox{black}{\textcolor{black}{$1}}@@ @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
 #+end_src
 
 *** Parameters
@@ -1884,8 +1884,8 @@ The ~collapse~ macro inserts of collapsed block of text.
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_collapse @@html:<details><summary>$1</summary>@@
-,#+MACRO: end_collapse @@html:</details>@@
+,#+MACRO: begin_collapse @@latex:\par\noindent\textbf{$1}\par@@ @@html:<details><summary>$1</summary>@@
+,#+MACRO: end_collapse @@latex:\par@@ @@html:</details>@@
 #+end_src
 
 *** Parameters
@@ -1911,8 +1911,8 @@ The ~info~ macro is useful for including helpful information.
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_info @@html:<div class="info"><p>@@
-,#+MACRO: end_info @@html:</p></div>@@
+,#+MACRO: begin_info @@latex:\par\noindent\textbf{Info:} @@ @@html:<div class="info"><p>@@
+,#+MACRO: end_info @@latex:\par@@ @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -1947,8 +1947,8 @@ Did you know...
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_minipage @@html:<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">@@
-,#+MACRO: end_minipage @@html:</div>@@
+,#+MACRO: begin_minipage @@latex:\begin{center}\begin{minipage}{0.95\linewidth}@@ @@html:<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">@@
+,#+MACRO: end_minipage @@latex:\end{minipage}\end{center}@@ @@html:</div>@@
 #+end_src
 
 *** Parameters
@@ -1965,8 +1965,8 @@ Did you know...
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_note @@html:<div class="note"><p>@@
-,#+MACRO: end_note @@html:</p></div>@@
+,#+MACRO: begin_note @@latex:\begin{quote}\textbf{Note:} @@ @@html:<div class="note"><p>@@
+,#+MACRO: end_note @@latex:\end{quote}@@ @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -2001,8 +2001,8 @@ This is a useful note...
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_panel @@html:<div class="panel"><p>@@
-,#+MACRO: end_panel @@html:</p></div>@@
+,#+MACRO: begin_panel @@latex:\begin{quote}@@ @@html:<div class="panel"><p>@@
+,#+MACRO: end_panel @@latex:\end{quote}@@ @@html:</p></div>@@
 #+end_src
 
 XXX PanelHeader + PanelContent
@@ -2039,8 +2039,8 @@ This is a formatted block of text...
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_tip @@html:<div class="tip"><p>@@
-,#+MACRO: end_tip @@html:</p></div>@@
+,#+MACRO: begin_tip @@latex:\begin{quote}\textbf{Tip:} @@ @@html:<div class="tip"><p>@@
+,#+MACRO: end_tip @@latex:\end{quote}@@ @@html:</p></div>@@
 #+end_src
 
 *** Parameters
@@ -2075,8 +2075,8 @@ Try doing it this way...
 *** Code
 
 #+begin_src org
-,#+MACRO: begin_warning @@html:<div class="warning"><p>@@
-,#+MACRO: end_warning @@html:</p></div>@@
+,#+MACRO: begin_warning @@latex:\begin{quote}\textbf{Warning:} @@ @@html:<div class="warning"><p>@@
+,#+MACRO: end_warning @@latex:\end{quote}@@ @@html:</p></div>@@
 #+end_src
 
 *** Parameters

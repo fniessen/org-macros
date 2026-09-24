@@ -1,6 +1,6 @@
 # -*- mode: org; -*-
 
-#+MACRO: bgcolor @@html:<div style="background-color: $1;">$2</div>@@
+#+MACRO: bgcolor @@latex:\colorbox{$1}{$2}@@ @@html:<div style="background-color: $1;">$2</div>@@
 
 #+MACRO: clearpage @@latex:\clearpage@@ @@html:<div style="page-break-after: always;">&nbsp;</div>@@ @@odt:<text:p text:style-name="PageBreak"/>@@
 
@@ -17,7 +17,7 @@
 
 #+MACRO: lcolor (eval (concat "\n#+BEGIN_EXPORT latex\n {\color{" $1 (format "}{%s}}\n#+END_EXPORT\n" (org-export-string-as $2 'latex t))))
 
-#+MACRO: fixme @@html:<span class="fixme">FIXME</span>@@
+#+MACRO: fixme @@latex:\textcolor{red}{\textbf{FIXME}}@@ @@html:<span class="fixme">FIXME</span>@@
 
 #+MACRO: highlight @@latex:\colorbox{$1}{$2}@@ @@html:<span style="background-color: $1;">$2</span>@@
 
@@ -27,7 +27,7 @@
 
 #+MACRO: newline @@latex:\hspace{0pt}\\@@ @@html:<br>@@
 
-#+MACRO: redact @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
+#+MACRO: redact @@latex:\colorbox{black}{\textcolor{black}{$1}}@@ @@html:<span class="redact" style="color:black; background-color:black;">$1</span>@@
 
 #+HTML_HEAD: <style>
 #+HTML_HEAD: kbd.kbd {background:#eee;border:none;padding:0 .25em}
@@ -71,26 +71,26 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: vsp @@latex:\vspace{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
 
-#+MACRO: begin_collapse @@html:<details><summary>$1</summary>@@
-#+MACRO: end_collapse @@html:</details>@@
+#+MACRO: begin_collapse @@latex:\par\noindent\textbf{$1}\par@@ @@html:<details><summary>$1</summary>@@
+#+MACRO: end_collapse @@latex:\par@@ @@html:</details>@@
 
-#+MACRO: begin_info @@html:<div class="info"><p>@@
-#+MACRO: end_info @@html:</p></div>@@
+#+MACRO: begin_info @@latex:\par\noindent\textbf{Info:} @@ @@html:<div class="info"><p>@@
+#+MACRO: end_info @@latex:\par@@ @@html:</p></div>@@
 
-#+MACRO: begin_minipage @@html:<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">@@
-#+MACRO: end_minipage @@html:</div>@@
+#+MACRO: begin_minipage @@latex:\begin{center}\begin{minipage}{0.95\linewidth}@@ @@html:<div style="border:1px solid #aaaaaa;padding:10px;width:780px;margin-left:auto;margin-right:auto;">@@
+#+MACRO: end_minipage @@latex:\end{minipage}\end{center}@@ @@html:</div>@@
 
-#+MACRO: begin_note @@html:<div class="note"><p>@@
-#+MACRO: end_note @@html:</p></div>@@
+#+MACRO: begin_note @@latex:\begin{quote}\textbf{Note:} @@ @@html:<div class="note"><p>@@
+#+MACRO: end_note @@latex:\end{quote}@@ @@html:</p></div>@@
 
-#+MACRO: begin_panel @@html:<div class="panel"><p>@@
-#+MACRO: end_panel @@html:</p></div>@@
+#+MACRO: begin_panel @@latex:\begin{quote}@@ @@html:<div class="panel"><p>@@
+#+MACRO: end_panel @@latex:\end{quote}@@ @@html:</p></div>@@
 
-#+MACRO: begin_tip @@html:<div class="tip"><p>@@
-#+MACRO: end_tip @@html:</p></div>@@
+#+MACRO: begin_tip @@latex:\begin{quote}\textbf{Tip:} @@ @@html:<div class="tip"><p>@@
+#+MACRO: end_tip @@latex:\end{quote}@@ @@html:</p></div>@@
 
-#+MACRO: begin_warning @@html:<div class="warning"><p>@@
-#+MACRO: end_warning @@html:</p></div>@@
+#+MACRO: begin_warning @@latex:\begin{quote}\textbf{Warning:} @@ @@html:<div class="warning"><p>@@
+#+MACRO: end_warning @@latex:\end{quote}@@ @@html:</p></div>@@
 
 #+MACRO: toc (eval (concat "#+TOC: headlines " "$1" " " "$2"))
 
