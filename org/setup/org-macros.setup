@@ -67,8 +67,6 @@ git log --pretty=format:"%h%x09%ad%x09%an%x09%s" --date=short | head -n 5
 
 #+MACRO: vspace @@latex:\vspace{10pt}@@ @@html:<div style="margin-bottom: 10pt;"></div>@@
 
-#+MACRO: vspace @@latex:\vspace{20pt}@@ @@html:<div style="margin-bottom: 20pt;"></div>@@
-
 #+MACRO: vsp @@latex:\vspace{$1}@@ @@html:<div style="margin-bottom: $1;"></div>@@
 
 #+MACRO: begin_collapse @@html:<details><summary>$1</summary>@@

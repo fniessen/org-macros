@@ -1823,7 +1823,7 @@ Second paragraph.
 
 To change the gap, redefine the macro in your setup:
 
-#+begin_src org
+#+begin_src org :tangle no
 ,#+MACRO: vspace @@latex:\vspace{20pt}@@ @@html:<div style="margin-bottom: 20pt;"></div>@@
 #+end_src
 
