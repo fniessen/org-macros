@@ -1,8 +1,8 @@
 EMACS ?= emacs
 EMACS_BATCH = $(EMACS) --batch --quick
 PACKAGE_INIT = --eval "(require 'package)" --eval "(package-initialize)"
-PDFLATEX ?= pdflatex
-PDFLATEX_FLAGS = -interaction=nonstopmode -halt-on-error
+LATEX ?= lualatex
+LATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 
 .PHONY: all check test tangle export-html export-latex export-pdf clean
 
@@ -75,8 +75,8 @@ export-latex:
 
 # Export the Org files to LaTeX and compile the resulting documents to PDF.
 export-pdf: export-latex
-	$(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=. README.tex && $(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=. README.tex
-	$(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=tests tests/all-macros.tex && $(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=tests tests/all-macros.tex
+	$(LATEX) $(LATEX_FLAGS) -output-directory=. README.tex && $(LATEX) $(LATEX_FLAGS) -output-directory=. README.tex
+	$(LATEX) $(LATEX_FLAGS) -output-directory=tests tests/all-macros.tex && $(LATEX) $(LATEX_FLAGS) -output-directory=tests tests/all-macros.tex
 
 # Remove generated HTML and TeX files.
 clean:
