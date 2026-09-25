@@ -65,6 +65,22 @@
     (should (string-match-p "\\\\textcolor\\[HTML\\]{FF0000}{ colored text}"
                             output))))
 
+(ert-deftest org-macros-test-dual-backend-chunk-counts ()
+  (with-temp-buffer
+    (insert-file-contents (expand-file-name "org/setup/org-macros.setup"
+                                            org-macros-test-root))
+    (let ((html-count 0)
+          (latex-count 0))
+      (goto-char (point-min))
+      (while (re-search-forward "^#\\+MACRO:.*$" nil t)
+        (let ((definition (match-string-no-properties 0)))
+          (when (and (string-match-p "@@html:" definition)
+                     (string-match-p "@@latex:" definition))
+            (setq html-count (+ html-count (how-many "@@html:" (line-beginning-position) (line-end-position))))
+            (setq latex-count (+ latex-count (how-many "@@latex:" (line-beginning-position) (line-end-position)))))))
+      (should (> html-count 0))
+      (should (= html-count latex-count)))))
+
 (ert-deftest org-macros-test-git-version ()
   (let ((repository-output
          (org-macros-test-export 'ascii
