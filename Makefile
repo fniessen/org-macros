@@ -1,11 +1,13 @@
 EMACS ?= emacs
 EMACS_BATCH = $(EMACS) --batch --quick
 PACKAGE_INIT = --eval "(require 'package)" --eval "(package-initialize)"
+PDFLATEX ?= pdflatex
+PDFLATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 
-.PHONY: all check test export-html export-latex clean
+.PHONY: all check test tangle export-html export-latex export-pdf clean
 
 # Run checks and export the Org files to HTML and LaTeX.
-all: check export-html export-latex
+all: check tangle export-html export-latex export-pdf
 
 # Parse Org files to catch syntax errors, then run git diff --check to verify
 # that no whitespace-related issues were introduced.
@@ -29,6 +31,12 @@ test:
 	$(EMACS_BATCH) \
 		-l tests/org-macros-test.el \
 		-f ert-run-tests-batch-and-exit
+
+# Tangle the macro definitions from README.org.
+tangle:
+	$(EMACS_BATCH) \
+		--eval "(require 'ob-tangle)" \
+		--eval "(org-babel-tangle-file \"README.org\")"
 
 # Export README.org and tests/all-macros.org to HTML.
 export-html:
@@ -59,12 +67,17 @@ export-latex:
   (find-file (expand-file-name \"README.org\" root)) \
   (org-export-to-file 'latex \
     (expand-file-name \"README.tex\" root) \
-    nil nil nil t) \
+    nil nil nil nil) \
   (find-file (expand-file-name \"tests/all-macros.org\" root)) \
   (org-export-to-file 'latex \
     (expand-file-name \"tests/all-macros.tex\" root) \
-    nil nil nil t))"
+    nil nil nil nil))"
+
+# Export the Org files to LaTeX and compile the resulting documents to PDF.
+export-pdf: export-latex
+	$(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=. README.tex && $(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=. README.tex
+	$(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=tests tests/all-macros.tex && $(PDFLATEX) $(PDFLATEX_FLAGS) -output-directory=tests tests/all-macros.tex
 
 # Remove generated HTML and TeX files.
 clean:
-	rm -f README.html README.tex tests/all-macros.html tests/all-macros.tex
+	rm -f README.aux README.html README.log README.out README.pdf README.tex README.toc tests/all-macros.aux tests/all-macros.html tests/all-macros.log tests/all-macros.out tests/all-macros.pdf tests/all-macros.tex tests/all-macros.toc
