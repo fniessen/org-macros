@@ -55,6 +55,16 @@
     (should (string-match-p "<span style=\"color: red\">[[:space:]]*colored text[[:space:]]*</span>"
                             output))))
 
+(ert-deftest org-macros-test-hex-colors-latex ()
+  (let ((output (org-macros-test-export
+                 'latex
+                 "{{{bgcolor(#E0E0E0, background text)}}}\n{{{color(#FF0000, colored text)}}}"
+                 (expand-file-name "README.org" org-macros-test-root))))
+    (should (string-match-p "\\\\colorbox\\[HTML\\]{E0E0E0}{ background text}"
+                            output))
+    (should (string-match-p "\\\\textcolor\\[HTML\\]{FF0000}{ colored text}"
+                            output))))
+
 (ert-deftest org-macros-test-git-version ()
   (let ((repository-output
          (org-macros-test-export 'ascii
