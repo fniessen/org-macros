@@ -6,6 +6,26 @@ LATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 
 .PHONY: all check test tangle export-html export-latex export-pdf clean
 
+# Show this help.
+help:
+	@echo "Usage: make TARGET"
+	@echo ""
+	@echo "Targets:"
+	@awk '\
+	/^[[:space:]]*#[[:space:]]/ { \
+		description = $$0; \
+		sub(/^[[:space:]]*#[[:space:]]*/, "", description); \
+		next; \
+	} \
+	/^[a-zA-Z0-9_-]+:/ { \
+		target = $$0; \
+		sub(/:.*/, "", target); \
+		printf "  %-15s %s\n", target, description; \
+		description = ""; \
+		next; \
+	} \
+	{ description = "" }' [Mm]akefile
+
 # Run checks and export the Org files to HTML and LaTeX.
 all: check tangle export-html export-latex export-pdf
 
