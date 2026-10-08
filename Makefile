@@ -8,9 +8,7 @@ LATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 
 # Show this help.
 help:
-	@echo "Usage: make TARGET"
-	@echo ""
-	@echo "Targets:"
+	@printf '%s\n' "Usage: make TARGET" "" "Targets:"
 	@awk '\
 	/^[[:space:]]*#[[:space:]]/ { \
 		description = $$0; \
