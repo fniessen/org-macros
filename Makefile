@@ -4,7 +4,8 @@ PACKAGE_INIT = --eval "(require 'package)" --eval "(package-initialize)"
 LATEX ?= lualatex
 LATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 
-.PHONY: all check test tangle export-html export-latex export-pdf clean
+.DEFAULT_GOAL := help
+.PHONY: help all lint-shell check test tangle export-html export-latex export-pdf clean
 
 # Show this help.
 help:
@@ -25,7 +26,15 @@ help:
 	{ description = "" }' [Mm]akefile
 
 # Run checks and export the Org files to HTML and LaTeX.
-all: check tangle export-html export-latex export-pdf
+all: lint-shell check tangle export-html export-latex export-pdf
+
+# Run ShellCheck on shell scripts in the repository.
+lint-shell:
+	@command -v shellcheck >/dev/null || { printf 'ShellCheck is required.\n' >&2; exit 127; }
+	@find . -type f -not -path './.git/*' \
+		\( -perm /111 -o -name '*.sh' -o -name '*.bash' \) -print0 \
+		| xargs -0 -r grep -IlZ -m1 -E '^#!.*(bash|/sh|/dash|/ksh)([[:space:]]|$$)' \
+		| xargs -0 -r shellcheck
 
 # Parse Org files to catch syntax errors, then run git diff --check to verify
 # that no whitespace-related issues were introduced.
