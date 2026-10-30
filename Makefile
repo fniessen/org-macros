@@ -7,7 +7,7 @@ LATEX_FLAGS = -interaction=nonstopmode -halt-on-error
 .DEFAULT_GOAL := help
 .PHONY: help all lint-shell check test tangle export-html export-latex export-pdf clean
 
-# Show this help.
+# Show available targets.
 help:
 	@printf '%s\n' "Usage: make TARGET" "" "Targets:"
 	@awk '\
